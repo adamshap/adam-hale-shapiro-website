@@ -45,3 +45,18 @@ if (searchInput) {
   });
   filter();
 }
+
+// Reveal contact details only after a visitor activates the button.
+// This deters simple address harvesters; it is not access control.
+for (const button of document.querySelectorAll('[data-reveal-email]')) {
+  button.hidden = false;
+  button.addEventListener('click', () => {
+    const address = [58, 63, 58, 54, 117, 40, 51, 58, 43, 50, 41, 52, 27, 40, 61, 117, 61, 41, 57, 117, 52, 41, 60].map((value) => String.fromCharCode(value ^ 91)).join('');
+    const link = document.createElement('a');
+    link.className = 'revealed-email';
+    link.textContent = address;
+    link.href = ['mail', 'to', ':'].join('') + address;
+    button.replaceWith(link);
+    link.focus();
+  }, { once: true });
+}

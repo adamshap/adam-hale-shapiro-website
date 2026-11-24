@@ -1082,3 +1082,7 @@ html:not(.js) .search-toolbar {
   .research-layout { display:block; }
   .research-group .research-item { break-inside:avoid; }
 }
+
+.email-reveal { border:0; border-bottom:1px solid var(--line); border-radius:0; padding:7px 0; min-height:40px; background:transparent; color:var(--ink); font:inherit; cursor:pointer; }
+.email-reveal:hover { color:var(--accent); border-color:currentColor; }
+.footer-contact .revealed-email { display:inline-block; padding:7px 0; min-height:40px; overflow-wrap:anywhere; }
