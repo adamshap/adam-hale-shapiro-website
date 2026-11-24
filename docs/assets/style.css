@@ -1016,3 +1016,13 @@ html:not(.js) .search-toolbar {
   .paper-main .breadcrumb { margin-bottom:25px; }
   .paper-main .abstract-body { font-size:1rem; padding-top:27px; }
 }
+
+/* Compact supporting text on the home page; preserve heading sizes. */
+.home-main .bio { font-size:.94rem; }
+.home-main .button,
+.home-main .profile-link,
+.home-main .text-link,
+.home-main .paper-details,
+.home-main .paper-status,
+.home-main .resource-link,
+.home-main .tool-feature>p:not(.eyebrow) { font-size:.82rem; }
