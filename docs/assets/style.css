@@ -116,7 +116,7 @@ section[id] {
   top:0;
   z-index:10;
   border-bottom:1px solid var(--line);
-  background:rgba(255,255,255,.96);
+  background:#fff;
 }
 .header-inner {
   max-width:1240px;
@@ -641,9 +641,10 @@ section[id] {
 }
 .footer-bottom {
   display:flex;
+  flex-wrap:wrap;
   justify-content:space-between;
   align-items:center;
-  gap:20px;
+  gap:4px 20px;
   margin-top:8px;
   padding-top:8px;
   border-top:1px solid var(--line);
@@ -653,6 +654,7 @@ section[id] {
   color:var(--muted);
   text-decoration:none;
 }
+.footer-bottom>span,.footer-bottom>a { white-space:nowrap; }
 @media(min-width:1600px) {
   :root {
     font-size:18px;
@@ -1238,6 +1240,7 @@ html:not(.js) .research-topics { display:none; }
 
 /* Compact spacing for code, dashboards, and documentation. */
 .data-main .page-heading { padding-bottom:20px; margin-bottom:20px; }
+.data-main .page-heading h1 { font-size:clamp(2rem,3.8vw,3rem); }
 .data-main .page-intro { margin-top:8px; }
 .data-main .data-list { gap:0; }
 .data-main .data-item { padding:18px 0; gap:28px; }
