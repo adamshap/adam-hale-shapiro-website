@@ -221,16 +221,12 @@ def home(pages):
     slug = '/'
     tree = Tree(pages[slug]['blocks'][0]).root
     paras = [n for n in tree.walk() if n.tag == 'p']
-    # Separate professional affiliation from the research summary.
-    introduction, research_summary = text(paras[0]).split('. I study ', 1)
+    # Render the professional affiliation from the original biography.
+    introduction = text(paras[0]).split('. I study ', 1)[0]
     position = introduction.removeprefix('I am ').split(' at the ', 1)[0]
     role, division = position.split(' of ', 1)
     institution = paras[0].find('a')
-    research_summary = ('I study ' + research_summary).replace(
-        'applied micro, macroeconomics, and health economics. My research focuses on ',
-        'applied microeconomics, macroeconomics, and health economics, focusing on '
-    ).replace('the U.S. healthcare sector', 'U.S. healthcare')
-    bio = '<div class="bio-affiliation"><p class="bio-role">' + escape(role) + '</p><p class="bio-division">' + escape(division) + '</p><p class="bio-institution">' + anchor(institution.attrs['href'], text(institution), slug) + '</p></div><p class="bio-research">' + escape(research_summary) + '</p>'
+    bio = '<div class="bio-affiliation"><p class="bio-role">' + escape(role) + '</p><p class="bio-division">' + escape(division) + '</p><p class="bio-institution">' + anchor(institution.attrs['href'], text(institution), slug) + '</p></div>'
     profile_links = [n.find('a') for n in paras[1:] if n.find('a') and 'media inquiries' not in text(n)]
     profile_icons = {'Google Scholar': 'google-scholar.svg', 'SF Fed Profile': 'sf-fed.png', 'LinkedIn': 'linkedin.svg'}
     social = ''
