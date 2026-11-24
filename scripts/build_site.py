@@ -6,6 +6,7 @@ from urllib.parse import urlsplit, urljoin
 import json
 import posixpath
 import re
+import hashlib
 
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / 'docs'
@@ -94,6 +95,10 @@ def fragment(source):
 def anchor(href, label, slug='/', css=''):
     return '<a' + (' class="' + css + '"' if css else '') + ' href="' + escape(relative(href, slug), quote=True) + '">' + escape(label) + '</a>'
 
+def asset_href(path, slug):
+    version = hashlib.sha256((DOCS / path.lstrip('/')).read_bytes()).hexdigest()[:10]
+    return relative(path, slug) + '?v=' + version
+
 def resources(nodes, source, destination):
     links = []
     for n in nodes:
@@ -134,7 +139,7 @@ def footer(slug):
 def page(slug, title, body, description=None):
     description = description or 'Research, publications, economic letters, code and data from economist Adam Hale Shapiro.'
     return '''<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#6a2036"><title>''' + escape(title) + '''</title><meta name="description" content="''' + escape(description, quote=True) + '''"><link rel="icon" href="''' + relative('/assets/favicon.svg', slug) + '''" type="image/svg+xml"><link rel="stylesheet" href="''' + relative('/assets/style.css', slug) + '''"><script defer src="''' + relative('/assets/site.js', slug) + '''"></script></head><body id="top"><a class="skip-link" href="#content">Skip to content</a>''' + navigation(slug) + body + footer(slug) + '</body></html>\n'
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#6a2036"><title>''' + escape(title) + '''</title><meta name="description" content="''' + escape(description, quote=True) + '''"><link rel="icon" href="''' + asset_href('/assets/favicon.svg', slug) + '''" type="image/svg+xml"><link rel="stylesheet" href="''' + asset_href('/assets/style.css', slug) + '''"><script defer src="''' + asset_href('/assets/site.js', slug) + '''"></script></head><body id="top"><a class="skip-link" href="#content">Skip to content</a>''' + navigation(slug) + body + footer(slug) + '</body></html>\n'
 
 def section_heading(eyebrow, title, intro=''):
     return '<div class="page-heading"><p class="eyebrow">' + escape(eyebrow) + '</p><h1>' + escape(title) + '</h1>' + ('<p class="page-intro">' + escape(intro) + '</p>' if intro else '') + '</div>'
