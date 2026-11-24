@@ -1326,3 +1326,14 @@ html:not(.js) .research-topics { display:none; }
 @media(max-width:650px) {
   .letter-list .letter-item { grid-template-columns:minmax(0,1fr) clamp(96px,28vw,120px); column-gap:12px; }
 }
+
+/* Larger, uniform desktop previews with a compact gutter beside the citation. */
+@media(min-width:651px) {
+  .research-group .research-item,.letter-list .letter-item,.featured-papers .research-item {
+    grid-template-columns:minmax(0,1fr) clamp(160px,16vw,220px);
+    column-gap:20px;
+  }
+}
+@media(min-width:651px) and (max-width:900px) {
+  .featured-papers { grid-template-columns:1fr; gap:16px; }
+}
