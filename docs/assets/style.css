@@ -1034,9 +1034,8 @@ html:not(.js) .search-toolbar {
 /* Original charts give each letter a compact visual preview. */
 .letter-list .letter-item { display:grid; grid-template-columns:minmax(0,1fr) 192px; align-items:start; column-gap:30px; }
 .letter-copy { min-width:0; }
-.letter-figure { position:relative; display:block; width:100%; aspect-ratio:7 / 4; padding:0; margin-top:3px; align-self:start; overflow:hidden; border:1px solid var(--line); border-radius:4px; background:#fff; transition:border-color .15s,box-shadow .15s; }
+.letter-figure { position:relative; display:block; width:100%; aspect-ratio:7 / 4; padding:0; margin-top:3px; align-self:start; overflow:hidden; border:0; border-radius:0; background:#fff; }
 .letter-figure img { position:absolute; inset:6px; width:calc(100% - 12px); height:calc(100% - 12px); object-fit:contain; object-position:center; }
-.letter-figure:hover { border-color:#b7c1c6; box-shadow:0 3px 12px #202b310a; }
 .letter-figure-credit { margin-top:22px; color:var(--muted); font-size:.8rem; }
 @media(max-width:650px) {
   .letter-list .letter-item { grid-template-columns:minmax(0,1fr) 104px; column-gap:16px; align-items:start; }
