@@ -330,7 +330,7 @@ section[id] {
 .page-main {
   max-width:1240px;
   margin:auto;
-  padding:70px 48px 90px;
+  padding:48px 48px 90px;
   min-height:60vh;
 }
 .page-heading {
@@ -541,7 +541,7 @@ section[id] {
   padding-top:40px;
 }
 .breadcrumb {
-  margin-bottom:36px;
+  margin-bottom:22px;
   font-size:max(.875rem,.8rem);
 }
 .breadcrumb a {
@@ -553,11 +553,11 @@ section[id] {
   text-decoration:underline;
 }
 .paper-header {
-  padding-bottom:36px;
+  padding-bottom:24px;
   border-bottom:1px solid var(--line);
 }
 .paper-header .eyebrow {
-  margin-bottom:20px;
+  margin-bottom:12px;
 }
 .paper-header h1 {
   font-size:clamp(2.2rem,4vw,3.5rem);
@@ -570,29 +570,29 @@ section[id] {
   color:var(--muted);
 }
 .paper-byline p+p {
-  margin-top:5px;
+  margin-top:3px;
 }
 .paper-header .resource-links {
-  margin-top:25px;
+  margin-top:14px;
 }
 .abstract-body {
-  padding-top:35px;
+  padding-top:24px;
   max-width:760px;
   font-size:1rem;
   line-height:1.95;
 }
 .prose h2 {
   font-size:1.6rem;
-  margin-bottom:20px;
+  margin-bottom:12px;
 }
 .prose p {
-  margin-bottom:20px;
+  margin-bottom:16px;
 }
 .prose+.prose {
-  margin-top:15px;
+  margin-top:10px;
 }
 .paper-return {
-  margin-top:30px;
+  margin-top:24px;
 }
 /* Footer */
 .site-footer {
@@ -797,7 +797,7 @@ section[id] {
     padding-top:22px;
   }
   .page-main {
-    padding-top:40px;
+    padding-top:32px;
     padding-bottom:52px;
   }
   .page-heading {
@@ -987,9 +987,9 @@ html:not(.js) .search-toolbar {
 .paper-abstract-content { margin-top:14px; padding:0 0 0 18px; border-left:2px solid #e1e7e8; font-size:.94rem; line-height:1.85; color:#414f58; max-width:780px; }
 .paper-abstract-content p+p { margin-top:15px; }
 .paper-header h1 { font-size:clamp(2rem,3.8vw,3.15rem); line-height:1.25; letter-spacing:-.035em; }
-.paper-header .paper-byline { font-size:.95rem; line-height:1.8; margin-top:24px; }
+.paper-header .paper-byline { font-size:.95rem; line-height:1.6; margin-top:16px; }
 .paper-header .paper-byline p:first-child { color:var(--ink); font-size:1rem; }
-.paper-header .paper-status { margin-top:20px; }
+.paper-header .paper-status { margin-top:10px; }
 .paper-header .primary-resource { color:white; background:var(--accent); border-color:var(--accent); padding:9px 19px; min-height:44px; }
 .paper-header .primary-resource:hover { background:var(--accent-hover); }
 .abstract-body { line-height:1.85; }
@@ -1011,11 +1011,11 @@ html:not(.js) .search-toolbar {
   .paper-main { padding-top:25px; }
   .paper-header h1 { font-size:2rem; line-height:1.28; }
   .paper-header .eyebrow { display:none; }
-  .paper-header .paper-byline { margin-top:21px; font-size:.9rem; }
+  .paper-header .paper-byline { margin-top:14px; font-size:.9rem; }
   .paper-header .paper-byline p:first-child { font-size:.95rem; }
-  .paper-header { padding-bottom:28px; }
-  .paper-main .breadcrumb { margin-bottom:25px; }
-  .paper-main .abstract-body { font-size:1rem; padding-top:27px; }
+  .paper-header { padding-bottom:22px; }
+  .paper-main .breadcrumb { margin-bottom:18px; }
+  .paper-main .abstract-body { font-size:1rem; padding-top:22px; }
 }
 
 /* Compact supporting text on the home page; preserve heading sizes. */
@@ -1028,6 +1028,7 @@ html:not(.js) .search-toolbar {
 .home-main .resource-link,
 .home-main .tool-feature>p:not(.eyebrow) { font-size:.82rem; }
 
+.letters-main .page-heading { padding-bottom:24px; margin-bottom:24px; }
 .letters-main .page-heading h1 { font-size:clamp(2rem,3.8vw,3rem); }
 
 /* Original charts give each letter a compact visual preview. */
