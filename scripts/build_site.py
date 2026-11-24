@@ -205,7 +205,7 @@ def navigation(slug):
     return '''<header class="site-header"><div class="header-inner">''' + anchor('/', 'Adam Hale Shapiro', slug, 'brand') + '''<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span>Menu</span><svg viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14"/></svg></button><nav id="site-nav" aria-label="Main navigation">''' + links + anchor(CV, 'CV', slug, 'nav-cv') + '</nav></div></header>'
 
 def footer(slug):
-    affiliation = ('Vice President &middot; ' if slug == '/' else '') + 'Federal Reserve Bank of San Francisco'
+    affiliation = 'Vice President &middot; Federal Reserve Bank of San Francisco'
     return '''<footer class="site-footer"><div class="footer-top"><div>''' + anchor('/', 'Adam Hale Shapiro', slug, 'footer-name') + '''<p>''' + affiliation + '''</p></div><div class="footer-contact"><button class="email-reveal" type="button" data-reveal-email hidden>Show email</button><noscript><a href="https://www.frbsf.org/our-people/economists/adam-shapiro/">Contact via SF Fed profile</a></noscript><p>101 Market Street · San Francisco, CA 94105</p></div></div><p class="disclaimer">The content on this website does not represent the views of the Federal Reserve Bank of San Francisco (FRBSF) or the Federal Reserve System. <a href="https://www.frbsf.org/contact-us/">Contact the FRBSF</a> for all media inquiries.</p><div class="footer-bottom"><span>© 2026 Adam Hale Shapiro</span><a href="#top">Back to top</a></div></footer>'''
 
 def page(slug, title, body, description=None):
