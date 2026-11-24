@@ -1253,3 +1253,12 @@ html:not(.js) .research-topics { display:none; }
   .data-main .data-details { margin-top:9px; }
   .data-main .data-documentation { padding-top:7px; }
 }
+
+/* Keep mobile navigation visible and avoid duplicate homepage actions. */
+@media(max-width:650px) {
+  .js .menu-toggle { display:none; }
+  .js .site-header nav:not([data-open]),.site-header nav { display:flex; flex-wrap:nowrap; justify-content:space-between; width:100%; gap:2px; padding:0; }
+  .site-header nav a,.site-header nav a:not(.nav-cv),.site-header nav .nav-cv { font-size:.8rem; padding:6px 3px; }
+  .header-inner { gap:8px; padding-top:14px; padding-bottom:10px; }
+  .home-main .hero-actions { display:none; }
+}
