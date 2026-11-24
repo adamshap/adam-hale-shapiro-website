@@ -52,3 +52,15 @@ the local ignored `migration/source/` directory. They are not published.
 
 The one-time `migration/migrate.py` importer captures the old public Wix site.
 Do not rerun it after editing the new site: edit `docs/` directly instead.
+
+## Analytics
+
+All 26 pages use the asynchronous GoatCounter script in `scripts/build_site.py`.
+The endpoint is `https://adam-hale-shapiro.goatcounter.com/count`.
+View the private dashboard at https://adam-hale-shapiro.goatcounter.com/ using the
+existing GoatCounter login. This website has separate statistics from ISMI and
+Supply & Demand. Do not replace its endpoint with either dashboard's endpoint.
+
+GoatCounter skips localhost and other local previews by default. Keep that
+behavior so development visits do not pollute the website's statistics.
+Documentation: https://www.goatcounter.com/help/start

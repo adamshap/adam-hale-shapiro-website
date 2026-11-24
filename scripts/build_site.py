@@ -12,6 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / 'docs'
 VOID = {'br', 'hr', 'img', 'meta', 'link', 'input', 'source', 'wbr'}
 CV = 'https://www.frbsf.org/wp-content/uploads/CV-Shapiro.pdf'
+GOATCOUNTER = 'https://adam-hale-shapiro.goatcounter.com/count'
 
 class Node:
     def __init__(self, tag='', attrs=(), parent=None):
@@ -209,7 +210,7 @@ def footer(slug):
 def page(slug, title, body, description=None):
     description = description or 'Research, publications, economic letters, code and data from economist Adam Hale Shapiro.'
     return '''<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#6a2036"><title>''' + escape(title) + '''</title><meta name="description" content="''' + escape(description, quote=True) + '''"><link rel="icon" href="''' + asset_href('/assets/favicon.svg', slug) + '''" type="image/svg+xml"><link rel="stylesheet" href="''' + asset_href('/assets/style.css', slug) + '''"><script defer src="''' + asset_href('/assets/site.js', slug) + '''"></script></head><body id="top"><a class="skip-link" href="#content">Skip to content</a>''' + navigation(slug) + body + footer(slug) + '</body></html>\n'
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#6a2036"><title>''' + escape(title) + '''</title><meta name="description" content="''' + escape(description, quote=True) + '''"><link rel="icon" href="''' + asset_href('/assets/favicon.svg', slug) + '''" type="image/svg+xml"><link rel="stylesheet" href="''' + asset_href('/assets/style.css', slug) + '''"><script defer src="''' + asset_href('/assets/site.js', slug) + '''"></script><script data-goatcounter="''' + GOATCOUNTER + '''" async src="https://gc.zgo.at/count.js"></script></head><body id="top"><a class="skip-link" href="#content">Skip to content</a>''' + navigation(slug) + body + footer(slug) + '</body></html>\n'
 
 def section_heading(eyebrow, title, intro=''):
     return '<div class="page-heading"><p class="eyebrow">' + escape(eyebrow) + '</p><h1>' + escape(title) + '</h1>' + ('<p class="page-intro">' + escape(intro) + '</p>' if intro else '') + '</div>'
