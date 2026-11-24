@@ -224,9 +224,9 @@ def home(pages):
     # Render the professional affiliation from the original biography.
     introduction = text(paras[0]).split('. I study ', 1)[0]
     position = introduction.removeprefix('I am ').split(' at the ', 1)[0]
-    role, division = position.split(' of ', 1)
+    role = position.split(' of ', 1)[0]
     institution = paras[0].find('a')
-    bio = '<div class="bio-affiliation"><p class="bio-role">' + escape(role) + '</p><p class="bio-division">' + escape(division) + '</p><p class="bio-institution">' + anchor(institution.attrs['href'], text(institution), slug) + '</p></div>'
+    bio = '<div class="bio-affiliation"><p class="bio-role">' + escape(role) + '</p><p class="bio-institution">' + anchor(institution.attrs['href'], text(institution), slug) + '</p></div>'
     profile_links = [n.find('a') for n in paras[1:] if n.find('a') and 'media inquiries' not in text(n)]
     profile_icons = {'Google Scholar': 'google-scholar.svg', 'SF Fed Profile': 'sf-fed.png', 'LinkedIn': 'linkedin.svg'}
     social = ''
