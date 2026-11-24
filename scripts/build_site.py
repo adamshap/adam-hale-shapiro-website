@@ -295,13 +295,17 @@ def figure_image(figure, destination, loading='lazy'):
     width, height = figure['width'], figure['height']
     left, top, right, bottom = figure.get('display_bounds', [0, 0, width, height])
     crop_width, crop_height = right - left, bottom - top
-    # Fit the chart's visible bounds into the shared 7:4 frame without distortion.
-    scale = min(1 / crop_width, (4 / 7) / crop_height)
+    # Balance visible chart area as well as frame size. Wider/taller charts keep
+    # their maximum safe scale; fuller plots get a little optical breathing room.
+    # The outer frame and row spacing stay fixed, and all chart labels remain.
+    frame_height = 4 / 7
+    balanced_scale = (.76 * frame_height / (crop_width * crop_height)) ** .5
+    scale = min(1 / crop_width, frame_height / crop_height, balanced_scale)
     framing = {
         'width': width * scale * 100,
         'height': height * scale * 175,
         'left': ((1 - crop_width * scale) / 2 - left * scale) * 100,
-        'top': (((4 / 7) - crop_height * scale) / 2 - top * scale) * 175,
+        'top': ((frame_height - crop_height * scale) / 2 - top * scale) * 175,
     }
     style = ';'.join('--figure-' + key + ':' + format(value, '.4f') + '%' for key, value in framing.items())
     return Node('img', [('src', asset_href(figure['src'], destination)), ('alt', figure['alt']), ('width', str(width)), ('height', str(height)), ('loading', loading), ('decoding', 'async'), ('style', style)])
