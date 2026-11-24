@@ -181,8 +181,10 @@ def home(pages):
     hero = '''<div class="tree-banner"><img src="assets/forest-banner.jpg" alt="Sunlight falling on snow-covered trees" width="1600" height="440" fetchpriority="high"></div><section class="hero"><div class="hero-copy"><p class="eyebrow">Economist</p><h1>Adam Hale Shapiro</h1><div class="bio"><p>''' + bio + '''</p></div><div class="hero-actions">''' + anchor('/research/', 'Explore research', css='button button-primary') + anchor(CV, 'Curriculum vitae', css='button button-secondary') + '''</div><div class="profile-links">''' + social + '''</div></div></section>'''
     tools = '<section class="home-section"><div class="section-header"><div><p class="eyebrow">Code & Data</p><h2>Explore the data.</h2></div>' + anchor('/blank-2/', 'All code & data', css='text-link') + '</div><div class="tools-grid">' + tool_feature('Inflation Shock Momentum', 'https://adamshap.github.io/ismi-webapp/ism_webapp.html', 'Explore sustained movements in inflation shocks.') + tool_feature('Supply & Demand Driven Inflation', 'https://adamshap.github.io/supply-demand-webapp/supply_demand_webapp.html', 'Explore the supply and demand components of inflation.') + '</div></section>'
     blocks = [fragment(b) for b in pages['/research']['blocks']]
-    selected = [b for b in blocks if b.find('p')][:2]
-    research = '<section class="home-section"><div class="section-header"><div><p class="eyebrow">Working papers</p><h2>Recent research.</h2></div>' + anchor('/research/', 'All research', css='text-link') + '</div><div class="featured-papers">' + ''.join(paper(b, destination='/') for b in selected) + '</div></section>'
+    selected = [b for b in blocks if 'Conditionally accepted' in text(b)][:2]
+    if not selected:
+        selected = [b for b in blocks if b.find('p')][:2]
+    research = '<section class="home-section"><div class="section-header"><div><p class="eyebrow">Research</p><h2>Recent research.</h2></div>' + anchor('/research/', 'All research', css='text-link') + '</div><div class="featured-papers">' + ''.join(paper(b, destination='/') for b in selected) + '</div></section>'
     return page(slug, 'Adam Hale Shapiro | Economist', '<main id="content" class="home-main">' + hero + tools + research + '</main>')
 
 def search_field(label, count):

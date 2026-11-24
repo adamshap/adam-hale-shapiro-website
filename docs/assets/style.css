@@ -976,7 +976,7 @@ html:not(.js) .search-toolbar {
 .research-group .paper h3 { font-family:var(--sans); font-size:1.16rem; line-height:1.5; letter-spacing:-.022em; font-weight:600; margin-bottom:10px; }
 .research-group .paper-details { font-size:.9rem; line-height:1.75; }
 .research-group .paper-details p:first-child { color:#414f58; }
-.paper-status { display:table; max-width:100%; color:#28533d; background:#edf5ef; border:1px solid #d8e8dd; padding:5px 10px; border-radius:4px; font-family:var(--sans); font-size:.875rem; line-height:1.6; margin-top:14px; }
+.paper-status { max-width:100%; color:var(--muted); font-family:var(--sans); font-size:.875rem; line-height:1.6; margin-top:14px; }
 .resource-link { min-height:38px; padding:6px 12px; }
 .primary-resource { color:var(--accent); border-color:#d7bfc7; background:#fcf8f9; }
 .paper-abstract { margin-top:15px; font-size:.875rem; }
