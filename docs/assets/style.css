@@ -1331,8 +1331,9 @@ html:not(.js) .research-topics { display:none; }
 @media(min-width:651px) {
   .research-group .research-item,.letter-list .letter-item,.featured-papers .research-item {
     grid-template-columns:minmax(0,1fr) clamp(160px,16vw,220px);
-    column-gap:20px;
+    column-gap:12px;
   }
+  .research-group .research-item { grid-template-columns:minmax(0,680px) clamp(160px,16vw,220px); }
 }
 @media(min-width:651px) and (max-width:900px) {
   .featured-papers { grid-template-columns:1fr; gap:16px; }
