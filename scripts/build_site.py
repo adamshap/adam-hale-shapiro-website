@@ -157,6 +157,42 @@ def bibliography(chunks):
                 break
     return ''.join(result)
 
+def media_coverage(nodes, title, source, destination):
+    outlets = {
+        'ft.com': 'Financial Times', 'wsj.com': 'Wall Street Journal',
+        'bloomberg.com': 'Bloomberg', 'reuters.com': 'Reuters',
+        'economist.com': 'The Economist', 'latimes.com': 'Los Angeles Times',
+        'nytimes.com': 'The New York Times', 'washingtonpost.com': 'The Washington Post',
+    }
+    groups = {}
+    for node in nodes:
+        for link in node.walk():
+            if link.tag != 'a':
+                continue
+            host = urlsplit(link.attrs['href']).hostname or ''
+            outlet = next((name for domain, name in outlets.items() if host == domain or host.endswith('.' + domain)), text(link))
+            groups.setdefault(outlet, []).append(link)
+    rows = []
+    for outlet, links in groups.items():
+        if len(links) == 1:
+            links_html = serialize(links[0], source, destination, True)
+            # Keep the outlet visible while retaining the article's descriptive label.
+            if text(links[0]).lower().removeprefix('the ') != outlet.lower().removeprefix('the '):
+                links_html = '<span class="media-outlet">' + escape(outlet) + '</span>' + links_html
+        else:
+            items = []
+            for link in links:
+                label = text(link)
+                if label.lower().removeprefix('the ') == outlet.lower().removeprefix('the '):
+                    year = re.search(r'(?:19|20)\d{2}', link.attrs['href'])
+                    label = year.group() if year else 'Article'
+                items.append('<li>' + anchor(link.attrs['href'], label, destination) + '</li>')
+            links_html = '<span class="media-outlet">' + escape(outlet) + '</span><ul class="media-links">' + ''.join(items) + '</ul>'
+        rows.append('<li>' + links_html + '</li>')
+    if not rows:
+        return ''
+    return '<details class="paper-media"><summary>Media coverage<span class="sr-only"> for ' + escape(title) + '</span></summary><ul class="media-outlets">' + ''.join(rows) + '</ul></details>'
+
 def paper(block, slug='/research', destination=None, pages=None):
     destination = destination or slug
     paras = [n for n in block.children if isinstance(n, Node) and n.tag == 'p']
@@ -166,7 +202,8 @@ def paper(block, slug='/research', destination=None, pages=None):
     resource_nodes = [n for n in rest if 'resource' in n.attrs.get('class', '').split()]
     detail_nodes = [n for n in rest if n not in resource_nodes]
     statuses = [n for n in detail_nodes if text(n).startswith('Conditionally accepted')]
-    detail_nodes = [n for n in detail_nodes if n not in statuses]
+    media_nodes = [n for n in detail_nodes if text(n).startswith('Coverage in')]
+    detail_nodes = [n for n in detail_nodes if n not in statuses and n not in media_nodes]
     first_link = next((n for n in first.walk() if n.tag == 'a' and text(n).strip('"“” ')), None)
     title = text(first_link or first).strip('"“” ')
     title_html = anchor(local_path(first_link.attrs['href'], slug), title, destination) if first_link else escape(title)
@@ -193,7 +230,10 @@ def paper(block, slug='/research', destination=None, pages=None):
             if abstract_parts:
                 abstract = '<details class="paper-abstract"><summary>Abstract<span class="sr-only"> for ' + escape(title) + '</span></summary><div class="paper-abstract-content">' + ''.join(abstract_parts) + '</div></details>'
     search = escape(text(block), quote=True)
-    return '<article class="paper" data-search-item data-search="' + search + '"><h3>' + title_html + '</h3><div class="paper-details">' + details + '</div>' + status_html + resources(resource_nodes, slug, destination) + abstract + '</article>'
+    disclosures = abstract + media_coverage(media_nodes, title, slug, destination)
+    if disclosures:
+        disclosures = '<div class="paper-disclosures">' + disclosures + '</div>'
+    return '<article class="paper" data-search-item data-search="' + search + '"><h3>' + title_html + '</h3><div class="paper-details">' + details + '</div>' + status_html + resources(resource_nodes, slug, destination) + disclosures + '</article>'
 
 def navigation(slug):
     items = [('/', 'Home'), ('/research/', 'Research'), ('/blank-1/', 'Letters'), ('/blank-2/', 'Code & Data')]
@@ -261,7 +301,7 @@ def illustrated_research(block, pages, figures, destination='/research', topics=
     for child in article.children:
         if isinstance(child, Node) and 'resource-links' in child.attrs.get('class', '').split():
             actions.append(child)
-        elif isinstance(child, Node) and child.tag == 'details':
+        elif isinstance(child, Node) and 'paper-disclosures' in child.attrs.get('class', '').split():
             abstracts.append(child)
         else:
             copy.children.append(child)
@@ -317,10 +357,11 @@ def letters(data):
         if figure:
             article.attrs['class'] += ' letter-item'
             copy = Node('div', [('class', 'letter-copy')])
-            copy.children = article.children
+            disclosures = [n for n in article.children if isinstance(n, Node) and 'paper-disclosures' in n.attrs.get('class', '').split()]
+            copy.children = [n for n in article.children if n not in disclosures]
             preview = Node('a', [('class', 'letter-figure'), ('href', href), ('aria-label', 'Read ' + figure['title'])])
             preview.children = [Node('img', [('src', asset_href(figure['src'], slug)), ('alt', figure['alt']), ('width', str(figure['width'])), ('height', str(figure['height'])), ('loading', 'eager' if index < 2 else 'lazy'), ('decoding', 'async')])]
-            article.children = [copy, preview]
+            article.children = [copy, preview, *disclosures]
         articles += serialize(article, slug, slug, True)
     return page(slug, 'Economic Letters | Adam Hale Shapiro', '<main id="content" class="page-main letters-main">' + section_heading('San Francisco Fed', 'Economic Letters') + tabs + '<div id="letter-results" class="letter-list">' + articles + '</div><p class="letter-figure-credit">Figures: Federal Reserve Bank of San Francisco.</p></main>')
 
