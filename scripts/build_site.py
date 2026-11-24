@@ -215,7 +215,7 @@ def section_heading(eyebrow, title, intro=''):
     return '<div class="page-heading"><p class="eyebrow">' + escape(eyebrow) + '</p><h1>' + escape(title) + '</h1>' + ('<p class="page-intro">' + escape(intro) + '</p>' if intro else '') + '</div>'
 
 def tool_feature(name, href, description, slug='/'):
-    return '<article class="tool-feature"><p class="eyebrow">Interactive dashboard</p><h3>' + anchor(href, name, slug) + '</h3><p>' + escape(description) + '</p>' + anchor(href, 'Open dashboard', slug, 'text-link') + '</article>'
+    return '<a class="tool-feature" href="' + escape(relative(href, slug), quote=True) + '"><h3>' + escape(name) + '</h3><p>' + escape(description) + '</p></a>'
 
 def home(pages):
     slug = '/'
@@ -239,13 +239,13 @@ def home(pages):
         compact_label = {'Google Scholar': 'Scholar', 'SF Fed Profile': 'SF Fed'}.get(label, label)
         social += '<a class="profile-link" aria-label="' + escape(label, quote=True) + '" href="' + escape(link.attrs['href'], quote=True) + '">' + image + '<span class="profile-label">' + escape(label) + '</span><span class="profile-label-compact" aria-hidden="true">' + escape(compact_label) + '</span></a>'
     hero = '''<div class="tree-banner"><img src="assets/forest-banner.jpg" alt="Sunlight falling on snow-covered trees" width="1600" height="440" fetchpriority="high"></div><section class="hero"><div class="hero-copy"><div class="bio">''' + bio + '''</div><div class="hero-tools"><div class="hero-actions">''' + anchor('/research/', 'Explore research', css='button button-primary') + anchor(CV, 'Curriculum vitae', css='hero-cv') + '''</div><div class="profile-links">''' + social + '''</div></div></div></section>'''
-    tools = '<section class="home-section"><div class="section-header"><div><p class="eyebrow">Code & Data</p><h2>Explore the data.</h2></div>' + anchor('/blank-2/', 'All code & data', css='text-link') + '</div><div class="tools-grid">' + tool_feature('Inflation Shock Momentum', 'https://adamshap.github.io/ismi-webapp/ism_webapp.html', 'Explore sustained movements in inflation shocks.') + tool_feature('Supply & Demand Driven Inflation', 'https://adamshap.github.io/supply-demand-webapp/supply_demand_webapp.html', 'Explore the supply and demand components of inflation.') + '</div></section>'
+    tools = '<section class="home-section"><div class="section-header"><div><h2>Data tools</h2></div>' + anchor('/blank-2/', 'All code & data', css='text-link all-data-link') + '</div><div class="tools-grid">' + tool_feature('Inflation Shock Momentum', 'https://adamshap.github.io/ismi-webapp/ism_webapp.html', 'Explore sustained movements in inflation shocks.') + tool_feature('Supply & Demand Driven Inflation', 'https://adamshap.github.io/supply-demand-webapp/supply_demand_webapp.html', 'Explore the supply and demand components of inflation.') + '</div></section>'
     blocks = [fragment(b) for b in pages['/research']['blocks']]
     selected = [b for b in blocks if 'Conditionally accepted' in text(b)][:2]
     if not selected:
         selected = [b for b in blocks if b.find('p')][:2]
     figures = json.loads((ROOT / 'content/research-figures.json').read_text(encoding='utf-8'))
-    research = '<section class="home-section"><div class="section-header"><div><p class="eyebrow">Research</p><h2>Recent papers</h2></div>' + anchor('/research/', 'All research', css='text-link all-research-link') + '</div><div class="featured-papers">' + ''.join(illustrated_research(b, None, figures, destination='/') for b in selected) + '</div></section>'
+    research = '<section class="home-section"><div class="section-header"><div><h2>Recent papers</h2></div>' + anchor('/research/', 'All research', css='text-link all-research-link') + '</div><div class="featured-papers">' + ''.join(illustrated_research(b, None, figures, destination='/') for b in selected) + '</div></section>'
     return page(slug, 'Adam Hale Shapiro | Economist', '<main id="content" class="home-main"><h1 class="sr-only">Adam Hale Shapiro</h1>' + hero + research + tools + '</main>')
 
 def search_field(label, count):
@@ -256,6 +256,8 @@ def illustrated_research(block, pages, figures, destination='/research'):
     href = article.find('h3').find('a').attrs['href']
     figure = figures[local_path(href, destination)]
     article.attrs['class'] += ' research-item'
+    if destination == '/' and any('paper-status' in n.attrs.get('class', '').split() for n in article.walk()):
+        article.attrs['class'] += ' featured-publication'
     copy = Node('div', [('class', 'research-copy')])
     actions, abstracts = [], []
     for child in article.children:

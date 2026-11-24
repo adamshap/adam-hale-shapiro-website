@@ -1181,3 +1181,27 @@ html:not(.js) .search-toolbar {
 @media(max-width:650px) {
   .home-main .all-research-link { display:none; }
 }
+
+/* Quiet home sections and lightweight research actions. */
+.hero .bio { display:block; }
+.hero-tools { border-top:0; margin-top:18px; padding-top:0; }
+.home-main .section-header { margin-bottom:22px; }
+.featured-papers .paper { border-top:0; padding-top:0; }
+.featured-papers .featured-publication .paper-venue { display:none; }
+.home-main .tool-feature { display:block; text-decoration:none; color:var(--ink); border:1px solid var(--line); padding:22px 24px; background:#fbfcfc; transition:border-color .15s,background .15s; }
+.home-main .tool-feature h3 { margin:0 0 7px; font-size:1.08rem; color:var(--ink); }
+.home-main .tool-feature>p { margin:0; }
+.home-main .tool-feature:hover { border-color:#b7c1c6; background:#f6f8f8; }
+.home-main .tool-feature:hover h3 { color:var(--accent); }
+.home-main .tools-grid { gap:20px; }
+.home-main .resource-link,.research-main .resource-link { border:0; background:transparent; padding:3px 0; min-height:34px; color:var(--accent); border-radius:0; font-weight:500; }
+.home-main .resource-link:hover,.research-main .resource-link:hover { text-decoration:underline; }
+.home-main .resource-links,.research-main .resource-links { gap:6px 18px; }
+.home-main .primary-resource,.research-main .primary-resource { font-weight:600; }
+@media(max-width:650px) {
+  .home-main .all-data-link { display:none; }
+  .home-main .section-header { margin-bottom:19px; }
+  .home-main .tool-feature { padding:18px 20px; }
+  .home-main .resource-link,.research-main .resource-link { min-height:36px; }
+  .hero-tools { margin-top:16px; }
+}
