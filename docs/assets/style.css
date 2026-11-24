@@ -1233,3 +1233,23 @@ html:not(.js) .research-topics { display:none; }
 
 /* Homepage affiliation lives in the footer. */
 .home-main .hero-tools { margin-top:0; }
+
+/* Compact spacing for code, dashboards, and documentation. */
+.data-main .page-heading { padding-bottom:20px; margin-bottom:20px; }
+.data-main .page-intro { margin-top:8px; }
+.data-main .data-list { gap:0; }
+.data-main .data-item { padding:18px 0; gap:28px; }
+.data-main .data-item:first-child { padding-top:0; }
+.data-main .data-item h2 { margin-top:4px; }
+.data-main .data-actions { gap:6px; }
+.data-main .data-action { min-height:36px; padding:6px 11px; }
+.data-main .data-note { margin-top:7px; line-height:1.5; }
+.data-main .data-documentation { margin-top:8px; }
+.data-main .data-documentation>div { padding-top:7px; }
+.data-main .data-documentation p { margin-bottom:6px; }
+@media(max-width:650px) {
+  .data-main .data-list { gap:10px; }
+  .data-main .data-item,.data-main .data-item:first-child,.data-main .data-item:last-child { padding:14px 16px; }
+  .data-main .data-details { margin-top:9px; }
+  .data-main .data-documentation { padding-top:7px; }
+}
