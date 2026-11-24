@@ -77,3 +77,36 @@ if (topicButtons.length) {
     });
   }));
 }
+
+// Read freshness from the same public CSV files used by the dashboards.
+const monthFormat = new Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric', timeZone: 'UTC' });
+const updatedFormat = new Intl.DateTimeFormat('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
+async function updateDashboardFreshness(note) {
+  try {
+    const response = await fetch(note.dataset.dashboardUpdated, { cache: 'no-cache' });
+    if (!response.ok) throw new Error('Dashboard data unavailable');
+    const csv = await response.text();
+    let latestMonth = null;
+    for (const line of csv.split(/\r?\n/)) {
+      const comma = line.indexOf(',');
+      if (comma < 0 || !line.slice(comma + 1).replace(/[,"\s]/g, '')) continue;
+      const match = line.slice(0, comma).trim().replace(/^"|"$/g, '').match(/^(\d{4})(?:-|m)(\d{1,2})(?:-\d{2})?$/);
+      if (!match) continue;
+      const year = Number(match[1]), month = Number(match[2]);
+      if (year < 1900 || month < 1 || month > 12) continue;
+      const date = Date.UTC(year, month - 1, 1);
+      if (latestMonth === null || date > latestMonth) latestMonth = date;
+    }
+    if (latestMonth === null) throw new Error('No dashboard dates found');
+    const modified = new Date(response.headers.get('Last-Modified') || '');
+    const parts = [];
+    if (Number.isFinite(modified.getTime())) parts.push(`Updated ${updatedFormat.format(modified)}`);
+    parts.push(`Data through ${monthFormat.format(latestMonth)}`);
+    note.textContent = parts.join(' \u00b7 ');
+    note.hidden = false;
+  } catch {
+    note.textContent = 'See dashboard for the latest data.';
+    note.hidden = false;
+  }
+}
+document.querySelectorAll('[data-dashboard-updated]').forEach(updateDashboardFreshness);

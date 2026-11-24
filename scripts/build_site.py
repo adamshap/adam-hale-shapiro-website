@@ -352,11 +352,14 @@ def code_data(data):
                     seen.add(link_node.attrs['href'])
                     label = text(link_node).replace('excel file (.xlsx)', 'Excel data').replace('Stata Code', 'Stata code')
                     actions.append(anchor(local_path(link_node.attrs['href'], slug), label, slug, 'data-action'))
-            if '(last updated' in text(n):
+            if i >= 2 and '(last updated' in text(n):
                 notes.append(re.search(r'\(last updated[^)]+\)', text(n)).group(0).strip('()').replace('last updated', 'Updated'))
             if 'requires Haver' in text(n):
                 notes.append('Stata code requires Haver.')
         detail = '<div class="data-actions">' + ''.join(actions) + '</div>'
+        if i < 2:
+            data_source = ['https://adamshap.github.io/ismi-webapp/ism_data.csv', 'https://adamshap.github.io/supply-demand-webapp/supply_demand_baseline.csv'][i]
+            detail += '<p class="data-note dashboard-update" data-dashboard-updated="' + data_source + '" hidden></p><noscript><p class="data-note">See dashboard for the latest data.</p></noscript>'
         detail += ''.join('<p class="data-note">' + escape(note) + '</p>' for note in notes)
         if documentation:
             detail += '<details class="data-documentation"><summary>Documentation</summary><div>' + ''.join(documentation) + '</div></details>'

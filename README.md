@@ -64,3 +64,13 @@ Supply & Demand. Do not replace its endpoint with either dashboard's endpoint.
 GoatCounter skips localhost and other local previews by default. Keep that
 behavior so development visits do not pollute the website's statistics.
 Documentation: https://www.goatcounter.com/help/start
+
+## Dashboard update dates
+
+The Code & Data page reads the public CSV used by each dashboard on page load,
+with cache revalidation. "Updated" comes from the CSV's Last-Modified header
+(the GitHub Pages publication time); "Data through" is the latest populated
+month in that CSV. Both ISO dates and Stata monthly dates are supported.
+Publishing new dashboard data updates these labels without rebuilding this site.
+If the source is unavailable, visitors are directed to the dashboard for the
+latest data rather than seeing an old hard-coded date.
