@@ -267,7 +267,7 @@ def research(data, pages):
             groups.append([text(block.find('h2')), []])
         elif block.find('p'):
             groups[-1][1].append(block)
-    sidebar = '<aside class="section-sidebar"><p class="eyebrow">On this page</p><a href="#working-papers">Working papers</a><a href="#publications">Publications</a>' + anchor(CV, 'Curriculum vitae') + '</aside>'
+    sidebar = '<aside class="section-sidebar"><p class="eyebrow">On this page</p><a href="#working-papers">Working papers</a><a href="#publications">Publications</a></aside>'
     count = sum(len(items) for _, items in groups)
     figures = json.loads((ROOT / 'content/research-figures.json').read_text(encoding='utf-8'))
     content = search_field('Search research', count)
