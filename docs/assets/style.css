@@ -1159,3 +1159,21 @@ html:not(.js) .search-toolbar {
   .research-figure { display:none; }
   .research-group .research-item,.featured-papers .research-item { grid-template-columns:minmax(0,1fr); column-gap:0; }
 }
+
+/* A compact affiliation block balances the research introduction. */
+.hero .bio { display:grid; grid-template-columns:270px minmax(0,1fr); gap:30px; max-width:940px; align-items:start; line-height:1.7; }
+.hero .bio p+p { margin-top:0; }
+.bio-role { font-size:1rem; font-weight:600; color:var(--ink); line-height:1.4; }
+.hero .bio .bio-division { font-size:.84rem; line-height:1.6; color:var(--muted); margin-top:5px; }
+.hero .bio .bio-institution { font-size:.84rem; line-height:1.6; margin-top:7px; }
+.bio-institution a { text-decoration:none; color:var(--muted); }
+.bio-institution a:hover { color:var(--accent); text-decoration:underline; }
+.bio-research { color:#45515a; }
+@media(max-width:900px) {
+  .hero .bio { grid-template-columns:1fr; gap:17px; }
+  .bio-affiliation { max-width:420px; }
+  .bio-research { max-width:66ch; }
+}
+@media(max-width:650px) {
+  .hero .bio { gap:15px; }
+}

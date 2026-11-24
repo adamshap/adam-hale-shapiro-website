@@ -221,9 +221,16 @@ def home(pages):
     slug = '/'
     tree = Tree(pages[slug]['blocks'][0]).root
     paras = [n for n in tree.walk() if n.tag == 'p']
-    bio = inner(paras[0])
-    # Keep the original biography wording; break it into readable paragraphs.
-    bio = bio.replace('. I study', '.</p><p>I study')
+    # Separate professional affiliation from the research summary.
+    introduction, research_summary = text(paras[0]).split('. I study ', 1)
+    position = introduction.removeprefix('I am ').split(' at the ', 1)[0]
+    role, division = position.split(' of ', 1)
+    institution = paras[0].find('a')
+    research_summary = ('I study ' + research_summary).replace(
+        'applied micro, macroeconomics, and health economics. My research focuses on ',
+        'applied microeconomics, macroeconomics, and health economics, focusing on '
+    ).replace('the U.S. healthcare sector', 'U.S. healthcare')
+    bio = '<div class="bio-affiliation"><p class="bio-role">' + escape(role) + '</p><p class="bio-division">' + escape(division) + '</p><p class="bio-institution">' + anchor(institution.attrs['href'], text(institution), slug) + '</p></div><p class="bio-research">' + escape(research_summary) + '</p>'
     profile_links = [n.find('a') for n in paras[1:] if n.find('a') and 'media inquiries' not in text(n)]
     profile_icons = {'Google Scholar': 'google-scholar.svg', 'SF Fed Profile': 'sf-fed.png', 'LinkedIn': 'linkedin.svg'}
     social = ''
@@ -235,7 +242,7 @@ def home(pages):
         image = '<img class="profile-icon' + (' profile-icon-bank' if label == 'SF Fed Profile' else '') + '" src="' + asset_href('/assets/icons/' + icon, slug) + '" width="20" height="20" alt="" aria-hidden="true" decoding="async">' if icon else ''
         compact_label = {'Google Scholar': 'Scholar', 'SF Fed Profile': 'SF Fed'}.get(label, label)
         social += '<a class="profile-link" aria-label="' + escape(label, quote=True) + '" href="' + escape(link.attrs['href'], quote=True) + '">' + image + '<span class="profile-label">' + escape(label) + '</span><span class="profile-label-compact" aria-hidden="true">' + escape(compact_label) + '</span></a>'
-    hero = '''<div class="tree-banner"><img src="assets/forest-banner.jpg" alt="Sunlight falling on snow-covered trees" width="1600" height="440" fetchpriority="high"></div><section class="hero"><div class="hero-copy"><div class="bio"><p>''' + bio + '''</p></div><div class="hero-tools"><div class="hero-actions">''' + anchor('/research/', 'Explore research', css='button button-primary') + anchor(CV, 'Curriculum vitae', css='hero-cv') + '''</div><div class="profile-links">''' + social + '''</div></div></div></section>'''
+    hero = '''<div class="tree-banner"><img src="assets/forest-banner.jpg" alt="Sunlight falling on snow-covered trees" width="1600" height="440" fetchpriority="high"></div><section class="hero"><div class="hero-copy"><div class="bio">''' + bio + '''</div><div class="hero-tools"><div class="hero-actions">''' + anchor('/research/', 'Explore research', css='button button-primary') + anchor(CV, 'Curriculum vitae', css='hero-cv') + '''</div><div class="profile-links">''' + social + '''</div></div></div></section>'''
     tools = '<section class="home-section"><div class="section-header"><div><p class="eyebrow">Code & Data</p><h2>Explore the data.</h2></div>' + anchor('/blank-2/', 'All code & data', css='text-link') + '</div><div class="tools-grid">' + tool_feature('Inflation Shock Momentum', 'https://adamshap.github.io/ismi-webapp/ism_webapp.html', 'Explore sustained movements in inflation shocks.') + tool_feature('Supply & Demand Driven Inflation', 'https://adamshap.github.io/supply-demand-webapp/supply_demand_webapp.html', 'Explore the supply and demand components of inflation.') + '</div></section>'
     blocks = [fragment(b) for b in pages['/research']['blocks']]
     selected = [b for b in blocks if 'Conditionally accepted' in text(b)][:2]
