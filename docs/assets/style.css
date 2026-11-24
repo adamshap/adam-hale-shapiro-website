@@ -1230,3 +1230,6 @@ html:not(.js) .research-topics { display:none; }
 }
 
 .research-topics::-webkit-scrollbar { display:none; }
+
+/* Homepage affiliation lives in the footer. */
+.home-main .hero-tools { margin-top:0; }

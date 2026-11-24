@@ -205,7 +205,8 @@ def navigation(slug):
     return '''<header class="site-header"><div class="header-inner">''' + anchor('/', 'Adam Hale Shapiro', slug, 'brand') + '''<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span>Menu</span><svg viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14"/></svg></button><nav id="site-nav" aria-label="Main navigation">''' + links + anchor(CV, 'CV', slug, 'nav-cv') + '</nav></div></header>'
 
 def footer(slug):
-    return '''<footer class="site-footer"><div class="footer-top"><div>''' + anchor('/', 'Adam Hale Shapiro', slug, 'footer-name') + '''<p>Federal Reserve Bank of San Francisco</p></div><div class="footer-contact"><button class="email-reveal" type="button" data-reveal-email hidden>Show email</button><noscript><a href="https://www.frbsf.org/our-people/economists/adam-shapiro/">Contact via SF Fed profile</a></noscript><p>101 Market Street · San Francisco, CA 94105</p></div></div><p class="disclaimer">The content on this website does not represent the views of the Federal Reserve Bank of San Francisco (FRBSF) or the Federal Reserve System. <a href="https://www.frbsf.org/contact-us/">Contact the FRBSF</a> for all media inquiries.</p><div class="footer-bottom"><span>© 2026 Adam Hale Shapiro</span><a href="#top">Back to top</a></div></footer>'''
+    affiliation = ('Vice President &middot; ' if slug == '/' else '') + 'Federal Reserve Bank of San Francisco'
+    return '''<footer class="site-footer"><div class="footer-top"><div>''' + anchor('/', 'Adam Hale Shapiro', slug, 'footer-name') + '''<p>''' + affiliation + '''</p></div><div class="footer-contact"><button class="email-reveal" type="button" data-reveal-email hidden>Show email</button><noscript><a href="https://www.frbsf.org/our-people/economists/adam-shapiro/">Contact via SF Fed profile</a></noscript><p>101 Market Street · San Francisco, CA 94105</p></div></div><p class="disclaimer">The content on this website does not represent the views of the Federal Reserve Bank of San Francisco (FRBSF) or the Federal Reserve System. <a href="https://www.frbsf.org/contact-us/">Contact the FRBSF</a> for all media inquiries.</p><div class="footer-bottom"><span>© 2026 Adam Hale Shapiro</span><a href="#top">Back to top</a></div></footer>'''
 
 def page(slug, title, body, description=None):
     description = description or 'Research, publications, economic letters, code and data from economist Adam Hale Shapiro.'
@@ -222,12 +223,6 @@ def home(pages):
     slug = '/'
     tree = Tree(pages[slug]['blocks'][0]).root
     paras = [n for n in tree.walk() if n.tag == 'p']
-    # Render the professional affiliation from the original biography.
-    introduction = text(paras[0]).split('. I study ', 1)[0]
-    position = introduction.removeprefix('I am ').split(' at the ', 1)[0]
-    role = position.split(' of ', 1)[0]
-    institution = paras[0].find('a')
-    bio = '<div class="bio-affiliation"><p class="bio-role">' + escape(role) + '</p><p class="bio-institution">' + anchor(institution.attrs['href'], text(institution), slug) + '</p></div>'
     profile_links = [n.find('a') for n in paras[1:] if n.find('a') and 'media inquiries' not in text(n)]
     profile_icons = {'Google Scholar': 'google-scholar.svg', 'SF Fed Profile': 'sf-fed.png', 'LinkedIn': 'linkedin.svg'}
     social = ''
@@ -239,7 +234,7 @@ def home(pages):
         image = '<img class="profile-icon' + (' profile-icon-bank' if label == 'SF Fed Profile' else '') + '" src="' + asset_href('/assets/icons/' + icon, slug) + '" width="20" height="20" alt="" aria-hidden="true" decoding="async">' if icon else ''
         compact_label = {'SF Fed Profile': 'SF Fed'}.get(label, label)
         social += '<a class="profile-link" aria-label="' + escape(label, quote=True) + '" href="' + escape(link.attrs['href'], quote=True) + '">' + image + '<span class="profile-label">' + escape(label) + '</span><span class="profile-label-compact" aria-hidden="true">' + escape(compact_label) + '</span></a>'
-    hero = '''<div class="tree-banner"><img src="assets/forest-banner.jpg" alt="Sunlight falling on snow-covered trees" width="1600" height="440" fetchpriority="high"></div><section class="hero"><div class="hero-copy"><div class="bio">''' + bio + '''</div><div class="hero-tools"><div class="hero-actions">''' + anchor('/research/', 'Explore research', css='button button-primary') + anchor(CV, 'Curriculum vitae', css='hero-cv') + '''</div><div class="profile-links">''' + social + '''</div></div></div></section>'''
+    hero = '''<div class="tree-banner"><img src="assets/forest-banner.jpg" alt="Sunlight falling on snow-covered trees" width="1600" height="440" fetchpriority="high"></div><section class="hero"><div class="hero-copy"><div class="hero-tools"><div class="hero-actions">''' + anchor('/research/', 'Explore research', css='button button-primary') + anchor(CV, 'Curriculum vitae', css='hero-cv') + '''</div><div class="profile-links">''' + social + '''</div></div></div></section>'''
     tools = '<section class="home-section"><div class="section-header"><div><h2>Data tools</h2></div>' + anchor('/blank-2/', 'All code & data', css='text-link all-data-link') + '</div><div class="tools-grid">' + tool_feature('Inflation Shock Momentum', 'https://adamshap.github.io/ismi-webapp/ism_webapp.html', 'Explore sustained movements in inflation shocks.') + tool_feature('Supply & Demand Driven Inflation', 'https://adamshap.github.io/supply-demand-webapp/supply_demand_webapp.html', 'Explore the supply and demand components of inflation.') + '</div></section>'
     blocks = [fragment(b) for b in pages['/research']['blocks']]
     selected = [b for b in blocks if 'Conditionally accepted' in text(b)][:2]
