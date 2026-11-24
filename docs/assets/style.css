@@ -1262,3 +1262,5 @@ html:not(.js) .research-topics { display:none; }
   .header-inner { gap:8px; padding-top:14px; padding-bottom:10px; }
   .home-main .hero-actions { display:none; }
 }
+
+.home-main .hero-tools .profile-links { border-left:0; padding-left:0; }
