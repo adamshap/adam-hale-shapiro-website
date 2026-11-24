@@ -301,18 +301,10 @@ def illustrated_research(block, pages, figures, destination='/research', topics=
     if destination == '/' and any('paper-status' in n.attrs.get('class', '').split() for n in article.walk()):
         article.attrs['class'] += ' featured-publication'
     copy = Node('div', [('class', 'research-copy')])
-    actions, abstracts = [], []
-    for child in article.children:
-        if isinstance(child, Node) and 'resource-links' in child.attrs.get('class', '').split():
-            actions.append(child)
-        elif isinstance(child, Node) and 'paper-disclosures' in child.attrs.get('class', '').split():
-            abstracts.append(child)
-        else:
-            copy.children.append(child)
+    copy.children = article.children
     preview = Node('a', [('class', 'letter-figure research-figure'), ('href', href), ('aria-label', 'Read ' + figure['title'])])
     preview.children = [Node('img', [('src', asset_href(figure['src'], destination)), ('alt', figure['alt']), ('width', str(figure['width'])), ('height', str(figure['height'])), ('loading', 'lazy'), ('decoding', 'async')])]
-    copy.children.extend(actions)
-    article.children = [copy, preview, *abstracts]
+    article.children = [copy, preview]
     return serialize(article, destination, destination, True)
 
 def research(data, pages):
