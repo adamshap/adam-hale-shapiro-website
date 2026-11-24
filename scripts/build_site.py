@@ -274,7 +274,7 @@ def research(data, pages):
     for index, (title, blocks) in enumerate(groups):
         section_id = 'working-papers' if index == 0 else 'publications'
         content += '<section class="research-group" id="' + section_id + '" data-search-group><div class="group-heading"><h2>' + escape(title) + '</h2><span>' + str(len(blocks)) + '</span></div>' + ''.join(illustrated_research(block, pages, figures) for block in blocks) + '</section>'
-    return page(slug, 'Research | Adam Hale Shapiro', '<main id="content" class="page-main research-main">' + section_heading('Research', 'Papers & publications', 'Research on inflation, price setting dynamics, and the U.S. healthcare sector.') + '<div class="research-layout">' + sidebar + '<div>' + content + '</div></div></main>')
+    return page(slug, 'Research | Adam Hale Shapiro', '<main id="content" class="page-main research-main">' + section_heading('Research', 'Papers & publications') + '<div class="research-layout">' + sidebar + '<div>' + content + '</div></div></main>')
 
 def letters(data):
     slug = '/blank-1'
