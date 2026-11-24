@@ -1206,7 +1206,12 @@ html:not(.js) .search-toolbar {
   .hero-tools { margin-top:16px; }
 }
 
-/* Keep research downloads close to the citation and abstract. */
-.research-main .research-item>.resource-links { margin-top:4px; }
-.research-main .research-item .resource-link { min-height:28px; padding:1px 0; }
-.research-main .research-item>.paper-abstract { margin-top:3px; }
+/* Keep paper citations and actions together, beside desktop figures. */
+.research-item .research-copy h3 { margin-bottom:3px; }
+.research-item .research-copy .paper-details { line-height:1.45; }
+.research-item .research-copy .paper-details p+p { margin-top:1px; }
+.research-item .research-copy .paper-status { margin-top:3px; line-height:1.45; }
+.research-item .research-copy>.resource-links { margin-top:2px; gap:2px 16px; }
+.research-item .research-copy .resource-link { min-height:26px; padding:1px 0; }
+.research-main .research-item { align-items:start; }
+.research-main .research-item>.paper-abstract { margin-top:1px; }

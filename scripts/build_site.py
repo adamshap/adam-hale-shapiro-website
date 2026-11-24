@@ -270,7 +270,8 @@ def illustrated_research(block, pages, figures, destination='/research'):
             copy.children.append(child)
     preview = Node('a', [('class', 'letter-figure research-figure'), ('href', href), ('aria-label', 'Read ' + figure['title'])])
     preview.children = [Node('img', [('src', asset_href(figure['src'], destination)), ('alt', figure['alt']), ('width', str(figure['width'])), ('height', str(figure['height'])), ('loading', 'lazy'), ('decoding', 'async')])]
-    article.children = [copy, preview, *actions, *abstracts]
+    copy.children.extend(actions)
+    article.children = [copy, preview, *abstracts]
     return serialize(article, destination, destination, True)
 
 def research(data, pages):
@@ -285,7 +286,7 @@ def research(data, pages):
     sidebar = '<aside class="section-sidebar"><p class="eyebrow">On this page</p><a href="#working-papers">Working papers</a><a href="#publications">Publications</a></aside>'
     count = sum(len(items) for _, items in groups)
     figures = json.loads((ROOT / 'content/research-figures.json').read_text(encoding='utf-8'))
-    content = search_field('Search research', count)
+    content = ''
     for index, (title, blocks) in enumerate(groups):
         section_id = 'working-papers' if index == 0 else 'publications'
         content += '<section class="research-group" id="' + section_id + '" data-search-group><div class="group-heading"><h2>' + escape(title) + '</h2><span>' + str(len(blocks)) + '</span></div>' + ''.join(illustrated_research(block, pages, figures) for block in blocks) + '</section>'
