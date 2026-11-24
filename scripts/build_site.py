@@ -291,6 +291,21 @@ def home(pages):
 def search_field(label, count):
     return '<div class="search-toolbar"><label class="search-box"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><span class="sr-only">' + escape(label) + '</span><input type="search" data-search-input placeholder="' + escape(label) + '" autocomplete="off"></label><p class="search-status" data-search-status aria-live="polite">' + str(count) + ' results</p></div><div class="empty-results" data-empty-results hidden><h3>No matching results</h3><p>Try a title, coauthor, journal, or year.</p><button type="button" class="button button-secondary" data-clear-search>Clear search</button></div>'
 
+def figure_image(figure, destination, loading='lazy'):
+    width, height = figure['width'], figure['height']
+    left, top, right, bottom = figure.get('display_bounds', [0, 0, width, height])
+    crop_width, crop_height = right - left, bottom - top
+    # Fit the chart's visible bounds into the shared 7:4 frame without distortion.
+    scale = min(1 / crop_width, (4 / 7) / crop_height)
+    framing = {
+        'width': width * scale * 100,
+        'height': height * scale * 175,
+        'left': ((1 - crop_width * scale) / 2 - left * scale) * 100,
+        'top': (((4 / 7) - crop_height * scale) / 2 - top * scale) * 175,
+    }
+    style = ';'.join('--figure-' + key + ':' + format(value, '.4f') + '%' for key, value in framing.items())
+    return Node('img', [('src', asset_href(figure['src'], destination)), ('alt', figure['alt']), ('width', str(width)), ('height', str(height)), ('loading', loading), ('decoding', 'async'), ('style', style)])
+
 def illustrated_research(block, pages, figures, destination='/research', topics=None):
     article = Tree(paper(block, destination=destination, pages=pages)).root.find('article')
     href = article.find('h3').find('a').attrs['href']
@@ -303,7 +318,7 @@ def illustrated_research(block, pages, figures, destination='/research', topics=
     copy = Node('div', [('class', 'research-copy')])
     copy.children = article.children
     preview = Node('a', [('class', 'letter-figure research-figure'), ('href', href), ('aria-label', 'Read ' + figure['title'])])
-    preview.children = [Node('img', [('src', asset_href(figure['src'], destination)), ('alt', figure['alt']), ('width', str(figure['width'])), ('height', str(figure['height'])), ('loading', 'lazy'), ('decoding', 'async')])]
+    preview.children = [figure_image(figure, destination)]
     article.children = [copy, preview]
     return serialize(article, destination, destination, True)
 
@@ -356,7 +371,7 @@ def letters(data):
             disclosures = [n for n in article.children if isinstance(n, Node) and 'paper-disclosures' in n.attrs.get('class', '').split()]
             copy.children = [n for n in article.children if n not in disclosures]
             preview = Node('a', [('class', 'letter-figure'), ('href', href), ('aria-label', 'Read ' + figure['title'])])
-            preview.children = [Node('img', [('src', asset_href(figure['src'], slug)), ('alt', figure['alt']), ('width', str(figure['width'])), ('height', str(figure['height'])), ('loading', 'eager' if index < 2 else 'lazy'), ('decoding', 'async')])]
+            preview.children = [figure_image(figure, slug, 'eager' if index < 2 else 'lazy')]
             article.children = [copy, preview, *disclosures]
         articles += serialize(article, slug, slug, True)
     return page(slug, 'Economic Letters | Adam Hale Shapiro', '<main id="content" class="page-main letters-main">' + section_heading('San Francisco Fed', 'Economic Letters') + tabs + '<div id="letter-results" class="letter-list">' + articles + '</div><p class="letter-figure-credit">Figures: Federal Reserve Bank of San Francisco.</p></main>')

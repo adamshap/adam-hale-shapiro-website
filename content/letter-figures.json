@@ -5,7 +5,13 @@
     "height": 1855,
     "source": "https://www.frbsf.org/wp-content/uploads/el2026-34-figure2.png",
     "alt": "Figure 2 illustrates the relationship of forward rate sensitivity to inflationary pressure source across various interest rate horizons.",
-    "title": "When Is Monetary Policy Transmission Strongest?"
+    "title": "When Is Monetary Policy Transmission Strongest?",
+    "display_bounds": [
+      8,
+      15,
+      2601,
+      1846
+    ]
   },
   "https://www.frbsf.org/research-and-insights/publications/economic-letter/2026/07/using-inflation-shock-patterns-to-help-forecast-inflation/": {
     "src": "/assets/letters/el2026-18.png",
@@ -13,7 +19,13 @@
     "height": 303,
     "source": "https://www.frbsf.org/wp-content/uploads/el2026-18-figure1A.png",
     "alt": "Panel A of Figure 1 plots the ISMI together with 12-month PCE inflation.",
-    "title": "Using Inflation Shock Patterns to Help Forecast Inflation"
+    "title": "Using Inflation Shock Patterns to Help Forecast Inflation",
+    "display_bounds": [
+      0,
+      6,
+      767,
+      300
+    ]
   },
   "https://www.frbsf.org/research-and-insights/publications/economic-letter/2025/02/does-monetary-policy-tightening-reduce-inflation/": {
     "src": "/assets/letters/el2025-03.png",
@@ -21,7 +33,13 @@
     "height": 325,
     "source": "https://www.frbsf.org/wp-content/uploads/el2025-03-figure1A-.png",
     "alt": "Chart from Does Monetary Policy Tightening Reduce Inflation?",
-    "title": "Does Monetary Policy Tightening Reduce Inflation?"
+    "title": "Does Monetary Policy Tightening Reduce Inflation?",
+    "display_bounds": [
+      0,
+      6,
+      415,
+      325
+    ]
   },
   "https://www.frbsf.org/research-and-insights/publications/economic-letter/2025/01/pandemic-era-demand-squeezed-housing-inventories/": {
     "src": "/assets/letters/el2025-01.png",
@@ -29,7 +47,13 @@
     "height": 365,
     "source": "https://www.frbsf.org/wp-content/uploads/el2025-01-figure1v2.png?quality=100&w=550",
     "alt": "Chart from Pandemic-Era Demand Squeezed Housing Inventories",
-    "title": "Pandemic-Era Demand Squeezed Housing Inventories"
+    "title": "Pandemic-Era Demand Squeezed Housing Inventories",
+    "display_bounds": [
+      1,
+      2,
+      550,
+      363
+    ]
   },
   "https://www.frbsf.org/research-and-insights/publications/economic-letter/2024/11/how-much-has-cooling-economy-reduced-inflation/": {
     "src": "/assets/letters/el2024-30.png",
@@ -37,7 +61,13 @@
     "height": 366,
     "source": "https://www.frbsf.org/wp-content/uploads/el2024-30-fig1.png?quality=100&w=550",
     "alt": "Chart from How Much Has the Cooling Economy Reduced Inflation?",
-    "title": "How Much Has the Cooling Economy Reduced Inflation?"
+    "title": "How Much Has the Cooling Economy Reduced Inflation?",
+    "display_bounds": [
+      0,
+      1,
+      530,
+      364
+    ]
   },
   "https://www.frbsf.org/research-and-insights/publications/economic-letter/2024/08/pandemic-era-liquid-wealth-is-running-dry/": {
     "src": "/assets/letters/el2024-21.png",
@@ -45,7 +75,13 @@
     "height": 366,
     "source": "https://www.frbsf.org/wp-content/uploads/el2024-21-fig1.png?quality=100&w=550",
     "alt": "Chart from Pandemic-Era Liquid Wealth Is Running Dry",
-    "title": "Pandemic-Era Liquid Wealth Is Running Dry"
+    "title": "Pandemic-Era Liquid Wealth Is Running Dry",
+    "display_bounds": [
+      0,
+      0,
+      541,
+      363
+    ]
   },
   "https://www.frbsf.org/research-and-insights/publications/economic-letter/2024/02/rise-and-fall-pandemic-excess-wealth/": {
     "src": "/assets/letters/el2024-06.png",
@@ -53,7 +89,13 @@
     "height": 364,
     "source": "https://www.frbsf.org/wp-content/uploads/el2024-06-fig1.png?quality=100&w=550",
     "alt": "Overall real household net worth",
-    "title": "The Rise and Fall of Pandemic Excess Wealth"
+    "title": "The Rise and Fall of Pandemic Excess Wealth",
+    "display_bounds": [
+      0,
+      2,
+      534,
+      361
+    ]
   },
   "https://www.frbsf.org/research-and-insights/publications/economic-letter/2023/05/how-much-do-labor-costs-drive-inflation/": {
     "src": "/assets/letters/el2023-13.png",
@@ -61,7 +103,13 @@
     "height": 365,
     "source": "https://www.frbsf.org/wp-content/uploads/sites/4/el2023-13-1.png",
     "alt": "Employment cost index growth and core PCE inflation",
-    "title": "How Much Do Labor Costs Drive Inflation?"
+    "title": "How Much Do Labor Costs Drive Inflation?",
+    "display_bounds": [
+      3,
+      7,
+      546,
+      365
+    ]
   },
   "https://www.frbsf.org/research-and-insights/publications/economic-letter/2022/11/can-news-drive-inflation-expectations/": {
     "src": "/assets/letters/el2022-31.png",
@@ -69,7 +117,13 @@
     "height": 365,
     "source": "https://www.frbsf.org/wp-content/uploads/sites/4/el2022-31-1.png",
     "alt": "Household, professional forecaster inflation expectations",
-    "title": "Can the News Drive Inflation Expectations?"
+    "title": "Can the News Drive Inflation Expectations?",
+    "display_bounds": [
+      0,
+      1,
+      548,
+      363
+    ]
   },
   "https://www.frbsf.org/research-and-insights/publications/economic-letter/2022/06/how-much-do-supply-and-demand-drive-inflation/": {
     "src": "/assets/letters/el2022-15.png",
@@ -77,7 +131,13 @@
     "height": 365,
     "source": "https://www.frbsf.org/wp-content/uploads/sites/4/el2022-15-1.png",
     "alt": "Supply-driven and demand-driven contributions to year-over-year PCE inflation",
-    "title": "How Much Do Supply and Demand Drive Inflation?"
+    "title": "How Much Do Supply and Demand Drive Inflation?",
+    "display_bounds": [
+      0,
+      2,
+      795,
+      363
+    ]
   },
   "https://www.frbsf.org/research-and-insights/publications/economic-letter/2022/02/what-is-best-measure-of-economic-slack/": {
     "src": "/assets/letters/el2022-04.png",
@@ -85,7 +145,13 @@
     "height": 365,
     "source": "https://www.frbsf.org/wp-content/uploads/sites/4/el2022-04-1.png",
     "alt": "Correlation between slack measures and unemployment",
-    "title": "What’s the Best Measure of Economic Slack?"
+    "title": "What’s the Best Measure of Economic Slack?",
+    "display_bounds": [
+      1,
+      0,
+      547,
+      365
+    ]
   },
   "https://www.frbsf.org/research-and-insights/publications/economic-letter/2022/02/will-rising-rents-push-up-future-inflation/": {
     "src": "/assets/letters/el2022-03.png",
@@ -93,7 +159,13 @@
     "height": 365,
     "source": "https://www.frbsf.org/wp-content/uploads/sites/4/el2022-03-1.png",
     "alt": "Rent inflation correlates strongly with inverse of unemployment",
-    "title": "Will Rising Rents Push Up Future Inflation?"
+    "title": "Will Rising Rents Push Up Future Inflation?",
+    "display_bounds": [
+      0,
+      1,
+      550,
+      362
+    ]
   },
   "https://www.frbsf.org/research-and-insights/publications/economic-letter/2021/10/is-american-rescue-plan-taking-us-back-to-1960s/": {
     "src": "/assets/letters/el2021-27.png",
@@ -101,7 +173,13 @@
     "height": 365,
     "source": "https://www.frbsf.org/wp-content/uploads/sites/4/el2021-27-1.png",
     "alt": "Unemployment, job vacancies relative to 30-year averages",
-    "title": "Is the American Rescue Plan Taking Us Back to the ’60s?"
+    "title": "Is the American Rescue Plan Taking Us Back to the ’60s?",
+    "display_bounds": [
+      1,
+      4,
+      546,
+      363
+    ]
   },
   "https://www.frbsf.org/research-and-insights/publications/economic-letter/2020/08/monitoring-inflationary-effects-of-covid-19/": {
     "src": "/assets/letters/el2020-24.png",
@@ -109,7 +187,13 @@
     "height": 365,
     "source": "https://www.frbsf.org/wp-content/uploads/sites/4/el2020-24-1.png",
     "alt": "Chart from Monitoring the Inflationary Effects of COVID-19",
-    "title": "Monitoring the Inflationary Effects of COVID-19"
+    "title": "Monitoring the Inflationary Effects of COVID-19",
+    "display_bounds": [
+      1,
+      4,
+      539,
+      365
+    ]
   },
   "https://www.frbsf.org/research-and-insights/publications/economic-letter/2020/04/news-sentiment-time-of-covid-19/": {
     "src": "/assets/letters/el2020-08.png",
@@ -117,7 +201,13 @@
     "height": 365,
     "source": "https://www.frbsf.org/wp-content/uploads/sites/4/el2020-08-1.png",
     "alt": "Chart from News Sentiment in the Time of COVID-19",
-    "title": "News Sentiment in the Time of COVID-19"
+    "title": "News Sentiment in the Time of COVID-19",
+    "display_bounds": [
+      3,
+      0,
+      550,
+      363
+    ]
   },
   "https://www.frbsf.org/research-and-insights/publications/economic-letter/2019/08/brexit-price-spike/": {
     "src": "/assets/letters/el2019-20.png",
@@ -125,7 +215,13 @@
     "height": 365,
     "source": "https://www.frbsf.org/wp-content/uploads/sites/4/el2019-20-1.png",
     "alt": "Chart from The Brexit Price Spike",
-    "title": "The Brexit Price Spike"
+    "title": "The Brexit Price Spike",
+    "display_bounds": [
+      2,
+      6,
+      547,
+      365
+    ]
   },
   "https://www.frbsf.org/research-and-insights/publications/economic-letter/2019/04/evolution-of-fomc-explicit-inflation-target/": {
     "src": "/assets/letters/el2019-12.png",
@@ -133,7 +229,13 @@
     "height": 475,
     "source": "https://www.frbsf.org/wp-content/uploads/sites/4/2019-12-1.png",
     "alt": "Chart from The Evolution of the FOMC’s Explicit Inflation Target",
-    "title": "The Evolution of the FOMC’s Explicit Inflation Target"
+    "title": "The Evolution of the FOMC’s Explicit Inflation Target",
+    "display_bounds": [
+      0,
+      2,
+      750,
+      472
+    ]
   },
   "https://www.frbsf.org/research-and-insights/publications/economic-letter/2018/11/has-inflation-sustainably-reached-target/": {
     "src": "/assets/letters/el2018-26.png",
@@ -141,7 +243,13 @@
     "height": 365,
     "source": "https://www.frbsf.org/wp-content/uploads/sites/4/2018-26-1.png",
     "alt": "Chart from Has Inflation Sustainably Reached Target?",
-    "title": "Has Inflation Sustainably Reached Target?"
+    "title": "Has Inflation Sustainably Reached Target?",
+    "display_bounds": [
+      3,
+      6,
+      545,
+      362
+    ]
   },
   "https://www.frbsf.org/research-and-insights/publications/economic-letter/2018/01/how-do-banks-cope-with-loss/": {
     "src": "/assets/letters/el2018-02.png",
@@ -149,7 +257,13 @@
     "height": 375,
     "source": "https://www.frbsf.org/wp-content/uploads/sites/4/2018-02-1.png",
     "alt": "Chart from How Do Banks Cope with Loss?",
-    "title": "How Do Banks Cope with Loss?"
+    "title": "How Do Banks Cope with Loss?",
+    "display_bounds": [
+      2,
+      4,
+      620,
+      373
+    ]
   },
   "https://www.frbsf.org/research-and-insights/publications/economic-letter/2017/11/contribution-to-low-pce-inflation-from-healthcare/": {
     "src": "/assets/letters/el2017-35.png",
@@ -157,7 +271,13 @@
     "height": 365,
     "source": "https://www.frbsf.org/wp-content/uploads/sites/4/2017-35-1.png",
     "alt": "Procyclical and acyclical core PCE inflation",
-    "title": "What’s Down with Inflation?"
+    "title": "What’s Down with Inflation?",
+    "display_bounds": [
+      4,
+      1,
+      530,
+      364
+    ]
   },
   "https://www.frbsf.org/research-and-insights/publications/economic-letter/2017/04/measuring-economic-sentiment-in-news/": {
     "src": "/assets/letters/el2017-10.png",
@@ -165,7 +285,13 @@
     "height": 365,
     "source": "https://www.frbsf.org/wp-content/uploads/sites/4/2017-10-1.png",
     "alt": "chart shows Negativity model-based and lexical measures over time",
-    "title": "What’s in the News? A New Economic Indicator"
+    "title": "What’s in the News? A New Economic Indicator",
+    "display_bounds": [
+      2,
+      3,
+      540,
+      364
+    ]
   },
   "https://www.frbsf.org/research-and-insights/publications/economic-letter/2016/06/energy-prices-and-inflation-expectations/": {
     "src": "/assets/letters/el2016-19.png",
@@ -173,7 +299,13 @@
     "height": 280,
     "source": "https://www.frbsf.org/wp-content/uploads/sites/4/2016-19-1.png",
     "alt": "CPI inflation expectations over the next 10 and 6–10 years",
-    "title": "Energy’s Impact on Inflation Expectations"
+    "title": "Energy’s Impact on Inflation Expectations",
+    "display_bounds": [
+      0,
+      3,
+      399,
+      278
+    ]
   },
   "https://www.frbsf.org/research-and-insights/publications/economic-letter/2016/05/medicare-payment-cuts-affect-core-inflation/": {
     "src": "/assets/letters/el2016-15.png",
@@ -181,7 +313,13 @@
     "height": 280,
     "source": "https://www.frbsf.org/wp-content/uploads/sites/4/2016-15-1.png",
     "alt": "Core PCE inflation for goods and services compared with trends",
-    "title": "Medicare Payment Cuts Continue to Restrain Inflation"
+    "title": "Medicare Payment Cuts Continue to Restrain Inflation",
+    "display_bounds": [
+      0,
+      5,
+      415,
+      278
+    ]
   },
   "https://www.frbsf.org/research-and-insights/publications/economic-letter/2015/04/health-care-reform-massachusetts-affect-physician-prices/": {
     "src": "/assets/letters/el2015-13.png",
@@ -189,7 +327,13 @@
     "height": 280,
     "source": "https://www.frbsf.org/wp-content/uploads/sites/4/2015-13-2.png",
     "alt": "Effect of reform on physician payment levels",
-    "title": "Did Massachusetts Health-Care Reform Affect Prices?"
+    "title": "Did Massachusetts Health-Care Reform Affect Prices?",
+    "display_bounds": [
+      0,
+      4,
+      414,
+      272
+    ]
   },
   "https://www.frbsf.org/research-and-insights/publications/economic-letter/2014/09/medicare-cuts-reduce-inflation-budget-control-act/": {
     "src": "/assets/letters/el2014-28.png",
@@ -197,7 +341,13 @@
     "height": 280,
     "source": "https://www.frbsf.org/wp-content/uploads/sites/4/2014-28-1.png",
     "alt": "Medical-care producer price indexes for hospitals",
-    "title": "How Much Do Medicare Cuts Reduce Inflation?"
+    "title": "How Much Do Medicare Cuts Reduce Inflation?",
+    "display_bounds": [
+      6,
+      4,
+      405,
+      272
+    ]
   },
   "https://www.frbsf.org/research-and-insights/publications/economic-letter/2014/06/will-inflation-stay-low-phillips-curve/": {
     "src": "/assets/letters/el2014-19.png",
@@ -205,7 +355,13 @@
     "height": 280,
     "source": "https://www.frbsf.org/wp-content/uploads/sites/4/2014-19-1.png",
     "alt": "Projected PCEPI inflation: Basic Phillips curve model",
-    "title": "Will Inflation Remain Low?"
+    "title": "Will Inflation Remain Low?",
+    "display_bounds": [
+      0,
+      3,
+      406,
+      277
+    ]
   },
   "https://www.frbsf.org/research-and-insights/publications/economic-letter/2013/12/inflation-measures-gap-personal-consumption-expenditures-pce-consumer-price-index-cpi/": {
     "src": "/assets/letters/el2013-37.png",
@@ -213,7 +369,13 @@
     "height": 280,
     "source": "https://www.frbsf.org/wp-content/uploads/sites/4/2013-37-1.png",
     "alt": "Core CPI and PCEPI inflation, 2003 to present",
-    "title": "Why Do Measures of Inflation Disagree?"
+    "title": "Why Do Measures of Inflation Disagree?",
+    "display_bounds": [
+      0,
+      1,
+      420,
+      279
+    ]
   },
   "https://www.frbsf.org/research-and-insights/publications/economic-letter/2013/03/medical-care-spending-growth/": {
     "src": "/assets/letters/el2013-07.png",
@@ -221,6 +383,12 @@
     "height": 280,
     "source": "https://www.frbsf.org/wp-content/uploads/sites/4/el2013-07-2.png",
     "alt": "Medical-care expenditure growth components, 2003-07",
-    "title": "What’s Driving Medical-Care Spending Growth?"
+    "title": "What’s Driving Medical-Care Spending Growth?",
+    "display_bounds": [
+      6,
+      3,
+      404,
+      278
+    ]
   }
 }

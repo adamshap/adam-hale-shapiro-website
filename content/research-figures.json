@@ -13,7 +13,13 @@
       550.8000000000001,
       360.36
     ],
-    "kind": "figure"
+    "kind": "figure",
+    "display_bounds": [
+      47,
+      17,
+      927,
+      419
+    ]
   },
   "/blank-4/": {
     "src": "/assets/research/not-all-inflation-is-the-same-state-dependent-transmission-of-monetary.png",
@@ -29,7 +35,13 @@
       575.28,
       277.2
     ],
-    "kind": "figure"
+    "kind": "figure",
+    "display_bounds": [
+      55,
+      6,
+      976,
+      328
+    ]
   },
   "/copy-of-papers/": {
     "src": "/assets/research/a-simple-framework-to-monitor-inflation.png",
@@ -45,7 +57,13 @@
       559.98,
       574.1999999999999
     ],
-    "kind": "figure"
+    "kind": "figure",
+    "display_bounds": [
+      9,
+      50,
+      987,
+      839
+    ]
   },
   "/papers/": {
     "src": "/assets/research/news-selection-and-household-inflation-expectations.png",
@@ -61,7 +79,13 @@
       541.6199999999999,
       360.36
     ],
-    "kind": "figure"
+    "kind": "figure",
+    "display_bounds": [
+      74,
+      71,
+      884,
+      600
+    ]
   },
   "/blank/": {
     "src": "/assets/research/are-medicaid-and-medicare-patients-treated-equally.png",
@@ -77,7 +101,13 @@
       553.86,
       380.15999999999997
     ],
-    "kind": "figure"
+    "kind": "figure",
+    "display_bounds": [
+      52,
+      38,
+      916,
+      481
+    ]
   },
   "/copy-of-news-selection/": {
     "src": "/assets/research/decomposing-supply-and-demand-driven-inflation.png",
@@ -93,7 +123,13 @@
       559.98,
       348.48
     ],
-    "kind": "figure"
+    "kind": "figure",
+    "display_bounds": [
+      1,
+      49,
+      983,
+      492
+    ]
   },
   "/copy-of-phillips-meets-beveridge/": {
     "src": "/assets/research/monetary-tightening-and-financial-stress-during-supply-versus-demand-d.png",
@@ -109,7 +145,13 @@
       550.6303009033203,
       239.93865417480467
     ],
-    "kind": "figure"
+    "kind": "figure",
+    "display_bounds": [
+      80,
+      2,
+      929,
+      327
+    ]
   },
   "/copy-of-papers-1/": {
     "src": "/assets/research/phillips-meets-beveridge.png",
@@ -125,7 +167,13 @@
       503.43311309814453,
       222.8031005859375
     ],
-    "kind": "figure"
+    "kind": "figure",
+    "display_bounds": [
+      28,
+      0,
+      833,
+      335
+    ]
   },
   "/copy-of-medicare-vs-medicaid/": {
     "src": "/assets/research/a-denial-a-day-keeps-the-doctor-away.png",
@@ -141,7 +189,13 @@
       297.26856353759763,
       584.1638854980469
     ],
-    "kind": "figure"
+    "kind": "figure",
+    "display_bounds": [
+      23,
+      25,
+      1040,
+      423
+    ]
   },
   "/copy-of-a-denial-a-day-keeps-the-doct/": {
     "src": "/assets/research/taking-the-fed-at-its-word-a-new-approach-to-estimating-central-bank-o.png",
@@ -157,7 +211,13 @@
       465.0,
       325.0
     ],
-    "kind": "figure"
+    "kind": "figure",
+    "display_bounds": [
+      10,
+      3,
+      741,
+      569
+    ]
   },
   "/copy-of-a-denial-a-day-keeps-the-doct-1/": {
     "src": "/assets/research/measuring-news-sentiment.png",
@@ -173,7 +233,13 @@
       401.0,
       256.0
     ],
-    "kind": "figure"
+    "kind": "figure",
+    "display_bounds": [
+      11,
+      9,
+      498,
+      395
+    ]
   },
   "/copy-of-measuring-news-sentiment/": {
     "src": "/assets/research/using-brexit-to-identify-the-nature-of-price-rigidities.png",
@@ -189,7 +255,13 @@
       503.43311309814453,
       237.656640625
     ],
-    "kind": "figure"
+    "kind": "figure",
+    "display_bounds": [
+      27,
+      10,
+      901,
+      366
+    ]
   },
   "/copy-of-brexit/": {
     "src": "/assets/research/de-leveraging-or-de-risking-how-banks-cope-with-loss.png",
@@ -205,7 +277,13 @@
       435.0,
       298.0
     ],
-    "kind": "figure"
+    "kind": "figure",
+    "display_bounds": [
+      11,
+      9,
+      652,
+      470
+    ]
   },
   "/copy-of-de-risking/": {
     "src": "/assets/research/administration-above-administrators-the-changing-technology-of-health-.png",
@@ -221,7 +299,13 @@
       249.48,
       190.8
     ],
-    "kind": "figure"
+    "kind": "figure",
+    "display_bounds": [
+      3,
+      2,
+      396,
+      219
+    ]
   },
   "/copy-of-administrators/": {
     "src": "/assets/research/does-medicare-part-d-save-lives.png",
@@ -237,7 +321,13 @@
       541.6199999999999,
       510.84000000000003
     ],
-    "kind": "figure"
+    "kind": "figure",
+    "display_bounds": [
+      77,
+      30,
+      897,
+      628
+    ]
   },
   "https://drive.google.com/file/d/1N1YXVxv-4MJKjJ3WzJFJJady6MgCUkDx/view?usp=sharing": {
     "src": "/assets/research/the-complexity-of-billing-and-paying-for-physician-care.png",
@@ -253,7 +343,13 @@
       355.761753540039,
       305.36454895019534
     ],
-    "kind": "figure"
+    "kind": "figure",
+    "display_bounds": [
+      2,
+      5,
+      634,
+      497
+    ]
   },
   "/copy-of-part-d/": {
     "src": "/assets/research/physician-competition-and-the-provision-of-care-evidence-from-heart-at.png",
@@ -269,7 +365,13 @@
       390.96000000000004,
       301.32
     ],
-    "kind": "figure"
+    "kind": "figure",
+    "display_bounds": [
+      15,
+      20,
+      650,
+      506
+    ]
   },
   "/copy-of-part-d-1/": {
     "src": "/assets/research/guidelines-for-measuring-disease-episodes-an-analysis-of-the-effects-o.png",
@@ -285,7 +387,13 @@
       401.76000000000005,
       259.2
     ],
-    "kind": "table"
+    "kind": "table",
+    "display_bounds": [
+      15,
+      3,
+      669,
+      370
+    ]
   },
   "/copy-of-part-d-2/": {
     "src": "/assets/research/price-setting-and-rapid-technology-adoption-the-case-of-the-pc-industr.png",
@@ -301,7 +409,13 @@
       595.35,
       433.35
     ],
-    "kind": "figure"
+    "kind": "figure",
+    "display_bounds": [
+      14,
+      0,
+      1058,
+      677
+    ]
   },
   "/copy-of-ami/": {
     "src": "/assets/research/implications-of-utilization-shifts-on-medical-care-price-measurement.png",
@@ -317,7 +431,13 @@
       512.934987487793,
       202.6546569824219
     ],
-    "kind": "table"
+    "kind": "table",
+    "display_bounds": [
+      170,
+      0,
+      747,
+      201
+    ]
   },
   "/copy-of-utilization/": {
     "src": "/assets/research/physician-payments-under-health-care-reform.png",
@@ -333,7 +453,13 @@
       568.5114883422851,
       373.03900573730465
     ],
-    "kind": "figure"
+    "kind": "figure",
+    "display_bounds": [
+      25,
+      19,
+      1044,
+      624
+    ]
   },
   "/copy-of-utilization-1/": {
     "src": "/assets/research/do-physicians-possess-market-power.png",
@@ -349,7 +475,13 @@
       375.71038818359375,
       283.5896264648437
     ],
-    "kind": "figure"
+    "kind": "figure",
+    "display_bounds": [
+      40,
+      34,
+      648,
+      398
+    ]
   },
   "/copy-of-market-power/": {
     "src": "/assets/research/geographic-variation-in-commercial-medical-care-expenditures-a-framewo.png",
@@ -365,7 +497,13 @@
       574.4644882202148,
       210.3305032348633
     ],
-    "kind": "table"
+    "kind": "table",
+    "display_bounds": [
+      0,
+      0,
+      1040,
+      318
+    ]
   },
   "https://onlinelibrary.wiley.com/doi/abs/10.1111/1475-6773.12008": {
     "src": "/assets/research/medical-care-price-indexes-for-patients-with-employer-provided-insuran.png",
@@ -381,7 +519,13 @@
       590.5799999999999,
       538.5600000000001
     ],
-    "kind": "figure"
+    "kind": "figure",
+    "display_bounds": [
+      67,
+      0,
+      793,
+      461
+    ]
   },
   "https://drive.google.com/file/d/0Bw-SDdc4zVJccm92MWN4WVJJZ3c/view?usp=sharing&resourcekey=0-P7WIYVLutzJTBxz9Mub2Qw": {
     "src": "/assets/research/strategic-alliance-as-a-response-to-the-threat-of-entry-evidence-from-.png",
@@ -397,7 +541,13 @@
       568.0,
       234.0
     ],
-    "kind": "figure"
+    "kind": "figure",
+    "display_bounds": [
+      9,
+      6,
+      510,
+      362
+    ]
   },
   "https://drive.google.com/file/d/0Bw-SDdc4zVJcQnBoZ0dQSXJMTzg/view?usp=sharing&resourcekey=0-nbcC8rlWEjmMsjnqVNM8Pg": {
     "src": "/assets/research/price-dispersion-over-the-business-cycle-evidence-from-the-airline-ind.png",
@@ -413,7 +563,13 @@
       398.5510475158692,
       288.8646176147461
     ],
-    "kind": "figure"
+    "kind": "figure",
+    "display_bounds": [
+      26,
+      0,
+      680,
+      483
+    ]
   },
   "https://drive.google.com/file/d/0Bw-SDdc4zVJcWk1taTl2THZ0QTQ/view?usp=sharing&resourcekey=0-qPzKpO3EDgdp9LvKLlhg8A": {
     "src": "/assets/research/does-competition-reduce-price-dispersion-new-evidence-from-the-airline.png",
@@ -429,7 +585,13 @@
       535.5,
       594.0
     ],
-    "kind": "figure"
+    "kind": "figure",
+    "display_bounds": [
+      147,
+      20,
+      762,
+      848
+    ]
   },
   "https://drive.google.com/file/d/0Bw-SDdc4zVJcWVVyZmp2VFRIVTg/view?usp=sharing&resourcekey=0-1SUiTxNbmrfw5h9pJGnu7Q": {
     "src": "/assets/research/estimating-the-new-keynesian-phillips-curve-a-vertical-production-chai.png",
@@ -445,7 +607,13 @@
       414.0,
       349.0
     ],
-    "kind": "figure"
+    "kind": "figure",
+    "display_bounds": [
+      4,
+      15,
+      672,
+      514
+    ]
   },
   "https://www.frbsf.org/research-and-insights/publications/working-papers/2025/08/inflation-since-pandemic-lessons-and-challenges/": {
     "src": "/assets/research/inflation-since-pandemic.png",
@@ -461,7 +629,13 @@
       563.0400000000001,
       586.08
     ],
-    "kind": "figure"
+    "kind": "figure",
+    "display_bounds": [
+      100,
+      12,
+      880,
+      547
+    ]
   },
   "https://press.uchicago.edu/ucp/books/book/chicago/M/bo27523501.html": {
     "src": "/assets/research/decomposing-medical-growth.png",
@@ -477,7 +651,13 @@
       358.56,
       220.32000000000002
     ],
-    "kind": "figure"
+    "kind": "figure",
+    "display_bounds": [
+      0,
+      34,
+      563,
+      361
+    ]
   },
   "https://press.uchicago.edu/ucp/books/book/chicago/M/bo18143459.html": {
     "src": "/assets/research/medical-representativeness.png",
@@ -493,7 +673,13 @@
       406.08,
       583.2
     ],
-    "kind": "table"
+    "kind": "table",
+    "display_bounds": [
+      41,
+      14,
+      675,
+      602
+    ]
   },
   "https://www.frbsf.org/research-and-insights/publications/working-papers/2014/11/a-dynamic-model-of-price-signaling-consumer-learning-and-price-adjustment/": {
     "src": "/assets/research/price-signaling.png",
@@ -509,7 +695,13 @@
       538.5600000000001,
       380.15999999999997
     ],
-    "kind": "figure"
+    "kind": "figure",
+    "display_bounds": [
+      96,
+      12,
+      602,
+      494
+    ]
   },
   "https://www.bea.gov/research/papers/2010/implications-consumer-heterogeneity-price-measures-technology-goods": {
     "src": "/assets/research/consumer-heterogeneity.png",
@@ -525,7 +717,13 @@
       565.25,
       589.4
     ],
-    "kind": "figure"
+    "kind": "figure",
+    "display_bounds": [
+      43,
+      40,
+      954,
+      706
+    ]
   },
   "https://fraser.stlouisfed.org/files/docs/historical/frbatl/wp/frbatl_wp_2009-25.pdf": {
     "src": "/assets/research/foreclosure-crisis.png",
@@ -541,7 +739,13 @@
       587.52,
       641.5200000000001
     ],
-    "kind": "figure"
+    "kind": "figure",
+    "display_bounds": [
+      39,
+      40,
+      992,
+      955
+    ]
   },
   "https://www.bostonfed.org/publications/research-department-working-paper/2007/subprime-outcomes-risky-mortgages-homeownership-experiences-and-foreclosures.aspx": {
     "src": "/assets/research/subprime-outcomes.png",
@@ -557,6 +761,12 @@
       575.28,
       641.5200000000001
     ],
-    "kind": "figure"
+    "kind": "figure",
+    "display_bounds": [
+      18,
+      35,
+      961,
+      1001
+    ]
   }
 }

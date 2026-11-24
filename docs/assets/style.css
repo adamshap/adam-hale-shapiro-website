@@ -1035,12 +1035,11 @@ html:not(.js) .search-toolbar {
 .letter-list .letter-item { display:grid; grid-template-columns:minmax(0,1fr) 192px; align-items:start; column-gap:30px; }
 .letter-copy { min-width:0; }
 .letter-figure { position:relative; display:block; width:100%; aspect-ratio:7 / 4; padding:0; margin-top:3px; align-self:start; overflow:hidden; border:0; border-radius:0; background:#fff; }
-.letter-figure img { position:absolute; inset:6px; width:calc(100% - 12px); height:calc(100% - 12px); object-fit:contain; object-position:center; }
+.letter-figure img { position:absolute; left:var(--figure-left,0%); top:var(--figure-top,0%); width:var(--figure-width,100%); height:var(--figure-height,100%); max-width:none; object-fit:fill; }
 .letter-figure-credit { margin-top:22px; color:var(--muted); font-size:.8rem; }
 @media(max-width:650px) {
   .letter-list .letter-item { grid-template-columns:minmax(0,1fr) 104px; column-gap:16px; align-items:start; }
   .letter-copy h3 { font-size:1.15rem; line-height:1.4; margin-bottom:8px; }
-  .letter-figure img { inset:4px; width:calc(100% - 8px); height:calc(100% - 8px); }
   .letter-copy .paper-details { font-size:.83rem; line-height:1.65; }
 }
 @media(max-width:359px) {
@@ -1104,7 +1103,6 @@ html:not(.js) .search-toolbar {
 .featured-papers .research-item { display:grid; grid-template-columns:minmax(0,1fr) 112px; grid-template-rows:1fr auto; column-gap:20px; align-items:start; }
 .featured-papers .paper h3 { font-size:1.08rem; margin-bottom:8px; }
 .featured-papers .paper-status { margin-top:8px; }
-.featured-papers .research-figure img { inset:4px; width:calc(100% - 8px); height:calc(100% - 8px); }
 .home-section { padding-top:38px; padding-bottom:42px; }
 @media(max-width:650px) {
   .site-header nav { gap:10px 14px; }
@@ -1322,4 +1320,9 @@ html:not(.js) .research-topics { display:none; }
   .media-outlets>li { display:block; }
   .media-outlet { display:block; margin-bottom:2px; }
   .media-links { column-gap:14px; }
+}
+
+/* Give mobile letter charts more room without increasing the gaps between rows. */
+@media(max-width:650px) {
+  .letter-list .letter-item { grid-template-columns:minmax(0,1fr) clamp(96px,28vw,120px); column-gap:12px; }
 }
