@@ -1273,3 +1273,10 @@ html:not(.js) .research-topics { display:none; }
 @media(max-width:650px) {
   .home-main .section-header h2 { font-size:1.25rem; }
 }
+
+/* Keep footer identity and contact details close together. */
+.footer-top p { margin-top:3px; line-height:1.5; }
+.footer-contact .email-reveal,.footer-contact .revealed-email { min-height:30px; padding:3px 0; }
+@media(max-width:650px) {
+  .footer-top { gap:6px; }
+}
