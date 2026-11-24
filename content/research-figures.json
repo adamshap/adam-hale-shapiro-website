@@ -1,0 +1,450 @@
+{
+  "/blank-3/": {
+    "src": "/assets/research/measuring-inflation-shock-momentum.png",
+    "title": "Measuring Inflation Shock Momentum",
+    "alt": "Inflation Shock Momentum Index and its components",
+    "width": 980,
+    "height": 872,
+    "source_pdf": "https://www.frbsf.org/wp-content/uploads/wp2026-10.pdf",
+    "page": 12,
+    "crop": [
+      58.14,
+      138.6,
+      547.7399999999999,
+      574.1999999999999
+    ],
+    "kind": "figure"
+  },
+  "/blank-4/": {
+    "src": "/assets/research/not-all-inflation-is-the-same-state-dependent-transmission-of-monetary.png",
+    "title": "Not all inflation is the same: State-dependent Transmission of Monetary Policy",
+    "alt": "Treasury yield responses to monetary policy tightening",
+    "width": 1041,
+    "height": 334,
+    "source_pdf": "https://www.frbsf.org/wp-content/uploads/wp2025-28.pdf",
+    "page": 8,
+    "crop": [
+      55.08,
+      110.88000000000001,
+      575.28,
+      277.2
+    ],
+    "kind": "figure"
+  },
+  "/copy-of-papers/": {
+    "src": "/assets/research/a-simple-framework-to-monitor-inflation.png",
+    "title": "A Simple Framework to Monitor Inflation",
+    "alt": "Cyclical and acyclical contributions to core PCE inflation",
+    "width": 992,
+    "height": 872,
+    "source_pdf": "https://www.frbsf.org/wp-content/uploads/wp2020-29.pdf",
+    "page": 24,
+    "crop": [
+      64.26,
+      138.6,
+      559.98,
+      574.1999999999999
+    ],
+    "kind": "figure"
+  },
+  "/papers/": {
+    "src": "/assets/research/news-selection-and-household-inflation-expectations.png",
+    "title": "News Selection and Household Inflation Expectations",
+    "alt": "Aggregate variation in hearing inflation news",
+    "width": 956,
+    "height": 650,
+    "source_pdf": "https://drive.google.com/file/d/1z1Hcgu2mrh3X7V9DUCdXK9kKekRJB_dE/view",
+    "page": 7,
+    "crop": [
+      64.26,
+      35.64,
+      541.6199999999999,
+      360.36
+    ],
+    "kind": "figure"
+  },
+  "/blank/": {
+    "src": "/assets/research/are-medicaid-and-medicare-patients-treated-equally.png",
+    "title": "Are Medicaid and Medicare Patients Treated Equally?",
+    "alt": "Spending and visits by insurance payer type",
+    "width": 980,
+    "height": 872,
+    "source_pdf": "/_files/ugd/5f94f7_5fe90671a9e847fda98083da2f173bdd.pdf",
+    "page": 35,
+    "crop": [
+      64.26,
+      130.67999999999998,
+      553.86,
+      566.2799999999999
+    ],
+    "kind": "figure"
+  },
+  "/copy-of-news-selection/": {
+    "src": "/assets/research/decomposing-supply-and-demand-driven-inflation.png",
+    "title": "Decomposing Supply and Demand Driven Inflation",
+    "alt": "Supply and demand shifts in a price-quantity diagram",
+    "width": 1004,
+    "height": 531,
+    "source_pdf": "https://www.frbsf.org/wp-content/uploads/wp2022-18.pdf",
+    "page": 9,
+    "crop": [
+      58.14,
+      83.16,
+      559.98,
+      348.48
+    ],
+    "kind": "figure"
+  },
+  "/copy-of-phillips-meets-beveridge/": {
+    "src": "/assets/research/monetary-tightening-and-financial-stress-during-supply-versus-demand-d.png",
+    "title": "Monetary Tightening and Financial Stress during Supply- versus Demand-driven Inflation",
+    "alt": "Financial stress and inflation drivers during monetary tightening",
+    "width": 1013,
+    "height": 337,
+    "source_pdf": "/_files/ugd/5f94f7_5486e197099c4bdc9e17489a4af39221.pdf",
+    "page": 4,
+    "crop": [
+      44.64570007324219,
+      71.5606512451172,
+      550.6303009033203,
+      239.93865417480467
+    ],
+    "kind": "figure"
+  },
+  "/copy-of-papers-1/": {
+    "src": "/assets/research/phillips-meets-beveridge.png",
+    "title": "Phillips meets Beveridge",
+    "alt": "Comparative inflation forecasting performance",
+    "width": 893,
+    "height": 335,
+    "source_pdf": "/_files/ugd/5f94f7_ce7e1a1cc2814413bc8c94ec65672dba.pdf",
+    "page": 5,
+    "crop": [
+      57.146461486816406,
+      55.700775146484375,
+      503.43311309814453,
+      222.8031005859375
+    ],
+    "kind": "figure"
+  },
+  "/copy-of-medicare-vs-medicaid/": {
+    "src": "/assets/research/a-denial-a-day-keeps-the-doctor-away.png",
+    "title": "A Denial a Day Keeps the Doctor Away",
+    "alt": "Overview of the health insurance billing process",
+    "width": 1040,
+    "height": 423,
+    "source_pdf": "/_files/ugd/5f94f7_bd2a0f5fec4f45eabcc6ee07c66aea80.pdf",
+    "page": 7,
+    "crop": [
+      86.16480102539063,
+      64.90709838867188,
+      297.26856353759763,
+      584.1638854980469
+    ],
+    "kind": "figure"
+  },
+  "/copy-of-a-denial-a-day-keeps-the-doct/": {
+    "src": "/assets/research/taking-the-fed-at-its-word-a-new-approach-to-estimating-central-bank-o.png",
+    "title": "Taking the Fed at its Word: A New Approach to Estimating Central Bank Objectives using Text Analysis",
+    "alt": "Text-based negativity scores and human ratings",
+    "width": 750,
+    "height": 570,
+    "source_pdf": "/_files/ugd/5f94f7_4d6eeff857f242e9a220b6030823d4dd.pdf",
+    "page": 12,
+    "crop": [
+      90.0,
+      40.0,
+      465.0,
+      325.0
+    ],
+    "kind": "figure"
+  },
+  "/copy-of-a-denial-a-day-keeps-the-doct-1/": {
+    "src": "/assets/research/measuring-news-sentiment.png",
+    "title": "Measuring News Sentiment",
+    "alt": "Distribution of news sentiment model scores",
+    "width": 512,
+    "height": 402,
+    "source_pdf": "/_files/ugd/5f94f7_e55b2f2b572a4ccc8d8a982b7a7d1410.pdf",
+    "page": 6,
+    "crop": [
+      145.0,
+      55.0,
+      401.0,
+      256.0
+    ],
+    "kind": "figure"
+  },
+  "/copy-of-measuring-news-sentiment/": {
+    "src": "/assets/research/using-brexit-to-identify-the-nature-of-price-rigidities.png",
+    "title": "Using Brexit to Identify the Nature of Price Rigidities",
+    "alt": "UK exchange rate around the Brexit referendum",
+    "width": 926,
+    "height": 387,
+    "source_pdf": "/_files/ugd/5f94f7_6cbcf3c792094e85acb251e160cfb92e.pdf",
+    "page": 4,
+    "crop": [
+      40.81890106201172,
+      44.5606201171875,
+      503.43311309814453,
+      237.656640625
+    ],
+    "kind": "figure"
+  },
+  "/copy-of-brexit/": {
+    "src": "/assets/research/de-leveraging-or-de-risking-how-banks-cope-with-loss.png",
+    "title": "De-leveraging or De-Risking? How Banks Cope with Loss",
+    "alt": "Oil prices and problem loans",
+    "width": 662,
+    "height": 488,
+    "source_pdf": "/_files/ugd/5f94f7_41fb32e8a58b4953bdb35cc16da8c494.pdf",
+    "page": 6,
+    "crop": [
+      104.0,
+      54.0,
+      435.0,
+      298.0
+    ],
+    "kind": "figure"
+  },
+  "/copy-of-de-risking/": {
+    "src": "/assets/research/administration-above-administrators-the-changing-technology-of-health-.png",
+    "title": "Administration above Administrators: The Changing Technology of Health Care Management",
+    "alt": "Administrative input shares in ambulatory health care",
+    "width": 404,
+    "height": 238,
+    "source_pdf": "/_files/ugd/5f94f7_bbf33285c5a34bc7815a31feaf63f211.pdf",
+    "page": 3,
+    "crop": [
+      47.88,
+      72.0,
+      249.48,
+      190.8
+    ],
+    "kind": "figure"
+  },
+  "/copy-of-administrators/": {
+    "src": "/assets/research/does-medicare-part-d-save-lives.png",
+    "title": "Does Medicare Part D Save Lives?",
+    "alt": "Mortality and drug coverage around Medicare Part D",
+    "width": 968,
+    "height": 682,
+    "source_pdf": "/_files/ugd/5f94f7_4e337f56520f47138c34ee703572c370.pdf",
+    "page": 7,
+    "crop": [
+      58.14,
+      170.27999999999997,
+      541.6199999999999,
+      510.84000000000003
+    ],
+    "kind": "figure"
+  },
+  "https://drive.google.com/file/d/1N1YXVxv-4MJKjJ3WzJFJJady6MgCUkDx/view?usp=sharing": {
+    "src": "/assets/research/the-complexity-of-billing-and-paying-for-physician-care.png",
+    "title": "The Complexity of Billing and Paying for Physician Care",
+    "alt": "Time to payment by insurance type",
+    "width": 646,
+    "height": 510,
+    "source_pdf": "/_files/ugd/5f94f7_810667fbb0294fd489b6d6d7ebb91746.pdf",
+    "page": 6,
+    "crop": [
+      33.16423126220703,
+      50.89409149169922,
+      355.761753540039,
+      305.36454895019534
+    ],
+    "kind": "figure"
+  },
+  "/copy-of-part-d/": {
+    "src": "/assets/research/physician-competition-and-the-provision-of-care-evidence-from-heart-at.png",
+    "title": "Physician Competition and the Provision of Care: Evidence from Heart Attacks",
+    "alt": "Physician cost, negotiated prices and patient severity",
+    "width": 674,
+    "height": 506,
+    "source_pdf": "/_files/ugd/5f94f7_2af23a762ebc4588874fb579a7eb1707.pdf",
+    "page": 6,
+    "crop": [
+      54.0,
+      48.6,
+      390.96000000000004,
+      301.32
+    ],
+    "kind": "figure"
+  },
+  "/copy-of-part-d-1/": {
+    "src": "/assets/research/guidelines-for-measuring-disease-episodes-an-analysis-of-the-effects-o.png",
+    "title": "Guidelines for Measuring Disease Episodes: An Analysis of the Effects on the Components of Expenditure Growth",
+    "alt": "Growth decomposition by disease-episode measurement method",
+    "width": 692,
+    "height": 370,
+    "source_pdf": "/_files/ugd/5f94f7_e0547e474231495491141d237420fc0f.pdf",
+    "page": 12,
+    "crop": [
+      56.160000000000004,
+      74.52000000000001,
+      401.76000000000005,
+      259.2
+    ],
+    "kind": "table"
+  },
+  "/copy-of-part-d-2/": {
+    "src": "/assets/research/price-setting-and-rapid-technology-adoption-the-case-of-the-pc-industr.png",
+    "title": "Price Setting and Rapid Technology Adoption: the case of the PC industry",
+    "alt": "Prices of notebook computers over their product cycles",
+    "width": 1097,
+    "height": 705,
+    "source_pdf": "/_files/ugd/5f94f7_602f4ddc0b4f4502a74ac420091f7d46.pdf",
+    "page": 4,
+    "crop": [
+      47.25,
+      81.0,
+      595.35,
+      433.35
+    ],
+    "kind": "figure"
+  },
+  "/copy-of-ami/": {
+    "src": "/assets/research/implications-of-utilization-shifts-on-medical-care-price-measurement.png",
+    "title": "Implications of Utilization Shifts on Medical-Care Price Measurement",
+    "alt": "Accounting for changes in medical-care procedures",
+    "width": 919,
+    "height": 230,
+    "source_pdf": "/_files/ugd/5f94f7_5b656198c19e4219b2bc85ca9c438785.pdf",
+    "page": 10,
+    "crop": [
+      53.84400421142578,
+      88.431123046875,
+      512.934987487793,
+      202.6546569824219
+    ],
+    "kind": "table"
+  },
+  "/copy-of-utilization/": {
+    "src": "/assets/research/physician-payments-under-health-care-reform.png",
+    "title": "Physician Payments Under Health Care Reform",
+    "alt": "Physician service price growth by state",
+    "width": 1067,
+    "height": 636,
+    "source_pdf": "/_files/ugd/5f94f7_9a0e0b531e954f549e6f0b66b0e5b507.pdf",
+    "page": 7,
+    "crop": [
+      35.71799926757812,
+      55.55900085449219,
+      568.5114883422851,
+      373.03900573730465
+    ],
+    "kind": "figure"
+  },
+  "/copy-of-utilization-1/": {
+    "src": "/assets/research/do-physicians-possess-market-power.png",
+    "title": "Do Physicians Possess Market Power?",
+    "alt": "Physician concentration in the cardiology sample",
+    "width": 671,
+    "height": 445,
+    "source_pdf": "/_files/ugd/5f94f7_a2e64616d7ae4a26a543b57f2ae1139c.pdf",
+    "page": 24,
+    "crop": [
+      40.791413574218744,
+      61.93336669921874,
+      375.71038818359375,
+      283.5896264648437
+    ],
+    "kind": "figure"
+  },
+  "/copy-of-market-power/": {
+    "src": "/assets/research/geographic-variation-in-commercial-medical-care-expenditures-a-framewo.png",
+    "title": "Geographic Variation in Commercial Medical-Care Expenditures: A Framework for Decomposing Price and Utilization",
+    "alt": "Medical-care expenditures across MSAs",
+    "width": 1060,
+    "height": 318,
+    "source_pdf": "/_files/ugd/5f94f7_90ae67646c594b23a73a5119826bde69.pdf",
+    "page": 3,
+    "crop": [
+      44.647499084472656,
+      51.59050079345703,
+      574.4644882202148,
+      210.3305032348633
+    ],
+    "kind": "table"
+  },
+  "https://onlinelibrary.wiley.com/doi/abs/10.1111/1475-6773.12008": {
+    "src": "/assets/research/medical-care-price-indexes-for-patients-with-employer-provided-insuran.png",
+    "title": "Medical-Care Price Indexes for Patients with Employer Provided Insurance: Nationally Representative Estimates from MarketScan Data",
+    "alt": "Medical-care price indexes for MarketScan and Pharmetrics",
+    "width": 1066,
+    "height": 548,
+    "source_pdf": "/_files/papers/marketscan-price-indexes.pdf",
+    "page": 18,
+    "crop": [
+      58.14,
+      265.32,
+      590.5799999999999,
+      538.5600000000001
+    ],
+    "kind": "figure"
+  },
+  "https://drive.google.com/file/d/0Bw-SDdc4zVJccm92MWN4WVJJZ3c/view?usp=sharing&resourcekey=0-P7WIYVLutzJTBxz9Mub2Qw": {
+    "src": "/assets/research/strategic-alliance-as-a-response-to-the-threat-of-entry-evidence-from-.png",
+    "title": "Strategic Alliance as a Response to the Threat of Entry: Evidence from Airline Codesharing",
+    "alt": "Share of airline segments operated under codesharing",
+    "width": 524,
+    "height": 368,
+    "source_pdf": "/_files/ugd/5f94f7_7dd5e29922f241a99c189e39e4898a2c.pdf",
+    "page": 3,
+    "crop": [
+      306.0,
+      50.0,
+      568.0,
+      234.0
+    ],
+    "kind": "figure"
+  },
+  "https://drive.google.com/file/d/0Bw-SDdc4zVJcQnBoZ0dQSXJMTzg/view?usp=sharing&resourcekey=0-nbcC8rlWEjmMsjnqVNM8Pg": {
+    "src": "/assets/research/price-dispersion-over-the-business-cycle-evidence-from-the-airline-ind.png",
+    "title": "Price Dispersion Over the Business Cycle: Evidence from the Airline Industry",
+    "alt": "Airline price dispersion and the business cycle",
+    "width": 708,
+    "height": 488,
+    "source_pdf": "/_files/ugd/5f94f7_f8978866a7294209865ccf318308e284.pdf",
+    "page": 5,
+    "crop": [
+      45.240929718017576,
+      45.439378051757814,
+      398.5510475158692,
+      288.8646176147461
+    ],
+    "kind": "figure"
+  },
+  "https://drive.google.com/file/d/0Bw-SDdc4zVJcWk1taTl2THZ0QTQ/view?usp=sharing&resourcekey=0-qPzKpO3EDgdp9LvKLlhg8A": {
+    "src": "/assets/research/does-competition-reduce-price-dispersion-new-evidence-from-the-airline.png",
+    "title": "Does Competition Reduce Price Dispersion? New Evidence from the Airline Industry",
+    "alt": "Airline entry and exit by carrier type",
+    "width": 918,
+    "height": 848,
+    "source_pdf": "/_files/ugd/5f94f7_99ae70ff90a642048c10cd77a1811994.pdf",
+    "page": 7,
+    "crop": [
+      76.5,
+      170.28,
+      535.5,
+      594.0
+    ],
+    "kind": "figure"
+  },
+  "https://drive.google.com/file/d/0Bw-SDdc4zVJcWVVyZmp2VFRIVTg/view?usp=sharing&resourcekey=0-1SUiTxNbmrfw5h9pJGnu7Q": {
+    "src": "/assets/research/estimating-the-new-keynesian-phillips-curve-a-vertical-production-chai.png",
+    "title": "Estimating the New Keynesian Phillips Curve: A Vertical Production Chain Approach",
+    "alt": "Vertical chain of production diagram",
+    "width": 691,
+    "height": 1139,
+    "source_pdf": "/_files/ugd/5f94f7_dfcddd4e499b4cf4b0de54b182aff524.pdf",
+    "page": 9,
+    "crop": [
+      85.05,
+      68.39999999999999,
+      430.10999999999996,
+      637.2
+    ],
+    "kind": "figure"
+  }
+}

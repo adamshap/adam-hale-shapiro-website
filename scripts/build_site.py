@@ -190,6 +190,25 @@ def home(pages):
 def search_field(label, count):
     return '<div class="search-toolbar"><label class="search-box"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><span class="sr-only">' + escape(label) + '</span><input type="search" data-search-input placeholder="' + escape(label) + '" autocomplete="off"></label><p class="search-status" data-search-status aria-live="polite">' + str(count) + ' results</p></div><div class="empty-results" data-empty-results hidden><h3>No matching results</h3><p>Try a title, coauthor, journal, or year.</p><button type="button" class="button button-secondary" data-clear-search>Clear search</button></div>'
 
+def illustrated_research(block, pages, figures):
+    article = Tree(paper(block, pages=pages)).root.find('article')
+    href = article.find('h3').find('a').attrs['href']
+    figure = figures[local_path(href, '/research')]
+    article.attrs['class'] += ' research-item'
+    copy = Node('div', [('class', 'research-copy')])
+    actions, abstracts = [], []
+    for child in article.children:
+        if isinstance(child, Node) and 'resource-links' in child.attrs.get('class', '').split():
+            actions.append(child)
+        elif isinstance(child, Node) and child.tag == 'details':
+            abstracts.append(child)
+        else:
+            copy.children.append(child)
+    preview = Node('a', [('class', 'letter-figure research-figure'), ('href', href), ('aria-label', 'Read ' + figure['title'])])
+    preview.children = [Node('img', [('src', figure['src']), ('alt', figure['alt']), ('width', str(figure['width'])), ('height', str(figure['height'])), ('loading', 'lazy'), ('decoding', 'async')])]
+    article.children = [copy, preview, *actions, *abstracts]
+    return serialize(article, '/research', '/research', True)
+
 def research(data, pages):
     slug = '/research'
     groups = []
@@ -201,10 +220,11 @@ def research(data, pages):
             groups[-1][1].append(block)
     sidebar = '<aside class="section-sidebar"><p class="eyebrow">On this page</p><a href="#working-papers">Working papers</a><a href="#publications">Publications</a>' + anchor(CV, 'Curriculum vitae') + '</aside>'
     count = sum(len(items) for _, items in groups)
+    figures = json.loads((ROOT / 'content/research-figures.json').read_text(encoding='utf-8'))
     content = search_field('Search research', count)
     for index, (title, blocks) in enumerate(groups):
         section_id = 'working-papers' if index == 0 else 'publications'
-        content += '<section class="research-group" id="' + section_id + '" data-search-group><div class="group-heading"><h2>' + escape(title) + '</h2><span>' + str(len(blocks)) + '</span></div>' + ''.join(paper(block, pages=pages) for block in blocks) + '</section>'
+        content += '<section class="research-group" id="' + section_id + '" data-search-group><div class="group-heading"><h2>' + escape(title) + '</h2><span>' + str(len(blocks)) + '</span></div>' + ''.join(illustrated_research(block, pages, figures) for block in blocks) + '</section>'
     return page(slug, 'Research | Adam Hale Shapiro', '<main id="content" class="page-main research-main">' + section_heading('Research', 'Papers & publications', 'Research on inflation, price setting dynamics, and the U.S. healthcare sector.') + '<div class="research-layout">' + sidebar + '<div>' + content + '</div></div></main>')
 
 def letters(data):

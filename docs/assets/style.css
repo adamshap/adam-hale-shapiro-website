@@ -1048,3 +1048,37 @@ html:not(.js) .search-toolbar {
 @media print {
   .letter-list .letter-item { break-inside:avoid; }
 }
+
+/* Research previews share the quiet framing of the Economic Letters list. */
+.research-main h1 { font-size:clamp(2rem,3.8vw,3rem); }
+.research-layout { grid-template-columns:160px minmax(0,1fr); gap:40px; }
+.research-main .search-toolbar { margin-bottom:28px; }
+.research-group .group-heading { padding-bottom:15px; }
+.research-group .research-item { display:grid; grid-template-columns:minmax(0,1fr) 176px; column-gap:24px; align-items:center; }
+.research-copy { min-width:0; }
+.research-group .research-copy h3 { margin-bottom:7px; }
+.research-copy .paper-status { margin-top:8px; }
+.research-figure { align-self:start; margin-top:3px; }
+.research-item>.resource-links,.research-item>.paper-abstract { grid-column:1 / -1; }
+.research-item>.resource-links { margin-top:12px; }
+.research-item>.paper-abstract { margin-top:9px; }
+.research-group+.research-group { margin-top:36px; }
+.research-group .paper-abstract-content { max-width:none; }
+@media(max-width:900px) {
+  .research-layout { grid-template-columns:1fr; gap:26px; }
+}
+@media(max-width:650px) {
+  .research-group .research-item { grid-template-columns:minmax(0,1fr) 104px; column-gap:16px; align-items:start; }
+  .research-group .research-copy h3 { font-size:1.05rem; line-height:1.45; }
+  .research-group .research-copy .paper-details { font-size:.85rem; line-height:1.65; }
+  .research-copy .paper-status { font-size:.83rem; line-height:1.65; }
+  .research-item>.resource-links { gap:7px; }
+  .research-main .search-toolbar { margin-bottom:23px; }
+}
+@media(max-width:359px) {
+  .research-group .research-item { grid-template-columns:minmax(0,1fr) 84px; column-gap:12px; }
+}
+@media print {
+  .research-layout { display:block; }
+  .research-group .research-item { break-inside:avoid; }
+}
