@@ -1026,3 +1026,5 @@ html:not(.js) .search-toolbar {
 .home-main .paper-status,
 .home-main .resource-link,
 .home-main .tool-feature>p:not(.eyebrow) { font-size:.82rem; }
+
+.letters-main .page-heading h1 { font-size:clamp(2rem,3.8vw,3rem); }
