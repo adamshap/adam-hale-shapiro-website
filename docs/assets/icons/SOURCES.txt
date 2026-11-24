@@ -1,0 +1,5 @@
+Google Scholar: Simple Icons (CC0), https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/googlescholar.svg
+LinkedIn: Font Awesome Free Brands (CC BY 4.0), https://raw.githubusercontent.com/FortAwesome/Font-Awesome/7.x/svgs/brands/linkedin.svg
+Font Awesome license: https://fontawesome.com/license/free
+SF Fed: official San Francisco Fed website icon, https://www.frbsf.org/wp-content/themes/sffed/assets/images/icons/favicon-96x96-uo.png
+Brand marks identify external profile destinations.

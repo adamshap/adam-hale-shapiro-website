@@ -225,7 +225,15 @@ def home(pages):
     # Keep the original biography wording; break it into readable paragraphs.
     bio = bio.replace('. I study', '.</p><p>I study')
     profile_links = [n.find('a') for n in paras[1:] if n.find('a') and 'media inquiries' not in text(n)]
-    social = ''.join(anchor(a.attrs['href'], text(a), css='profile-link') for a in profile_links if text(a) not in ('CV', 'Email'))
+    profile_icons = {'Google Scholar': 'google-scholar.svg', 'SF Fed Profile': 'sf-fed.png', 'LinkedIn': 'linkedin.svg'}
+    social = ''
+    for link in profile_links:
+        label = text(link)
+        if label in ('CV', 'Email'):
+            continue
+        icon = profile_icons.get(label)
+        image = '<img class="profile-icon' + (' profile-icon-bank' if label == 'SF Fed Profile' else '') + '" src="' + asset_href('/assets/icons/' + icon, slug) + '" width="20" height="20" alt="" aria-hidden="true" decoding="async">' if icon else ''
+        social += '<a class="profile-link" href="' + escape(link.attrs['href'], quote=True) + '">' + image + '<span>' + escape(label) + '</span></a>'
     hero = '''<div class="tree-banner"><img src="assets/forest-banner.jpg" alt="Sunlight falling on snow-covered trees" width="1600" height="440" fetchpriority="high"></div><section class="hero"><div class="hero-copy"><p class="eyebrow">Economist</p><h1>Adam Hale Shapiro</h1><div class="bio"><p>''' + bio + '''</p></div><div class="hero-actions">''' + anchor('/research/', 'Explore research', css='button button-primary') + anchor(CV, 'Curriculum vitae', css='button button-secondary') + '''</div><div class="profile-links">''' + social + '''</div></div></section>'''
     tools = '<section class="home-section"><div class="section-header"><div><p class="eyebrow">Code & Data</p><h2>Explore the data.</h2></div>' + anchor('/blank-2/', 'All code & data', css='text-link') + '</div><div class="tools-grid">' + tool_feature('Inflation Shock Momentum', 'https://adamshap.github.io/ismi-webapp/ism_webapp.html', 'Explore sustained movements in inflation shocks.') + tool_feature('Supply & Demand Driven Inflation', 'https://adamshap.github.io/supply-demand-webapp/supply_demand_webapp.html', 'Explore the supply and demand components of inflation.') + '</div></section>'
     blocks = [fragment(b) for b in pages['/research']['blocks']]
