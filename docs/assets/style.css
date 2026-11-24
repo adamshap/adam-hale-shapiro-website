@@ -1280,3 +1280,7 @@ html:not(.js) .research-topics { display:none; }
 @media(max-width:650px) {
   .footer-top { gap:6px; }
 }
+
+@media(max-width:650px) {
+  .home-main .featured-papers .paper h3 { font-size:.95rem; }
+}
