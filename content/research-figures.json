@@ -2,16 +2,16 @@
   "/blank-3/": {
     "src": "/assets/research/measuring-inflation-shock-momentum.png",
     "title": "Measuring Inflation Shock Momentum",
-    "alt": "Inflation Shock Momentum Index and its components",
+    "alt": "Inflation Shock Momentum Index and PCE inflation",
     "width": 980,
-    "height": 872,
+    "height": 428,
     "source_pdf": "https://www.frbsf.org/wp-content/uploads/wp2026-10.pdf",
     "page": 12,
     "crop": [
-      58.14,
-      138.6,
-      547.7399999999999,
-      574.1999999999999
+      61.2,
+      146.52,
+      550.8000000000001,
+      360.36
     ],
     "kind": "figure"
   },
@@ -66,16 +66,16 @@
   "/blank/": {
     "src": "/assets/research/are-medicaid-and-medicare-patients-treated-equally.png",
     "title": "Are Medicaid and Medicare Patients Treated Equally?",
-    "alt": "Spending and visits by insurance payer type",
+    "alt": "Health spending by payer type for dual-eligible patients",
     "width": 980,
-    "height": 872,
+    "height": 500,
     "source_pdf": "/_files/ugd/5f94f7_5fe90671a9e847fda98083da2f173bdd.pdf",
     "page": 35,
     "crop": [
-      64.26,
-      130.67999999999998,
+      64.25999999999999,
+      130.68,
       553.86,
-      566.2799999999999
+      380.15999999999997
     ],
     "kind": "figure"
   },
@@ -434,16 +434,16 @@
   "https://drive.google.com/file/d/0Bw-SDdc4zVJcWVVyZmp2VFRIVTg/view?usp=sharing&resourcekey=0-1SUiTxNbmrfw5h9pJGnu7Q": {
     "src": "/assets/research/estimating-the-new-keynesian-phillips-curve-a-vertical-production-chai.png",
     "title": "Estimating the New Keynesian Phillips Curve: A Vertical Production Chain Approach",
-    "alt": "Vertical chain of production diagram",
-    "width": 691,
-    "height": 1139,
+    "alt": "GDP inflation and alternative measures of marginal cost",
+    "width": 672,
+    "height": 518,
     "source_pdf": "/_files/ugd/5f94f7_dfcddd4e499b4cf4b0de54b182aff524.pdf",
-    "page": 9,
+    "page": 10,
     "crop": [
-      85.05,
-      68.39999999999999,
-      430.10999999999996,
-      637.2
+      78.0,
+      90.0,
+      414.0,
+      349.0
     ],
     "kind": "figure"
   }

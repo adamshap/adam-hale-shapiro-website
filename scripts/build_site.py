@@ -104,8 +104,57 @@ def resources(nodes, source, destination):
         a = n.find('a')
         if a and text(a):
             css = 'resource-link primary-resource' if 'pdf' in text(a).lower() else 'resource-link'
-            links.append(anchor(local_path(a.attrs['href'], source), text(a), destination, css))
+            label = text(a)
+            labels = {
+                'Interactive Dashboard': 'Dashboard', 'Data Series (.xlxs)': 'Data',
+                'Daily News Sentiment Index (.xlxs)': 'Data', 'ISMI Series': 'Data',
+                'Economic Letter': 'Letter', 'Data and Code': 'Code & data',
+                'Cyclical Inflation Code': 'Cyclical code', 'Covid-Sensitive Inflation Code': 'COVID code',
+            }
+            links.append(anchor(local_path(a.attrs['href'], source), labels.get(label, label), destination, css))
     return '<div class="resource-links">' + ''.join(links) + '</div>' if links else ''
+
+def bibliography(chunks):
+    journals = (
+        'Journal of Money', 'International Journal of Central Banking', 'Journal of Monetary Economics',
+        'The Quarterly Journal of Economics', 'Quarterly Journal of Economics', 'Review of Economic Studies',
+        'Journal of Econometrics', 'Journal of International Economics', 'Review of Economic Dynamics',
+        'American Economic Association', 'American Journal of Health Economics', 'Health Affairs',
+        'Health Services Research', 'Review of Economics and Statistics', 'Health Economics',
+        'Journal of Health Economics', 'Journal of Law', 'International Journal of Industrial Organization',
+        'Journal of Industrial Economics', 'Journal of Political Economy',
+    )
+    pattern = re.compile('|'.join(re.escape(journal) for journal in journals))
+    result = []
+    standalone_dates = []
+    for chunk in chunks:
+        if not text(Tree(chunk).root).strip(' .'):
+            continue
+        chunk = re.sub(r'^with\s*(?=<a\b)', 'with ', chunk)
+        chunk = chunk.replace(',,', ',')
+        if re.fullmatch(r'[A-Z][a-z]+ 20\d\d\.?', text(Tree(chunk).root)):
+            standalone_dates.append(text(Tree(chunk).root).rstrip('.'))
+            continue
+        chunk = re.sub(r'FRBSF Working Paper\. (20\d\d)\.?', r'FRBSF Working Paper &middot; \1', chunk)
+        chunk = re.sub(r'FRBSF Working Paper[. ]*([A-Z][a-z]+),? (20\d\d)', r'FRBSF Working Paper &middot; \1 \2', chunk)
+        is_author = text(Tree(chunk).root).startswith('with ')
+        if is_author:
+            chunk = re.sub(r'\.(\s*(?:</a>)?\s*)$', r'\1', chunk)
+        venue = pattern.search(chunk) if is_author else None
+        if venue:
+            authors = chunk[:venue.start()].rstrip(' .')
+            if authors:
+                result.append('<p class="paper-authors">' + authors + '</p>')
+            result.append('<p class="paper-venue">' + chunk[venue.start():] + '</p>')
+        else:
+            kind = 'paper-authors' if is_author else 'paper-note' if text(Tree(chunk).root).startswith('Coverage in') else 'paper-venue'
+            result.append('<p class="' + kind + '">' + chunk + '</p>')
+    if standalone_dates:
+        for index in range(len(result) - 1, -1, -1):
+            if 'class="paper-venue"' in result[index]:
+                result[index] = result[index].removesuffix('</p>').rstrip(' .') + ' &middot; ' + ' &middot; '.join(standalone_dates) + '</p>'
+                break
+    return ''.join(result)
 
 def paper(block, slug='/research', destination=None, pages=None):
     destination = destination or slug
@@ -122,7 +171,7 @@ def paper(block, slug='/research', destination=None, pages=None):
     title_html = anchor(local_path(first_link.attrs['href'], slug), title, destination) if first_link else escape(title)
     tail = ''.join(serialize(c, slug, destination, True) for c in first.children if c is not first_link).strip(' \xa0')
     # Paper titles occasionally share a paragraph with their coauthors.
-    details = ('<p>' + tail + '</p>' if tail else '') + ''.join('<p>' + inner(n, slug, destination) + '</p>' for n in detail_nodes)
+    details = bibliography(([tail] if tail else []) + [inner(n, slug, destination) for n in detail_nodes])
     status_html = ''.join('<p class="paper-status">' + escape(text(n)) + '</p>' for n in statuses)
     abstract = ''
     if pages and first_link:
@@ -146,7 +195,7 @@ def paper(block, slug='/research', destination=None, pages=None):
     return '<article class="paper" data-search-item data-search="' + search + '"><h3>' + title_html + '</h3><div class="paper-details">' + details + '</div>' + status_html + resources(resource_nodes, slug, destination) + abstract + '</article>'
 
 def navigation(slug):
-    items = [('/', 'Home'), ('/research/', 'Research'), ('/blank-1/', 'Economic Letters'), ('/blank-2/', 'Code & Data')]
+    items = [('/', 'Home'), ('/research/', 'Research'), ('/blank-1/', 'Letters'), ('/blank-2/', 'Code & Data')]
     active = slug if slug in ('/', '/research', '/blank-1', '/blank-2') else '/research'
     links = ''
     for url, label in items:
@@ -183,16 +232,17 @@ def home(pages):
     selected = [b for b in blocks if 'Conditionally accepted' in text(b)][:2]
     if not selected:
         selected = [b for b in blocks if b.find('p')][:2]
-    research = '<section class="home-section"><div class="section-header"><div><p class="eyebrow">Research</p><h2>Recent research.</h2></div>' + anchor('/research/', 'All research', css='text-link') + '</div><div class="featured-papers">' + ''.join(paper(b, destination='/') for b in selected) + '</div></section>'
-    return page(slug, 'Adam Hale Shapiro | Economist', '<main id="content" class="home-main">' + hero + tools + research + '</main>')
+    figures = json.loads((ROOT / 'content/research-figures.json').read_text(encoding='utf-8'))
+    research = '<section class="home-section"><div class="section-header"><div><p class="eyebrow">Research</p><h2>Recent research.</h2></div>' + anchor('/research/', 'All research', css='text-link') + '</div><div class="featured-papers">' + ''.join(illustrated_research(b, None, figures, destination='/') for b in selected) + '</div></section>'
+    return page(slug, 'Adam Hale Shapiro | Economist', '<main id="content" class="home-main">' + hero + research + tools + '</main>')
 
 def search_field(label, count):
     return '<div class="search-toolbar"><label class="search-box"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><span class="sr-only">' + escape(label) + '</span><input type="search" data-search-input placeholder="' + escape(label) + '" autocomplete="off"></label><p class="search-status" data-search-status aria-live="polite">' + str(count) + ' results</p></div><div class="empty-results" data-empty-results hidden><h3>No matching results</h3><p>Try a title, coauthor, journal, or year.</p><button type="button" class="button button-secondary" data-clear-search>Clear search</button></div>'
 
-def illustrated_research(block, pages, figures):
-    article = Tree(paper(block, pages=pages)).root.find('article')
+def illustrated_research(block, pages, figures, destination='/research'):
+    article = Tree(paper(block, destination=destination, pages=pages)).root.find('article')
     href = article.find('h3').find('a').attrs['href']
-    figure = figures[local_path(href, '/research')]
+    figure = figures[local_path(href, destination)]
     article.attrs['class'] += ' research-item'
     copy = Node('div', [('class', 'research-copy')])
     actions, abstracts = [], []
@@ -204,9 +254,9 @@ def illustrated_research(block, pages, figures):
         else:
             copy.children.append(child)
     preview = Node('a', [('class', 'letter-figure research-figure'), ('href', href), ('aria-label', 'Read ' + figure['title'])])
-    preview.children = [Node('img', [('src', figure['src']), ('alt', figure['alt']), ('width', str(figure['width'])), ('height', str(figure['height'])), ('loading', 'lazy'), ('decoding', 'async')])]
+    preview.children = [Node('img', [('src', asset_href(figure['src'], destination)), ('alt', figure['alt']), ('width', str(figure['width'])), ('height', str(figure['height'])), ('loading', 'lazy'), ('decoding', 'async')])]
     article.children = [copy, preview, *actions, *abstracts]
-    return serialize(article, '/research', '/research', True)
+    return serialize(article, destination, destination, True)
 
 def research(data, pages):
     slug = '/research'
@@ -248,7 +298,7 @@ def letters(data):
             copy = Node('div', [('class', 'letter-copy')])
             copy.children = article.children
             preview = Node('a', [('class', 'letter-figure'), ('href', href), ('aria-label', 'Read ' + figure['title'])])
-            preview.children = [Node('img', [('src', figure['src']), ('alt', figure['alt']), ('width', str(figure['width'])), ('height', str(figure['height'])), ('loading', 'eager' if index < 2 else 'lazy'), ('decoding', 'async')])]
+            preview.children = [Node('img', [('src', asset_href(figure['src'], slug)), ('alt', figure['alt']), ('width', str(figure['width'])), ('height', str(figure['height'])), ('loading', 'eager' if index < 2 else 'lazy'), ('decoding', 'async')])]
             article.children = [copy, preview]
         articles += serialize(article, slug, slug, True)
     return page(slug, 'Economic Letters | Adam Hale Shapiro', '<main id="content" class="page-main letters-main">' + section_heading('San Francisco Fed', 'Economic Letters', 'Economic analysis and research for a broader audience.') + search_field('Search economic letters', len(groups)) + '<div class="letter-list">' + articles + '</div><p class="letter-figure-credit">Figures: Federal Reserve Bank of San Francisco.</p></main>')
