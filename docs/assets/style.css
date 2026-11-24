@@ -1267,3 +1267,9 @@ html:not(.js) .research-topics { display:none; }
 
 /* A clearer name in the shared site header. */
 .site-header .brand { font-size:clamp(1.5rem,2.5vw,1.7rem); }
+
+/* Smaller homepage section headings. */
+.home-main .section-header h2 { font-size:1.6rem; }
+@media(max-width:650px) {
+  .home-main .section-header h2 { font-size:1.5rem; }
+}
