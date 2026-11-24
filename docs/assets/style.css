@@ -1205,3 +1205,8 @@ html:not(.js) .search-toolbar {
   .home-main .resource-link,.research-main .resource-link { min-height:36px; }
   .hero-tools { margin-top:16px; }
 }
+
+/* Keep research downloads close to the citation and abstract. */
+.research-main .research-item>.resource-links { margin-top:4px; }
+.research-main .research-item .resource-link { min-height:28px; padding:1px 0; }
+.research-main .research-item>.paper-abstract { margin-top:3px; }
