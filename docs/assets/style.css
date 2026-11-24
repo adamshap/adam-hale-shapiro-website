@@ -972,7 +972,7 @@ html:not(.js) .search-toolbar {
 /* Research listings and reading view. */
 .research-main .page-heading { padding-bottom:36px; margin-bottom:34px; }
 .research-main h1 { font-size:clamp(2.1rem,4.5vw,3.65rem); }
-.research-group .paper { padding:27px 0; }
+.research-group .paper { padding:18px 0; }
 .research-group .paper h3 { font-family:var(--sans); font-size:1.16rem; line-height:1.5; letter-spacing:-.022em; font-weight:600; margin-bottom:10px; }
 .research-group .paper-details { font-size:.9rem; line-height:1.75; }
 .research-group .paper-details p:first-child { color:#414f58; }
@@ -1000,7 +1000,7 @@ html:not(.js) .search-toolbar {
   .research-main .section-sidebar { gap:12px 20px; }
   .research-main .section-sidebar a { font-size:.875rem; }
   .research-group .group-heading h2 { font-family:var(--sans); font-weight:600; font-size:1.05rem; letter-spacing:-.015em; }
-  .research-group .paper { padding:23px 0 25px; }
+  .research-group .paper { padding:16px 0; }
   .research-group .paper h3 { font-size:1.1rem; line-height:1.5; }
   .research-group .paper-details { font-size:.9rem; }
   .paper-status { font-size:.875rem; margin-top:12px; }
