@@ -61,7 +61,7 @@ for (const button of document.querySelectorAll('[data-reveal-email]')) {
   }, { once: true });
 }
 
-// Topic filters preserve the original order within each research section.
+// Topic filters preserve the original order of papers and Economic Letters.
 const topicButtons = [...document.querySelectorAll('[data-topic]')];
 if (topicButtons.length) {
   const papers = [...document.querySelectorAll('[data-topics]')];

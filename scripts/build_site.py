@@ -301,12 +301,18 @@ def letters(data):
         elif groups:
             groups[-1].append(p)
     figures = json.loads((ROOT / 'content/letter-figures.json').read_text(encoding='utf-8'))
+    topics = json.loads((ROOT / 'content/letter-topics.json').read_text(encoding='utf-8'))
+    assert set(topics) == set(figures), 'Each Economic Letter needs topic assignments'
+    labels = [('all', 'All'), ('inflation', 'Inflation & monetary policy'), ('housing', 'Housing & wealth'), ('health', 'Health economics'), ('finance', 'Banking & finance'), ('news', 'News & sentiment')]
+    tabs = '<div class="research-topics" role="group" aria-label="Filter Economic Letters by topic">' + ''.join('<button type="button" class="topic-tab" data-topic="' + key + '" aria-pressed="' + ('true' if key == 'all' else 'false') + '" aria-controls="letter-results">' + escape(label) + '</button>' for key, label in labels) + '</div>'
+
     articles = ''
     for index, nodes in enumerate(groups):
         block = Node('root')
         block.children = nodes
         article = Tree(paper(block, slug)).root.find('article')
         href = nodes[0].find('a').attrs['href']
+        article.attrs['data-topics'] = ' '.join(topics[href])
         figure = figures.get(href)
         if figure:
             article.attrs['class'] += ' letter-item'
@@ -316,7 +322,7 @@ def letters(data):
             preview.children = [Node('img', [('src', asset_href(figure['src'], slug)), ('alt', figure['alt']), ('width', str(figure['width'])), ('height', str(figure['height'])), ('loading', 'eager' if index < 2 else 'lazy'), ('decoding', 'async')])]
             article.children = [copy, preview]
         articles += serialize(article, slug, slug, True)
-    return page(slug, 'Economic Letters | Adam Hale Shapiro', '<main id="content" class="page-main letters-main">' + section_heading('San Francisco Fed', 'Economic Letters') + search_field('Search economic letters', len(groups)) + '<div class="letter-list">' + articles + '</div><p class="letter-figure-credit">Figures: Federal Reserve Bank of San Francisco.</p></main>')
+    return page(slug, 'Economic Letters | Adam Hale Shapiro', '<main id="content" class="page-main letters-main">' + section_heading('San Francisco Fed', 'Economic Letters') + tabs + '<div id="letter-results" class="letter-list">' + articles + '</div><p class="letter-figure-credit">Figures: Federal Reserve Bank of San Francisco.</p></main>')
 
 def code_data(data):
     slug = '/blank-2'
