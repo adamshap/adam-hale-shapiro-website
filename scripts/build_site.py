@@ -245,7 +245,7 @@ def home(pages):
     if not selected:
         selected = [b for b in blocks if b.find('p')][:2]
     figures = json.loads((ROOT / 'content/research-figures.json').read_text(encoding='utf-8'))
-    research = '<section class="home-section"><div class="section-header"><div><p class="eyebrow">Research</p><h2>Recent papers</h2></div>' + anchor('/research/', 'All research', css='text-link') + '</div><div class="featured-papers">' + ''.join(illustrated_research(b, None, figures, destination='/') for b in selected) + '</div></section>'
+    research = '<section class="home-section"><div class="section-header"><div><p class="eyebrow">Research</p><h2>Recent papers</h2></div>' + anchor('/research/', 'All research', css='text-link all-research-link') + '</div><div class="featured-papers">' + ''.join(illustrated_research(b, None, figures, destination='/') for b in selected) + '</div></section>'
     return page(slug, 'Adam Hale Shapiro | Economist', '<main id="content" class="home-main"><h1 class="sr-only">Adam Hale Shapiro</h1>' + hero + research + tools + '</main>')
 
 def search_field(label, count):
