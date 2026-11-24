@@ -284,12 +284,11 @@ def research(data, pages):
         elif block.find('p'):
             groups[-1][1].append(block)
     sidebar = '<aside class="section-sidebar"><p class="eyebrow">On this page</p><a href="#working-papers">Working papers</a><a href="#publications">Publications</a></aside>'
-    count = sum(len(items) for _, items in groups)
     figures = json.loads((ROOT / 'content/research-figures.json').read_text(encoding='utf-8'))
     content = ''
     for index, (title, blocks) in enumerate(groups):
         section_id = 'working-papers' if index == 0 else 'publications'
-        content += '<section class="research-group" id="' + section_id + '" data-search-group><div class="group-heading"><h2>' + escape(title) + '</h2><span>' + str(len(blocks)) + '</span></div>' + ''.join(illustrated_research(block, pages, figures) for block in blocks) + '</section>'
+        content += '<section class="research-group" id="' + section_id + '" data-search-group><div class="group-heading"><h2>' + escape(title) + '</h2></div>' + ''.join(illustrated_research(block, pages, figures) for block in blocks) + '</section>'
     return page(slug, 'Research | Adam Hale Shapiro', '<main id="content" class="page-main research-main">' + section_heading('Research', 'Papers & publications') + '<div class="research-layout">' + sidebar + '<div>' + content + '</div></div></main>')
 
 def letters(data):
