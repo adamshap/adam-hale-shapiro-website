@@ -1271,5 +1271,5 @@ html:not(.js) .research-topics { display:none; }
 /* Smaller homepage section headings. */
 .home-main .section-header h2 { font-size:1.6rem; }
 @media(max-width:650px) {
-  .home-main .section-header h2 { font-size:1.5rem; }
+  .home-main .section-header h2 { font-size:1.25rem; }
 }
