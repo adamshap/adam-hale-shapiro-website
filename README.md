@@ -1,7 +1,9 @@
 # Adam Hale Shapiro's website
 
-Independent static copy of the public Wix website, prepared for GitHub Pages.
-The publishable website is in `docs/`. No paid hosting or build tools are required.
+Academic website hosted on GitHub Pages at adam-hale-shapiro.com.
+The publishable website is in `docs/`. No paid hosting or production dependencies
+are required. The site includes responsive navigation, research and Economic
+Letters search, paper abstracts, dashboards, and downloadable research assets.
 
 ## Edit the website
 
@@ -12,8 +14,23 @@ The publishable website is in `docs/`. No paid hosting or build tools are requir
 - Individual paper pages retain their existing paths in `docs/`.
 - Shared appearance: `docs/assets/style.css`
 
-Edit the HTML in GitHub and commit the change. GitHub Pages publishes from the
-`main` branch's `/docs` folder.
+Page content is maintained in `content/site.json`. The shared HTML layouts are
+in `scripts/build_site.py`. Edit the content or layout and regenerate the pages:
+
+```powershell
+py scripts/build_site.py
+node --check docs/assets/site.js
+py -m http.server 8766 --bind 127.0.0.1 --directory docs
+```
+
+The renderer uses Python's standard library. Preview the result, then commit the
+content, renderer, and generated `docs/` changes together. GitHub Pages publishes
+from the `main` branch's `/docs` folder. Direct HTML edits in `docs/` must also be
+carried into the source content or layout before rebuilding.
+
+The site uses system fonts, local assets, and a small progressive-enhancement
+script. All pages, abstracts, and downloads remain accessible without JavaScript;
+JavaScript adds the mobile menu and instant search.
 
 ## Domain migration
 
