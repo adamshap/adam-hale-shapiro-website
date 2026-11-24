@@ -75,7 +75,7 @@ def serialize(node, source='/', destination='/', tidy=False):
     inside = ''.join(serialize(c, source, destination, tidy) for c in node.children)
     if node.tag == 'root':
         return inside
-    if node.tag == 'a' and not text(node).strip('"“” '):
+    if node.tag == 'a' and not text(node).strip('"“” ') and not node.find('img'):
         return ''
     attrs = ''
     for key, value in node.attrs.items():
@@ -216,12 +216,23 @@ def letters(data):
             groups.append([p])
         elif groups:
             groups[-1].append(p)
+    figures = json.loads((ROOT / 'content/letter-figures.json').read_text(encoding='utf-8'))
     articles = ''
-    for nodes in groups:
+    for index, nodes in enumerate(groups):
         block = Node('root')
         block.children = nodes
-        articles += paper(block, slug)
-    return page(slug, 'Economic Letters | Adam Hale Shapiro', '<main id="content" class="page-main letters-main">' + section_heading('San Francisco Fed', 'Economic Letters', 'Economic analysis and research for a broader audience.') + search_field('Search economic letters', len(groups)) + '<div class="letter-list">' + articles + '</div></main>')
+        article = Tree(paper(block, slug)).root.find('article')
+        href = nodes[0].find('a').attrs['href']
+        figure = figures.get(href)
+        if figure:
+            article.attrs['class'] += ' letter-item'
+            copy = Node('div', [('class', 'letter-copy')])
+            copy.children = article.children
+            preview = Node('a', [('class', 'letter-figure'), ('href', href), ('aria-label', 'Read ' + figure['title'])])
+            preview.children = [Node('img', [('src', figure['src']), ('alt', figure['alt']), ('width', str(figure['width'])), ('height', str(figure['height'])), ('loading', 'eager' if index < 2 else 'lazy'), ('decoding', 'async')])]
+            article.children = [copy, preview]
+        articles += serialize(article, slug, slug, True)
+    return page(slug, 'Economic Letters | Adam Hale Shapiro', '<main id="content" class="page-main letters-main">' + section_heading('San Francisco Fed', 'Economic Letters', 'Economic analysis and research for a broader audience.') + search_field('Search economic letters', len(groups)) + '<div class="letter-list">' + articles + '</div><p class="letter-figure-credit">Figures: Federal Reserve Bank of San Francisco.</p></main>')
 
 def code_data(data):
     slug = '/blank-2'
