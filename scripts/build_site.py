@@ -104,10 +104,11 @@ def resources(nodes, source, destination):
     for n in nodes:
         a = n.find('a')
         if a and text(a):
-            links.append(anchor(local_path(a.attrs['href'], source), text(a), destination, 'resource-link'))
+            css = 'resource-link primary-resource' if 'pdf' in text(a).lower() else 'resource-link'
+            links.append(anchor(local_path(a.attrs['href'], source), text(a), destination, css))
     return '<div class="resource-links">' + ''.join(links) + '</div>' if links else ''
 
-def paper(block, slug='/research', destination=None):
+def paper(block, slug='/research', destination=None, pages=None):
     destination = destination or slug
     paras = [n for n in block.children if isinstance(n, Node) and n.tag == 'p']
     if not paras:
@@ -115,14 +116,35 @@ def paper(block, slug='/research', destination=None):
     first, *rest = paras
     resource_nodes = [n for n in rest if 'resource' in n.attrs.get('class', '').split()]
     detail_nodes = [n for n in rest if n not in resource_nodes]
+    statuses = [n for n in detail_nodes if text(n).startswith('Conditionally accepted')]
+    detail_nodes = [n for n in detail_nodes if n not in statuses]
     first_link = next((n for n in first.walk() if n.tag == 'a' and text(n).strip('"“” ')), None)
     title = text(first_link or first).strip('"“” ')
     title_html = anchor(local_path(first_link.attrs['href'], slug), title, destination) if first_link else escape(title)
     tail = ''.join(serialize(c, slug, destination, True) for c in first.children if c is not first_link).strip(' \xa0')
     # Paper titles occasionally share a paragraph with their coauthors.
     details = ('<p>' + tail + '</p>' if tail else '') + ''.join('<p>' + inner(n, slug, destination) + '</p>' for n in detail_nodes)
+    status_html = ''.join('<p class="paper-status">' + escape(text(n)) + '</p>' for n in statuses)
+    abstract = ''
+    if pages and first_link:
+        target = urlsplit(local_path(first_link.attrs['href'], slug)).path.rstrip('/')
+        entry = pages.get(target)
+        if entry:
+            abstract_parts, in_abstract = [], False
+            for value in entry['blocks']:
+                part = fragment(value)
+                if part.find('h2'):
+                    if text(part.find('h2')) == 'Abstract':
+                        in_abstract = True
+                        continue
+                    if in_abstract:
+                        break
+                if in_abstract:
+                    abstract_parts.append(inner(part, target, destination))
+            if abstract_parts:
+                abstract = '<details class="paper-abstract"><summary>Abstract<span class="sr-only"> for ' + escape(title) + '</span></summary><div class="paper-abstract-content">' + ''.join(abstract_parts) + '</div></details>'
     search = escape(text(block), quote=True)
-    return '<article class="paper" data-search-item data-search="' + search + '"><h3>' + title_html + '</h3><div class="paper-details">' + details + '</div>' + resources(resource_nodes, slug, destination) + '</article>'
+    return '<article class="paper" data-search-item data-search="' + search + '"><h3>' + title_html + '</h3><div class="paper-details">' + details + '</div>' + status_html + resources(resource_nodes, slug, destination) + abstract + '</article>'
 
 def navigation(slug):
     items = [('/', 'Home'), ('/research/', 'Research'), ('/blank-1/', 'Economic Letters'), ('/blank-2/', 'Code & Data')]
@@ -166,7 +188,7 @@ def home(pages):
 def search_field(label, count):
     return '<div class="search-toolbar"><label class="search-box"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><span class="sr-only">' + escape(label) + '</span><input type="search" data-search-input placeholder="' + escape(label) + '" autocomplete="off"></label><p class="search-status" data-search-status aria-live="polite">' + str(count) + ' results</p></div><div class="empty-results" data-empty-results hidden><h3>No matching results</h3><p>Try a title, coauthor, journal, or year.</p><button type="button" class="button button-secondary" data-clear-search>Clear search</button></div>'
 
-def research(data):
+def research(data, pages):
     slug = '/research'
     groups = []
     for value in data['blocks']:
@@ -180,8 +202,8 @@ def research(data):
     content = search_field('Search research', count)
     for index, (title, blocks) in enumerate(groups):
         section_id = 'working-papers' if index == 0 else 'publications'
-        content += '<section class="research-group" id="' + section_id + '" data-search-group><div class="group-heading"><h2>' + escape(title) + '</h2><span>' + str(len(blocks)) + '</span></div>' + ''.join(paper(block) for block in blocks) + '</section>'
-    return page(slug, 'Research | Adam Hale Shapiro', '<main id="content" class="page-main">' + section_heading('Research', 'Papers & publications', 'Research on inflation, price setting dynamics, and the U.S. healthcare sector.') + '<div class="research-layout">' + sidebar + '<div>' + content + '</div></div></main>')
+        content += '<section class="research-group" id="' + section_id + '" data-search-group><div class="group-heading"><h2>' + escape(title) + '</h2><span>' + str(len(blocks)) + '</span></div>' + ''.join(paper(block, pages=pages) for block in blocks) + '</section>'
+    return page(slug, 'Research | Adam Hale Shapiro', '<main id="content" class="page-main research-main">' + section_heading('Research', 'Papers & publications', 'Research on inflation, price setting dynamics, and the U.S. healthcare sector.') + '<div class="research-layout">' + sidebar + '<div>' + content + '</div></div></main>')
 
 def letters(data):
     slug = '/blank-1'
@@ -249,7 +271,10 @@ def detail(slug, data):
     meta_tree = Tree(meta).root
     links = [n for n in meta_tree.walk() if n.tag == 'p' and 'resource' in n.attrs.get('class', '')]
     meta_paras = [n for n in meta_tree.children if isinstance(n, Node) and n not in links]
-    header = '<div class="paper-header"><p class="eyebrow">Research</p><h1>' + escape(title.strip('" ')) + '</h1><div class="paper-byline">' + ''.join(serialize(n, slug, slug, True) for n in meta_paras) + '</div>' + resources(links, slug, slug) + '</div>'
+    statuses = [n for n in meta_paras if text(n).startswith('Conditionally accepted')]
+    meta_paras = [n for n in meta_paras if n not in statuses]
+    status_html = ''.join('<p class="paper-status">' + escape(text(n)) + '</p>' for n in statuses)
+    header = '<div class="paper-header"><p class="eyebrow">Research</p><h1>' + escape(title.strip('" ')) + '</h1><div class="paper-byline">' + ''.join(serialize(n, slug, slug, True) for n in meta_paras) + '</div>' + status_html + resources(links, slug, slug) + '</div>'
     body = ''.join('<section class="prose">' + inner(b, slug, slug) + '</section>' for b in blocks[abstract_at:])
     return page(slug, title + ' | Adam Hale Shapiro', '<main id="content" class="page-main paper-main"><div class="breadcrumb">' + anchor('/research/', 'All research', slug) + '</div>' + header + '<div class="abstract-body">' + body + '</div><div class="paper-return">' + anchor('/research/', 'Browse all research', slug, 'button button-secondary') + '</div></main>')
 
@@ -259,7 +284,7 @@ def build():
         if slug == '/':
             output = home(pages)
         elif slug == '/research':
-            output = research(data)
+            output = research(data, pages)
         elif slug == '/blank-1':
             output = letters(data)
         elif slug == '/blank-2':
