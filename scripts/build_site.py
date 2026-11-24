@@ -233,9 +233,8 @@ def paper(block, slug='/research', destination=None, pages=None):
     resource_html = resources(resource_nodes, slug, destination)
     resource_links = Tree(resource_html).root.find('div') if resource_html else None
     links = resource_links.children if resource_links else []
-    first_resource = serialize(links[0], destination, destination, True) if links else ''
-    other_resources = ''.join(serialize(n, destination, destination, True) for n in links[1:])
-    disclosures = first_resource + abstract + media_coverage(media_nodes, title, slug, destination) + other_resources
+    resource_actions = ''.join(serialize(n, destination, destination, True) for n in links)
+    disclosures = resource_actions + abstract + media_coverage(media_nodes, title, slug, destination)
     if disclosures:
         disclosures = '<div class="paper-disclosures">' + disclosures + '</div>'
     return '<article class="paper" data-search-item data-search="' + search + '"><h3>' + title_html + '</h3><div class="paper-details">' + details + '</div>' + status_html + disclosures + '</article>'

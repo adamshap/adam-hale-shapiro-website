@@ -1293,11 +1293,11 @@ html:not(.js) .research-topics { display:none; }
 /* Quiet, optional reading controls keep coverage out of the citation. */
 .paper-disclosures { display:flex; flex-wrap:wrap; align-items:baseline; gap:0 16px; grid-column:1 / -1; margin-top:2px; min-width:0; }
 .paper-disclosures>.resource-links { display:contents; }
-.paper-disclosures .resource-link { min-height:28px; padding:4px 0; border:0; border-radius:0; background:none; line-height:1.5; }
+.paper-disclosures .resource-link { min-height:28px; padding:4px 0; border:0; border-radius:0; background:none; font:500 .875rem/1.5 var(--sans); color:var(--accent); }
 .paper-disclosures .resource-link:hover { background:none; text-decoration:underline; }
 .paper-disclosures details { margin:0; min-width:0; font-size:.875rem; }
 .paper-disclosures details[open] { flex-basis:100%; }
-.paper-disclosures summary { display:list-item; width:fit-content; padding:5px 0; line-height:1.5; color:var(--muted); cursor:pointer; }
+.paper-disclosures summary { display:list-item; width:fit-content; padding:4px 0; font:500 .875rem/1.5 var(--sans); color:var(--accent); cursor:pointer; }
 .paper-disclosures summary::marker { font-size:.7em; }
 .paper-disclosures summary:hover { color:var(--accent); }
 .paper-disclosures summary:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
