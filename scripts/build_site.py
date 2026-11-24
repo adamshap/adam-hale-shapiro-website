@@ -361,7 +361,7 @@ def code_data(data):
         if documentation:
             detail += '<details class="data-documentation"><summary>Documentation</summary><div>' + ''.join(documentation) + '</div></details>'
         items += '<article class="data-item' + (' dashboard-item' if i < 2 else '') + '"><div class="data-item-heading"><p class="eyebrow">' + ('Interactive dashboard' if i < 2 else 'Data & replication') + '</p><h2>' + escape(title) + '</h2></div><div class="data-details">' + detail + '</div></article>'
-    return page(slug, 'Code & Data | Adam Hale Shapiro', '<main id="content" class="page-main data-main">' + section_heading('Research resources', 'Code & data', 'Interactive dashboards, data series, and replication code.') + '<div class="data-list">' + items + '</div></main>')
+    return page(slug, 'Code & Data | Adam Hale Shapiro', '<main id="content" class="page-main data-main">' + section_heading('Research resources', 'Code & data') + '<div class="data-list">' + items + '</div></main>')
 
 def detail(slug, data):
     blocks = [fragment(b) for b in data['blocks']]
