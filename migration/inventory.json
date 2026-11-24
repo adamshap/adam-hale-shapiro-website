@@ -1,0 +1,215 @@
+{
+  "pages": [
+    {
+      "path": "/",
+      "title": "Home",
+      "blocks": 1,
+      "links": 7,
+      "source_sha256": "f8e197325d3b80c48c5a8003852e51dd7f5d5caeb5545b227074e702dfc6a46d"
+    },
+    {
+      "path": "/research",
+      "title": "Research",
+      "blocks": 76,
+      "links": 112,
+      "source_sha256": "306ff3a6ac6a186f1dbd9fc2588e0f57212764c76949b8fa2fa723a8472b3e34"
+    },
+    {
+      "path": "/blank-1",
+      "title": "Economic Letters",
+      "blocks": 1,
+      "links": 24,
+      "source_sha256": "620d4c609267a14414cc3ef678f75dfc53563621edf9421996b376b52119c8b5"
+    },
+    {
+      "path": "/blank-2",
+      "title": "Code & Data",
+      "blocks": 1,
+      "links": 22,
+      "source_sha256": "0120ccd8501b23fda126d966b86f35460bb1ee61f1fbf7f227f17eaac16e0a45"
+    },
+    {
+      "path": "/papers",
+      "title": "News Selection",
+      "blocks": 5,
+      "links": 1,
+      "source_sha256": "a2dffca318bfcd70185cc270415ac3c9ebb7b437d8dca836baebebf9fe7fc887"
+    },
+    {
+      "path": "/blank",
+      "title": "Medicare vs Medicaid",
+      "blocks": 5,
+      "links": 1,
+      "source_sha256": "1c0b5369b92d25d81ae8c9b632216ad341119c1948175e397be341ef8e740578"
+    },
+    {
+      "path": "/copy-of-papers",
+      "title": "Simple Framework",
+      "blocks": 7,
+      "links": 3,
+      "source_sha256": "f6a699e2c5948c0b7c1cdba6da25054ec5ecbdcb6a38527dc5ffee2b3228c1e7"
+    },
+    {
+      "path": "/blank-3",
+      "title": "ISMI",
+      "blocks": 7,
+      "links": 3,
+      "source_sha256": "874a228acd3e8791e0be42954851925b382fa9484f580571b2beb7b8088baf5e"
+    },
+    {
+      "path": "/blank-4",
+      "title": "Not all inflation",
+      "blocks": 5,
+      "links": 1,
+      "source_sha256": "f1b30ee2aad0081a2f5c2a39295a9ec2e31bce88656e33f03da81d2042c24ff0"
+    },
+    {
+      "path": "/copy-of-news-selection",
+      "title": "Supply & Demand",
+      "blocks": 9,
+      "links": 5,
+      "source_sha256": "b6ec575b9d15a1f3cd55d72ab4f2063c7053294f5ace7be5fa99f6011e6424f2"
+    },
+    {
+      "path": "/copy-of-phillips-meets-beveridge",
+      "title": "Monetary Tightening",
+      "blocks": 5,
+      "links": 1,
+      "source_sha256": "80ed679eef87a9d27c2495a86f0db35a3ecfaae27280d7423533314a24625305"
+    },
+    {
+      "path": "/copy-of-papers-1",
+      "title": "Phillips Meets Beveridge",
+      "blocks": 5,
+      "links": 1,
+      "source_sha256": "b2fdca6fc1a07db4474d640371214aec0456578fd552b94ad31209981d32afcb"
+    },
+    {
+      "path": "/copy-of-medicare-vs-medicaid",
+      "title": "A Denial a Day Keeps the Doctor Away",
+      "blocks": 6,
+      "links": 2,
+      "source_sha256": "cabf538f6a4ebb21ddee778e8951dd2515c8cb9b916d513884cde1bc5e8a9e24"
+    },
+    {
+      "path": "/copy-of-a-denial-a-day-keeps-the-doct",
+      "title": "Taking the Fed at its Word",
+      "blocks": 7,
+      "links": 3,
+      "source_sha256": "5058fad88095335d71bed2f7877a00360ded2deb200cf82b53f77c883cd709ab"
+    },
+    {
+      "path": "/copy-of-a-denial-a-day-keeps-the-doct-1",
+      "title": "Measuring News Sentiment",
+      "blocks": 8,
+      "links": 4,
+      "source_sha256": "e548ea1bd2343b943ec75894b3a3fb3bd651719010ba1751b6b57187a518b8d7"
+    },
+    {
+      "path": "/copy-of-measuring-news-sentiment",
+      "title": "Brexit",
+      "blocks": 6,
+      "links": 2,
+      "source_sha256": "9a1515ecfdb28e1bdf970f98ecee11d3e625d119bb3a1f5a04d9df4dc12d58f2"
+    },
+    {
+      "path": "/copy-of-brexit",
+      "title": "De-risking",
+      "blocks": 6,
+      "links": 2,
+      "source_sha256": "54c6b19f4fc0611af8855c3bebe0fd7c4288d13acfeff407ea50bb3a5134afe2"
+    },
+    {
+      "path": "/copy-of-de-risking",
+      "title": "Administrators",
+      "blocks": 6,
+      "links": 2,
+      "source_sha256": "81acc9d4fc836085c30e4d58ef4b036ec0448f042d5ff8b7c8c289e196a7a1b2"
+    },
+    {
+      "path": "/copy-of-administrators",
+      "title": "Part D",
+      "blocks": 5,
+      "links": 1,
+      "source_sha256": "7026a27fe5a2374e1f2acf4cd01f436355e8b0f86af4b2c5f35bf5c5186f1ddd"
+    },
+    {
+      "path": "/copy-of-part-d",
+      "title": "AMI",
+      "blocks": 5,
+      "links": 1,
+      "source_sha256": "086cd15c6ca565caad6bf3dbe38f94d2395e977eb660b79382d86806dd69759a"
+    },
+    {
+      "path": "/copy-of-part-d-1",
+      "title": "Guidelines",
+      "blocks": 4,
+      "links": 1,
+      "source_sha256": "b85a0d698ab08f6148ea9455b812eb0c219394ff4b5c1cced4457deb62a8e04e"
+    },
+    {
+      "path": "/copy-of-part-d-2",
+      "title": "Apples to PCs",
+      "blocks": 5,
+      "links": 1,
+      "source_sha256": "a2929221f5b7f7a127f9c9bfbc3b5800801f8193bad80c1cde182a469ee7e241"
+    },
+    {
+      "path": "/copy-of-ami",
+      "title": "Utilization",
+      "blocks": 5,
+      "links": 1,
+      "source_sha256": "567d8e6a8afac5fc6c7154849ece121c59fc6494a3e4978217be8ef8150d81d4"
+    },
+    {
+      "path": "/copy-of-utilization",
+      "title": "Massachusetts",
+      "blocks": 5,
+      "links": 1,
+      "source_sha256": "63fd08b52c9ec7f9d10c5b112c9f724e5dcaf02110346eff2451f1c70b6fdba4"
+    },
+    {
+      "path": "/copy-of-utilization-1",
+      "title": "Market Power",
+      "blocks": 5,
+      "links": 1,
+      "source_sha256": "a42ef89442ad3a0e8a6b7ae41e661ad929bedca14933b7289ed0ae217fb13e68"
+    },
+    {
+      "path": "/copy-of-market-power",
+      "title": "Geographic",
+      "blocks": 6,
+      "links": 2,
+      "source_sha256": "33370ee0abff75d9a4d5968a70f65729eb1e77ed0d9d9591d8b4c22f245dfbac"
+    }
+  ],
+  "downloaded_assets": {
+    "https://static.wixstatic.com/media/153fb9ec893749ea83d6a79b74fb164a.jpg": "/assets/dcd31f824ccb40926e.jpg",
+    "https://www.adam-hale-shapiro.com/_files/ugd/5f94f7_5fe90671a9e847fda98083da2f173bdd.pdf": "/_files/ugd/5f94f7_5fe90671a9e847fda98083da2f173bdd.pdf",
+    "https://www.adam-hale-shapiro.com/_files/ugd/5f94f7_f90bde4b48db48a5b197613d9cf0dbc6.xlsx?dn=supply_demand_public.xlsx": "/_files/ugd/5f94f7_f90bde4b48db48a5b197613d9cf0dbc6.xlsx",
+    "https://www.adam-hale-shapiro.com/_files/archives/5f94f7_8b71061271f146b683a178f69fd8927a.zip?dn=shapiro_code%20(3).zip": "/_files/archives/5f94f7_8b71061271f146b683a178f69fd8927a.zip",
+    "https://www.adam-hale-shapiro.com/_files/ugd/5f94f7_5486e197099c4bdc9e17489a4af39221.pdf": "/_files/ugd/5f94f7_5486e197099c4bdc9e17489a4af39221.pdf",
+    "https://www.adam-hale-shapiro.com/_files/ugd/5f94f7_ce7e1a1cc2814413bc8c94ec65672dba.pdf": "/_files/ugd/5f94f7_ce7e1a1cc2814413bc8c94ec65672dba.pdf",
+    "https://www.adam-hale-shapiro.com/_files/ugd/5f94f7_bd2a0f5fec4f45eabcc6ee07c66aea80.pdf": "/_files/ugd/5f94f7_bd2a0f5fec4f45eabcc6ee07c66aea80.pdf",
+    "https://www.adam-hale-shapiro.com/_files/ugd/5f94f7_4d6eeff857f242e9a220b6030823d4dd.pdf": "/_files/ugd/5f94f7_4d6eeff857f242e9a220b6030823d4dd.pdf",
+    "https://www.adam-hale-shapiro.com/_files/ugd/5f94f7_e55b2f2b572a4ccc8d8a982b7a7d1410.pdf": "/_files/ugd/5f94f7_e55b2f2b572a4ccc8d8a982b7a7d1410.pdf",
+    "https://www.adam-hale-shapiro.com/_files/ugd/5f94f7_6cbcf3c792094e85acb251e160cfb92e.pdf": "/_files/ugd/5f94f7_6cbcf3c792094e85acb251e160cfb92e.pdf",
+    "https://www.adam-hale-shapiro.com/_files/ugd/5f94f7_41fb32e8a58b4953bdb35cc16da8c494.pdf": "/_files/ugd/5f94f7_41fb32e8a58b4953bdb35cc16da8c494.pdf",
+    "https://www.adam-hale-shapiro.com/_files/ugd/5f94f7_bbf33285c5a34bc7815a31feaf63f211.pdf": "/_files/ugd/5f94f7_bbf33285c5a34bc7815a31feaf63f211.pdf",
+    "https://www.adam-hale-shapiro.com/_files/ugd/5f94f7_4e337f56520f47138c34ee703572c370.pdf": "/_files/ugd/5f94f7_4e337f56520f47138c34ee703572c370.pdf",
+    "https://www.adam-hale-shapiro.com/_files/ugd/5f94f7_810667fbb0294fd489b6d6d7ebb91746.pdf": "/_files/ugd/5f94f7_810667fbb0294fd489b6d6d7ebb91746.pdf",
+    "https://www.adam-hale-shapiro.com/_files/ugd/5f94f7_2af23a762ebc4588874fb579a7eb1707.pdf": "/_files/ugd/5f94f7_2af23a762ebc4588874fb579a7eb1707.pdf",
+    "https://www.adam-hale-shapiro.com/_files/ugd/5f94f7_e0547e474231495491141d237420fc0f.pdf": "/_files/ugd/5f94f7_e0547e474231495491141d237420fc0f.pdf",
+    "https://www.adam-hale-shapiro.com/_files/ugd/5f94f7_602f4ddc0b4f4502a74ac420091f7d46.pdf": "/_files/ugd/5f94f7_602f4ddc0b4f4502a74ac420091f7d46.pdf",
+    "https://www.adam-hale-shapiro.com/_files/ugd/5f94f7_5b656198c19e4219b2bc85ca9c438785.pdf": "/_files/ugd/5f94f7_5b656198c19e4219b2bc85ca9c438785.pdf",
+    "https://www.adam-hale-shapiro.com/_files/ugd/5f94f7_9a0e0b531e954f549e6f0b66b0e5b507.pdf": "/_files/ugd/5f94f7_9a0e0b531e954f549e6f0b66b0e5b507.pdf",
+    "https://www.adam-hale-shapiro.com/_files/ugd/5f94f7_a2e64616d7ae4a26a543b57f2ae1139c.pdf": "/_files/ugd/5f94f7_a2e64616d7ae4a26a543b57f2ae1139c.pdf",
+    "https://www.adam-hale-shapiro.com/_files/ugd/5f94f7_90ae67646c594b23a73a5119826bde69.pdf": "/_files/ugd/5f94f7_90ae67646c594b23a73a5119826bde69.pdf",
+    "https://www.adam-hale-shapiro.com/_files/ugd/5f94f7_7dd5e29922f241a99c189e39e4898a2c.pdf": "/_files/ugd/5f94f7_7dd5e29922f241a99c189e39e4898a2c.pdf",
+    "https://www.adam-hale-shapiro.com/_files/ugd/5f94f7_f8978866a7294209865ccf318308e284.pdf": "/_files/ugd/5f94f7_f8978866a7294209865ccf318308e284.pdf",
+    "https://www.adam-hale-shapiro.com/_files/ugd/5f94f7_99ae70ff90a642048c10cd77a1811994.pdf": "/_files/ugd/5f94f7_99ae70ff90a642048c10cd77a1811994.pdf",
+    "https://www.adam-hale-shapiro.com/_files/ugd/5f94f7_dfcddd4e499b4cf4b0de54b182aff524.pdf": "/_files/ugd/5f94f7_dfcddd4e499b4cf4b0de54b182aff524.pdf",
+    "https://www.adam-hale-shapiro.com/_files/ugd/5f94f7_b4d10a94f4474488bc7967bdce920fc3.pdf": "/_files/ugd/5f94f7_b4d10a94f4474488bc7967bdce920fc3.pdf"
+  },
+  "failures": []
+}
