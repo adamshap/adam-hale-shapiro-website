@@ -60,3 +60,20 @@ for (const button of document.querySelectorAll('[data-reveal-email]')) {
     link.focus();
   }, { once: true });
 }
+
+// Topic filters preserve the original order within each research section.
+const topicButtons = [...document.querySelectorAll('[data-topic]')];
+if (topicButtons.length) {
+  const papers = [...document.querySelectorAll('[data-topics]')];
+  const groups = [...document.querySelectorAll('.research-group')];
+  topicButtons.forEach((button) => button.addEventListener('click', () => {
+    const topic = button.dataset.topic;
+    topicButtons.forEach((tab) => tab.setAttribute('aria-pressed', String(tab === button)));
+    papers.forEach((paper) => {
+      paper.hidden = topic !== 'all' && !paper.dataset.topics.split(' ').includes(topic);
+    });
+    groups.forEach((group) => {
+      group.hidden = ![...group.querySelectorAll('[data-topics]')].some((paper) => !paper.hidden);
+    });
+  }));
+}

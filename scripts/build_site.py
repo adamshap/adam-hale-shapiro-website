@@ -252,11 +252,13 @@ def home(pages):
 def search_field(label, count):
     return '<div class="search-toolbar"><label class="search-box"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><span class="sr-only">' + escape(label) + '</span><input type="search" data-search-input placeholder="' + escape(label) + '" autocomplete="off"></label><p class="search-status" data-search-status aria-live="polite">' + str(count) + ' results</p></div><div class="empty-results" data-empty-results hidden><h3>No matching results</h3><p>Try a title, coauthor, journal, or year.</p><button type="button" class="button button-secondary" data-clear-search>Clear search</button></div>'
 
-def illustrated_research(block, pages, figures, destination='/research'):
+def illustrated_research(block, pages, figures, destination='/research', topics=None):
     article = Tree(paper(block, destination=destination, pages=pages)).root.find('article')
     href = article.find('h3').find('a').attrs['href']
     figure = figures[local_path(href, destination)]
     article.attrs['class'] += ' research-item'
+    if topics is not None:
+        article.attrs['data-topics'] = ' '.join(topics[local_path(href, destination)])
     if destination == '/' and any('paper-status' in n.attrs.get('class', '').split() for n in article.walk()):
         article.attrs['class'] += ' featured-publication'
     copy = Node('div', [('class', 'research-copy')])
@@ -283,13 +285,16 @@ def research(data, pages):
             groups.append([text(block.find('h2')), []])
         elif block.find('p'):
             groups[-1][1].append(block)
-    sidebar = '<aside class="section-sidebar"><p class="eyebrow">On this page</p><a href="#working-papers">Working papers</a><a href="#publications">Publications</a></aside>'
     figures = json.loads((ROOT / 'content/research-figures.json').read_text(encoding='utf-8'))
+    topics = json.loads((ROOT / 'content/research-topics.json').read_text(encoding='utf-8'))
+    assert set(topics) == set(figures), 'Each research paper needs topic assignments'
+    labels = [('all', 'All'), ('inflation', 'Inflation & monetary policy'), ('health', 'Health economics'), ('competition', 'Price setting & competition'), ('finance', 'Banking & finance')]
+    tabs = '<div class="research-topics" role="group" aria-label="Filter papers by topic">' + ''.join('<button type="button" class="topic-tab" data-topic="' + key + '" aria-pressed="' + ('true' if key == 'all' else 'false') + '" aria-controls="research-results">' + escape(label) + '</button>' for key, label in labels) + '</div>'
     content = ''
     for index, (title, blocks) in enumerate(groups):
         section_id = 'working-papers' if index == 0 else 'publications'
-        content += '<section class="research-group" id="' + section_id + '" data-search-group><div class="group-heading"><h2>' + escape(title) + '</h2></div>' + ''.join(illustrated_research(block, pages, figures) for block in blocks) + '</section>'
-    return page(slug, 'Research | Adam Hale Shapiro', '<main id="content" class="page-main research-main">' + section_heading('Research', 'Papers & publications') + '<div class="research-layout">' + sidebar + '<div>' + content + '</div></div></main>')
+        content += '<section class="research-group" id="' + section_id + '" data-search-group><div class="group-heading"><h2>' + escape(title) + '</h2></div>' + ''.join(illustrated_research(block, pages, figures, topics=topics) for block in blocks) + '</section>'
+    return page(slug, 'Research | Adam Hale Shapiro', '<main id="content" class="page-main research-main">' + section_heading('Research', 'Papers & publications') + tabs + '<div id="research-results" class="research-results">' + content + '</div></main>')
 
 def letters(data):
     slug = '/blank-1'
