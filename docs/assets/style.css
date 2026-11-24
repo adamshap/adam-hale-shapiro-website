@@ -179,7 +179,7 @@ section[id] {
 .home-main {
   max-width:1240px;
   margin:auto;
-  padding:0 48px;
+  padding:0 48px 48px;
 }
 .hero {
   display:block;
@@ -750,6 +750,9 @@ section[id] {
   .home-main,.page-main {
     padding-left:24px;
     padding-right:24px;
+  }
+  .home-main {
+    padding-bottom:32px;
   }
   .hero {
     padding:28px 0 36px;
