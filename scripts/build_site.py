@@ -296,7 +296,7 @@ def letters(data):
     tree = Tree(''.join(data['blocks'])).root
     groups = []
     for p in [n for n in tree.walk() if n.tag == 'p']:
-        if p.find('a'):
+        if p.find('a') and not text(p).startswith('Coverage in'):
             groups.append([p])
         elif groups:
             groups[-1].append(p)
