@@ -156,7 +156,7 @@ def home(pages):
     bio = bio.replace('. I study', '.</p><p>I study')
     profile_links = [n.find('a') for n in paras[1:] if n.find('a') and 'media inquiries' not in text(n)]
     social = ''.join(anchor(a.attrs['href'], text(a), css='profile-link') for a in profile_links if text(a) not in ('CV', 'Email'))
-    hero = '''<section class="hero"><div class="hero-copy"><p class="eyebrow">Economist</p><h1>Adam Hale<br>Shapiro<span class="accent-period">.</span></h1><div class="bio"><p>''' + bio + '''</p></div><div class="hero-actions">''' + anchor('/research/', 'Explore research', css='button button-primary') + anchor(CV, 'Curriculum vitae', css='button button-secondary') + '''</div><div class="profile-links">''' + social + '''</div></div><figure class="hero-visual"><img src="assets/forest.jpg" alt="Sunlight falling on snow-covered trees" width="900" height="1100" fetchpriority="high"><figcaption>Applied micro · Macroeconomics · Health economics</figcaption></figure></section>'''
+    hero = '''<div class="tree-banner"><img src="assets/forest-banner.jpg" alt="Sunlight falling on snow-covered trees" width="1600" height="440" fetchpriority="high"></div><section class="hero"><div class="hero-copy"><p class="eyebrow">Economist</p><h1>Adam Hale Shapiro</h1><div class="bio"><p>''' + bio + '''</p></div><div class="hero-actions">''' + anchor('/research/', 'Explore research', css='button button-primary') + anchor(CV, 'Curriculum vitae', css='button button-secondary') + '''</div><div class="profile-links">''' + social + '''</div></div></section>'''
     tools = '<section class="home-section"><div class="section-header"><div><p class="eyebrow">Code & Data</p><h2>Explore the data.</h2></div>' + anchor('/blank-2/', 'All code & data', css='text-link') + '</div><div class="tools-grid">' + tool_feature('Inflation Shock Momentum', 'https://adamshap.github.io/ismi-webapp/ism_webapp.html', 'Explore sustained movements in inflation shocks.') + tool_feature('Supply & Demand Driven Inflation', 'https://adamshap.github.io/supply-demand-webapp/supply_demand_webapp.html', 'Explore the supply and demand components of inflation.') + '</div></section>'
     blocks = [fragment(b) for b in pages['/research']['blocks']]
     selected = [b for b in blocks if b.find('p')][:2]
@@ -215,11 +215,28 @@ def code_data(data):
         first = nodes[0]
         a = next(n for n in first.walk() if n.tag == 'a' and text(n))
         title = text(a).replace('Dashboard', '').replace('(.xlsx)', '').strip()
-        link = anchor(local_path(a.attrs['href'], slug), 'Open dashboard' if i < 2 else 'Download data', slug, 'button button-primary' if i < 2 else 'resource-link')
-        details = ''.join('<p>' + inner(n, slug, slug).strip() + '</p>' for n in nodes[1:])
-        details = details.replace('documentation:', 'Documentation:').replace('excel file (.xlsx)', 'Excel data (.xlsx)')
-        items += '<article class="data-item' + (' dashboard-item' if i < 2 else '') + '"><div><p class="eyebrow">' + ('Interactive dashboard' if i < 2 else 'Data & replication') + '</p><h2>' + escape(title) + '</h2></div><div class="data-details">' + details + '<div class="data-primary">' + link + '</div></div></article>'
-    return page(slug, 'Code & Data | Adam Hale Shapiro', '<main id="content" class="page-main">' + section_heading('Open research', 'Code & data', 'Interactive dashboards, data series, and replication code.') + '<div class="data-list">' + items + '</div></main>')
+        actions = [anchor(local_path(a.attrs['href'], slug), 'Open dashboard' if i < 2 else 'Download data', slug, 'data-action primary-action')]
+        documentation, notes = [], []
+        for n in nodes[1:]:
+            if text(n).lower().startswith('documentation:'):
+                documentation.append('<p>' + inner(n, slug, slug).replace('documentation:', '').strip() + '</p>')
+                continue
+            seen = set()
+            for link_node in n.walk():
+                if link_node.tag == 'a' and text(link_node) and link_node.attrs.get('href') not in seen:
+                    seen.add(link_node.attrs['href'])
+                    label = text(link_node).replace('excel file (.xlsx)', 'Excel data').replace('Stata Code', 'Stata code')
+                    actions.append(anchor(local_path(link_node.attrs['href'], slug), label, slug, 'data-action'))
+            if '(last updated' in text(n):
+                notes.append(re.search(r'\(last updated[^)]+\)', text(n)).group(0).strip('()').replace('last updated', 'Updated'))
+            if 'requires Haver' in text(n):
+                notes.append('Stata code requires Haver.')
+        detail = '<div class="data-actions">' + ''.join(actions) + '</div>'
+        detail += ''.join('<p class="data-note">' + escape(note) + '</p>' for note in notes)
+        if documentation:
+            detail += '<details class="data-documentation"><summary>Documentation</summary><div>' + ''.join(documentation) + '</div></details>'
+        items += '<article class="data-item' + (' dashboard-item' if i < 2 else '') + '"><div class="data-item-heading"><p class="eyebrow">' + ('Interactive dashboard' if i < 2 else 'Data & replication') + '</p><h2>' + escape(title) + '</h2></div><div class="data-details">' + detail + '</div></article>'
+    return page(slug, 'Code & Data | Adam Hale Shapiro', '<main id="content" class="page-main data-main">' + section_heading('Research resources', 'Code & data', 'Interactive dashboards, data series, and replication code.') + '<div class="data-list">' + items + '</div></main>')
 
 def detail(slug, data):
     blocks = [fragment(b) for b in data['blocks']]
