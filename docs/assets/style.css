@@ -1291,7 +1291,10 @@ html:not(.js) .research-topics { display:none; }
 }
 
 /* Quiet, optional reading controls keep coverage out of the citation. */
-.paper-disclosures { display:flex; flex-wrap:wrap; gap:0 22px; grid-column:1 / -1; margin-top:2px; min-width:0; }
+.paper-disclosures { display:flex; flex-wrap:wrap; align-items:baseline; gap:0 16px; grid-column:1 / -1; margin-top:2px; min-width:0; }
+.paper-disclosures>.resource-links { display:contents; }
+.paper-disclosures .resource-link { min-height:28px; padding:4px 0; border:0; border-radius:0; background:none; line-height:1.5; }
+.paper-disclosures .resource-link:hover { background:none; text-decoration:underline; }
 .paper-disclosures details { margin:0; min-width:0; font-size:.875rem; }
 .paper-disclosures details[open] { flex-basis:100%; }
 .paper-disclosures summary { display:list-item; width:fit-content; padding:5px 0; line-height:1.5; color:var(--muted); cursor:pointer; }
@@ -1316,7 +1319,7 @@ html:not(.js) .research-topics { display:none; }
   .research-main .page-heading { padding-bottom:20px; margin-bottom:18px; }
   .letter-copy h3 { margin-bottom:3px; }
   .letter-copy .paper-details { line-height:1.45; }
-  .paper-disclosures { column-gap:18px; }
+  .paper-disclosures { column-gap:14px; }
   .media-outlets>li { display:block; }
   .media-outlet { display:block; margin-bottom:2px; }
   .media-links { column-gap:14px; }
