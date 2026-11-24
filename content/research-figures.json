@@ -446,5 +446,117 @@
       349.0
     ],
     "kind": "figure"
+  },
+  "https://www.frbsf.org/research-and-insights/publications/working-papers/2025/08/inflation-since-pandemic-lessons-and-challenges/": {
+    "src": "/assets/research/inflation-since-pandemic.png",
+    "title": "Inflation Since the Pandemic: Lessons and Challenges",
+    "alt": "Headline and core PCE inflation before and during the pandemic",
+    "width": 1005,
+    "height": 556,
+    "source_pdf": "https://www.frbsf.org/wp-content/uploads/wp2025-16.pdf",
+    "page": 3,
+    "crop": [
+      61.2,
+      308.88,
+      563.0400000000001,
+      586.08
+    ],
+    "kind": "figure"
+  },
+  "https://press.uchicago.edu/ucp/books/book/chicago/M/bo27523501.html": {
+    "src": "/assets/research/decomposing-medical-growth.png",
+    "title": "Decomposing Medical-Care Expenditure Growth",
+    "alt": "Aggregate medical-care expenditure, prevalence, and demographic indexes",
+    "width": 580,
+    "height": 364,
+    "source_pdf": "https://www.nber.org/system/files/chapters/c13112/c13112.pdf",
+    "page": 17,
+    "crop": [
+      69.12,
+      38.879999999999995,
+      358.56,
+      220.32000000000002
+    ],
+    "kind": "figure"
+  },
+  "https://press.uchicago.edu/ucp/books/book/chicago/M/bo18143459.html": {
+    "src": "/assets/research/medical-representativeness.png",
+    "title": "Developing a Framework for Decomposing Medical-Care Expenditure Growth: Exploring Issues of Representativeness",
+    "alt": "Table 16.1 compares sample and population statistics for commercially insured patients",
+    "width": 727,
+    "height": 623,
+    "source_pdf": "https://www.nber.org/system/files/chapters/c12841/c12841.pdf",
+    "page": 14,
+    "crop": [
+      43.2,
+      272.15999999999997,
+      406.08,
+      583.2
+    ],
+    "kind": "table"
+  },
+  "https://www.frbsf.org/research-and-insights/publications/working-papers/2014/11/a-dynamic-model-of-price-signaling-consumer-learning-and-price-adjustment/": {
+    "src": "/assets/research/price-signaling.png",
+    "title": "A Dynamic Model of Price Signaling, Consumer Learning, and Price Adjustment",
+    "alt": "Pricing policy function under price signaling and consumer learning",
+    "width": 834,
+    "height": 508,
+    "source_pdf": "https://www.frbsf.org/wp-content/uploads/wp2014-27.pdf",
+    "page": 15,
+    "crop": [
+      122.4,
+      126.72,
+      538.5600000000001,
+      380.15999999999997
+    ],
+    "kind": "figure"
+  },
+  "https://www.bea.gov/research/papers/2010/implications-consumer-heterogeneity-price-measures-technology-goods": {
+    "src": "/assets/research/consumer-heterogeneity.png",
+    "title": "Implications of Consumer Heterogeneity on Price Measures for Technology Goods",
+    "alt": "Prices of Hewlett Packard laptop computers over their product life cycles",
+    "width": 1036,
+    "height": 742,
+    "source_pdf": "https://www.bea.gov/sites/default/files/papers/WP2010-10.pdf",
+    "page": 37,
+    "crop": [
+      47.6,
+      218.92000000000002,
+      565.25,
+      589.4
+    ],
+    "kind": "figure"
+  },
+  "https://fraser.stlouisfed.org/files/docs/historical/frbatl/wp/frbatl_wp_2009-25.pdf": {
+    "src": "/assets/research/foreclosure-crisis.png",
+    "title": "Decomposing the Foreclosure Crisis: House Price Depreciation versus Bad Underwriting",
+    "alt": "Massachusetts house prices, foreclosures, and delinquencies",
+    "width": 1079,
+    "height": 999,
+    "source_pdf": "https://fraser.stlouisfed.org/files/docs/historical/frbatl/wp/frbatl_wp_2009-25.pdf",
+    "page": 37,
+    "crop": [
+      48.96,
+      142.56,
+      587.52,
+      641.5200000000001
+    ],
+    "kind": "figure"
+  },
+  "https://www.bostonfed.org/publications/research-department-working-paper/2007/subprime-outcomes-risky-mortgages-homeownership-experiences-and-foreclosures.aspx": {
+    "src": "/assets/research/subprime-outcomes.png",
+    "title": "Subprime Outcomes: Risky Mortgages, Homeownership Experiences, and Foreclosures",
+    "alt": "Estimated cumulative foreclosure incidence for prime and subprime homeownerships",
+    "width": 1029,
+    "height": 1094,
+    "source_pdf": "https://www.bostonfed.org/-/media/Documents/Workingpapers/PDF/wp0715.pdf",
+    "page": 62,
+    "crop": [
+      61.2,
+      95.03999999999999,
+      575.28,
+      641.5200000000001
+    ],
+    "kind": "figure"
   }
 }

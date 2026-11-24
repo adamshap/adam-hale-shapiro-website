@@ -287,7 +287,7 @@ def research(data, pages):
     tabs = '<div class="research-topics" role="group" aria-label="Filter papers by topic">' + ''.join('<button type="button" class="topic-tab" data-topic="' + key + '" aria-pressed="' + ('true' if key == 'all' else 'false') + '" aria-controls="research-results">' + escape(label) + '</button>' for key, label in labels) + '</div>'
     content = ''
     for index, (title, blocks) in enumerate(groups):
-        section_id = 'working-papers' if index == 0 else 'publications'
+        section_id = ['working-papers', 'publications', 'book-chapters', 'older-working-papers'][index]
         content += '<section class="research-group" id="' + section_id + '" data-search-group><div class="group-heading"><h2>' + escape(title) + '</h2></div>' + ''.join(illustrated_research(block, pages, figures, topics=topics) for block in blocks) + '</section>'
     return page(slug, 'Research | Adam Hale Shapiro', '<main id="content" class="page-main research-main">' + section_heading('Research', 'Papers & publications') + tabs + '<div id="research-results" class="research-results">' + content + '</div></main>')
 
