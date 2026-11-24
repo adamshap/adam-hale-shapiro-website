@@ -598,15 +598,15 @@ section[id] {
 .site-footer {
   max-width:1144px;
   margin:auto;
-  padding:38px 0 30px;
+  padding:20px 0 16px;
   border-top:1px solid var(--line);
   color:var(--muted);
 }
 .footer-top {
   display:flex;
   justify-content:space-between;
-  gap:36px;
-  margin-bottom:28px;
+  gap:24px;
+  margin-bottom:12px;
 }
 .footer-name {
   font-family:var(--serif);
@@ -631,9 +631,9 @@ section[id] {
   text-decoration:underline;
 }
 .disclaimer {
-  max-width:920px;
+  max-width:none;
   font-size:max(.875rem,.72rem);
-  line-height:1.85;
+  line-height:1.55;
 }
 .disclaimer a {
   color:inherit;
@@ -643,8 +643,8 @@ section[id] {
   justify-content:space-between;
   align-items:center;
   gap:20px;
-  margin-top:26px;
-  padding-top:20px;
+  margin-top:12px;
+  padding-top:10px;
   border-top:1px solid var(--line);
   font-size:max(.875rem,.7rem);
 }
@@ -865,12 +865,12 @@ section[id] {
   }
   .site-footer {
     margin:0 24px;
-    padding:28px 0 24px;
+    padding:18px 0 14px;
   }
   .footer-top {
     flex-direction:column;
     gap:20px;
-    margin-bottom:24px;
+    margin-bottom:10px;
   }
   .footer-contact {
     text-align:left;
