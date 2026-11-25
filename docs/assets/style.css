@@ -950,7 +950,7 @@ html:not(.js) .search-toolbar {
   position:absolute;
   inset:0;
   pointer-events:none;
-  background:linear-gradient(to bottom,#fff,transparent 16%,transparent 80%,#fff),linear-gradient(to right,#fff,transparent 5%,transparent 95%,#fff);
+  background:linear-gradient(to bottom,transparent 94%,#fff);
 }
 .data-item { align-items:start; }
 .data-item h2 { font-size:1.4rem; line-height:1.4; margin-top:9px; }
