@@ -945,6 +945,13 @@ html:not(.js) .search-toolbar {
 /* Wide landscape banner and compact research resources. */
 .tree-banner { position:relative; margin-top:30px; background:#fff; }
 .tree-banner img { width:100%; height:180px; object-fit:cover; object-position:center; }
+.tree-banner::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:linear-gradient(to bottom,#fff,transparent 4%,transparent 96%,#fff),linear-gradient(to right,#fff,transparent 1.5%,transparent 98.5%,#fff);
+}
 .data-item { align-items:start; }
 .data-item h2 { font-size:1.4rem; line-height:1.4; margin-top:9px; }
 .data-actions { display:flex; flex-wrap:wrap; gap:9px; }
