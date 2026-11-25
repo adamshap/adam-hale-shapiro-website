@@ -260,8 +260,8 @@ def page(slug, title, body, description=None):
 def section_heading(eyebrow, title, intro=''):
     return '<div class="page-heading"><p class="eyebrow">' + escape(eyebrow) + '</p><h1>' + escape(title) + '</h1>' + ('<p class="page-intro">' + escape(intro) + '</p>' if intro else '') + '</div>'
 
-def tool_feature(name, href, description, slug='/'):
-    return '<a class="tool-feature" href="' + escape(relative(href, slug), quote=True) + '"><h3>' + escape(name) + '</h3><p>' + escape(description) + '</p></a>'
+def tool_feature(name, href, description, preview, slug='/'):
+    return '<a class="tool-feature" href="' + escape(relative(href, slug), quote=True) + '"><div class="tool-summary"><h3>' + escape(name) + '</h3><p>' + escape(description) + '</p></div><span class="tool-preview"><img src="' + asset_href('/assets/dashboards/' + preview, slug) + '" alt="" width="914" height="500" loading="lazy" decoding="async"></span></a>'
 
 def home(pages):
     slug = '/'
@@ -279,7 +279,7 @@ def home(pages):
         compact_label = {'SF Fed Profile': 'SF Fed'}.get(label, label)
         social += '<a class="profile-link" aria-label="' + escape(label, quote=True) + '" href="' + escape(link.attrs['href'], quote=True) + '">' + image + '<span class="profile-label">' + escape(label) + '</span><span class="profile-label-compact" aria-hidden="true">' + escape(compact_label) + '</span></a>'
     hero = '''<div class="tree-banner"><img src="assets/forest-banner.jpg" alt="Sunlight falling on snow-covered trees" width="1600" height="440" fetchpriority="high"></div><section class="hero"><div class="hero-copy"><div class="hero-tools"><div class="profile-links">''' + social + '''</div></div></div></section>'''
-    tools = '<section class="home-section"><div class="section-header"><div><h2>Interactive Dashboards</h2></div>' + anchor('/blank-2/', 'All code & data', css='text-link all-data-link') + '</div><div class="tools-grid">' + tool_feature('Inflation Shock Momentum', 'https://adamshap.github.io/ismi-webapp/ism_webapp.html', 'Explore sustained movements in inflation shocks.') + tool_feature('Supply & Demand Driven Inflation', 'https://adamshap.github.io/supply-demand-webapp/supply_demand_webapp.html', 'Explore the supply and demand components of inflation.') + '</div></section>'
+    tools = '<section class="home-section"><div class="section-header"><div><h2>Interactive Dashboards</h2></div>' + anchor('/blank-2/', 'All code & data', css='text-link all-data-link') + '</div><div class="tools-grid">' + tool_feature('Inflation Shock Momentum', 'https://adamshap.github.io/ismi-webapp/ism_webapp.html', 'Explore sustained movements in inflation shocks.', 'ismi.jpg') + tool_feature('Supply & Demand Driven Inflation', 'https://adamshap.github.io/supply-demand-webapp/supply_demand_webapp.html', 'Explore the supply and demand components of inflation.', 'supply-demand.jpg') + '</div></section>'
     blocks = [fragment(b) for b in pages['/research']['blocks']]
     selected = [b for b in blocks if 'Conditionally accepted' in text(b)][:2]
     if not selected:
