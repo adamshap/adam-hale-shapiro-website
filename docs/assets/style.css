@@ -505,7 +505,7 @@ section[id] {
 }
 .data-item {
   display:grid;
-  grid-template-columns:1fr 1.25fr;
+  grid-template-columns:1fr 1fr;
   gap:60px;
   padding:36px 0;
   border-bottom:1px solid var(--line);
@@ -596,6 +596,7 @@ section[id] {
 }
 /* Footer */
 .site-footer {
+  width:calc(100% - 96px);
   max-width:1144px;
   margin:auto;
   padding:14px 0 12px;
@@ -666,8 +667,9 @@ section[id] {
     padding-right:36px;
   }
   .site-footer {
-    margin-left:36px;
-    margin-right:36px;
+    width:calc(100% - 72px);
+    margin-left:auto;
+    margin-right:auto;
   }
   .site-header nav {
     gap:19px;
@@ -870,7 +872,8 @@ section[id] {
     padding-top:27px;
   }
   .site-footer {
-    margin:0 24px;
+    width:calc(100% - 48px);
+    margin:0 auto;
     padding:14px 0 12px;
   }
   .footer-top {
@@ -917,6 +920,7 @@ section[id] {
     font-size:3rem;
   }
   .site-footer {
+    width:auto;
     margin:0;
   }
   a {
@@ -1052,6 +1056,7 @@ html:not(.js) .search-toolbar {
 }
 
 /* Research previews share the quiet framing of the Economic Letters list. */
+.research-main { max-width:1000px; }
 .research-main h1 { font-size:clamp(2rem,3.8vw,3rem); }
 .research-layout { grid-template-columns:160px minmax(0,1fr); gap:40px; }
 .research-main .search-toolbar { margin-bottom:28px; }
@@ -1336,7 +1341,6 @@ html:not(.js) .research-topics { display:none; }
     grid-template-columns:minmax(0,1fr) clamp(160px,16vw,220px);
     column-gap:12px;
   }
-  .research-group .research-item { grid-template-columns:minmax(0,680px) clamp(160px,16vw,220px); }
 }
 @media(min-width:651px) and (max-width:900px) {
   .featured-papers { grid-template-columns:1fr; gap:16px; }
