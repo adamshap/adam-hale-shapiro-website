@@ -78,6 +78,20 @@ if (topicButtons.length) {
   }));
 }
 
+// A quiet edge cue appears only while more mobile topics remain off-screen.
+for (const strip of document.querySelectorAll('.topic-strip')) {
+  const tabs = strip.querySelector('.research-topics');
+  const cue = strip.querySelector('.topic-swipe-cue');
+  const updateCue = () => {
+    cue.hidden = innerWidth > 650 || tabs.scrollWidth - tabs.clientWidth - tabs.scrollLeft <= 2;
+  };
+  tabs.addEventListener('scroll', updateCue, { passive: true });
+  if ('ResizeObserver' in window) new ResizeObserver(updateCue).observe(tabs);
+  else window.addEventListener('resize', updateCue, { passive: true });
+  document.fonts?.ready.then(updateCue);
+  updateCue();
+}
+
 // Read freshness from the same public CSV files used by the dashboards.
 const monthFormat = new Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric', timeZone: 'UTC' });
 const updatedFormat = new Intl.DateTimeFormat('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' });

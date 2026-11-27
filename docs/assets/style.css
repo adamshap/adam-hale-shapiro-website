@@ -1274,6 +1274,11 @@ html:not(.js) .research-topics { display:none; }
 }
 
 .research-topics::-webkit-scrollbar { display:none; }
+.topic-strip { position:relative; }
+.topic-swipe-cue { display:none; }
+@media(max-width:650px) {
+  .topic-swipe-cue { position:absolute; top:0; right:0; display:flex; align-items:center; justify-content:flex-end; width:36px; height:42px; padding-right:2px; color:var(--muted); background:linear-gradient(to right,rgba(255,255,255,0),#fff 55%); pointer-events:none; }
+}
 
 /* Homepage affiliation lives in the footer. */
 .home-main .hero-tools { margin-top:0; }

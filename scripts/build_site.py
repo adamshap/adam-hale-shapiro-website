@@ -360,6 +360,9 @@ def illustrated_research(block, pages, figures, destination='/research', topics=
     article.children = [copy, preview]
     return serialize(article, destination, destination, True)
 
+def topic_strip(tabs):
+    return '<div class="topic-strip">' + tabs + '<span class="topic-swipe-cue" aria-hidden="true" hidden><svg width="12" height="16" viewBox="0 0 12 16" fill="none"><path d="m4 4 4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>'
+
 def research(data, pages):
     slug = '/research'
     groups = []
@@ -373,7 +376,7 @@ def research(data, pages):
     topics = json.loads((ROOT / 'content/research-topics.json').read_text(encoding='utf-8'))
     assert set(topics) == set(figures), 'Each research paper needs topic assignments'
     labels = [('all', 'All'), ('inflation', 'Inflation & monetary policy'), ('health', 'Health economics'), ('competition', 'Price setting & competition'), ('finance', 'Banking & finance')]
-    tabs = '<div class="research-topics" role="group" aria-label="Filter papers by topic">' + ''.join('<button type="button" class="topic-tab" data-topic="' + key + '" aria-pressed="' + ('true' if key == 'all' else 'false') + '" aria-controls="research-results">' + escape(label) + '</button>' for key, label in labels) + '</div>'
+    tabs = topic_strip('<div class="research-topics" role="group" aria-label="Filter papers by topic">' + ''.join('<button type="button" class="topic-tab" data-topic="' + key + '" aria-pressed="' + ('true' if key == 'all' else 'false') + '" aria-controls="research-results">' + escape(label) + '</button>' for key, label in labels) + '</div>')
     content = ''
     for index, (title, blocks) in enumerate(groups):
         section_id = ['working-papers', 'publications', 'book-chapters', 'older-working-papers'][index]
@@ -393,7 +396,7 @@ def letters(data):
     topics = json.loads((ROOT / 'content/letter-topics.json').read_text(encoding='utf-8'))
     assert set(topics) == set(figures), 'Each Economic Letter needs topic assignments'
     labels = [('all', 'All'), ('inflation', 'Inflation & monetary policy'), ('housing', 'Housing & wealth'), ('health', 'Health economics'), ('finance', 'Banking & finance'), ('news', 'News & sentiment')]
-    tabs = '<div class="research-topics" role="group" aria-label="Filter Economic Letters by topic">' + ''.join('<button type="button" class="topic-tab" data-topic="' + key + '" aria-pressed="' + ('true' if key == 'all' else 'false') + '" aria-controls="letter-results">' + escape(label) + '</button>' for key, label in labels) + '</div>'
+    tabs = topic_strip('<div class="research-topics" role="group" aria-label="Filter Economic Letters by topic">' + ''.join('<button type="button" class="topic-tab" data-topic="' + key + '" aria-pressed="' + ('true' if key == 'all' else 'false') + '" aria-controls="letter-results">' + escape(label) + '</button>' for key, label in labels) + '</div>')
 
     articles = ''
     for index, nodes in enumerate(groups):
