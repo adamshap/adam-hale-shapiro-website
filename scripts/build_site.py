@@ -7,6 +7,7 @@ import json
 import posixpath
 import re
 import hashlib
+from citations import load_citations, normalized_title, write_citations
 
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / 'docs'
@@ -14,6 +15,17 @@ VOID = {'br', 'hr', 'img', 'meta', 'link', 'input', 'source', 'wbr'}
 CV = 'https://www.frbsf.org/wp-content/uploads/CV-Shapiro.pdf'
 GOATCOUNTER = 'https://adam-hale-shapiro.goatcounter.com/count'
 SITE_URL = 'https://adam-hale-shapiro.com'
+CITATIONS = load_citations()
+CITATIONS_BY_TITLE = {normalized_title(e['match_title']): e for e in CITATIONS}
+CITATIONS_BY_PATH = {e['paper_path']: e for e in CITATIONS if e['paper_path']}
+
+def citation_link(title, destination, paper_path=None):
+    entry = CITATIONS_BY_PATH.get(paper_path) or CITATIONS_BY_TITLE.get(normalized_title(title))
+    if not entry:
+        return ''
+    filename = entry['id'] + '.bib'
+    href = relative('/citations/' + filename, destination)
+    return '<a class="resource-link" href="' + escape(href, quote=True) + '" download="' + filename + '">BibTeX</a>'
 
 def sharing_metadata(slug, title, description):
     url = SITE_URL + ('/' if slug == '/' else '/' + slug.strip('/') + '/')
@@ -253,7 +265,7 @@ def paper(block, slug='/research', destination=None, pages=None):
     resource_links = Tree(resource_html).root.find('div') if resource_html else None
     links = resource_links.children if resource_links else []
     resource_actions = ''.join(serialize(n, destination, destination, True) for n in links)
-    disclosures = resource_actions + abstract + media_coverage(media_nodes, title, slug, destination)
+    disclosures = resource_actions + citation_link(title, destination) + abstract + media_coverage(media_nodes, title, slug, destination)
     if disclosures:
         disclosures = '<div class="paper-disclosures">' + disclosures + '</div>'
     return '<article class="paper" data-search-item data-search="' + search + '"><h3>' + title_html + '</h3><div class="paper-details">' + details + '</div>' + status_html + disclosures + '</article>'
@@ -455,11 +467,16 @@ def detail(slug, data):
     statuses = [n for n in meta_paras if text(n).startswith('Conditionally accepted')]
     meta_paras = [n for n in meta_paras if n not in statuses]
     status_html = ''.join('<p class="paper-status">' + escape(text(n)) + '</p>' for n in statuses)
-    header = '<div class="paper-header"><p class="eyebrow">Research</p><h1>' + escape(title.strip('" ')) + '</h1><div class="paper-byline">' + ''.join(serialize(n, slug, slug, True) for n in meta_paras) + '</div>' + status_html + resources(links, slug, slug) + '</div>'
+    resource_html = resources(links, slug, slug)
+    bib_link = citation_link(title, slug, slug)
+    if bib_link:
+        resource_html = resource_html.removesuffix('</div>') + bib_link + '</div>' if resource_html else '<div class="resource-links">' + bib_link + '</div>'
+    header = '<div class="paper-header"><p class="eyebrow">Research</p><h1>' + escape(title.strip('" ')) + '</h1><div class="paper-byline">' + ''.join(serialize(n, slug, slug, True) for n in meta_paras) + '</div>' + status_html + resource_html + '</div>'
     body = ''.join('<section class="prose">' + inner(b, slug, slug) + '</section>' for b in blocks[abstract_at:])
     return page(slug, title + ' | Adam Hale Shapiro', '<main id="content" class="page-main paper-main"><div class="breadcrumb">' + anchor('/research/', 'All research', slug) + '</div>' + header + '<div class="abstract-body">' + body + '</div><div class="paper-return">' + anchor('/research/', 'Browse all research', slug, 'button button-secondary') + '</div></main>')
 
 def build():
+    write_citations(DOCS / 'citations')
     pages = json.loads((ROOT / 'content/site.json').read_text(encoding='utf-8'))
     for slug, data in pages.items():
         if slug == '/':

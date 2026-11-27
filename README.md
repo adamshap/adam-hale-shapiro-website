@@ -109,3 +109,17 @@ month in that CSV. Both ISO dates and Stata monthly dates are supported.
 Publishing new dashboard data updates these labels without rebuilding this site.
 If the source is unavailable, visitors are directed to the dashboard for the
 latest data rather than seeing an old hard-coded date.
+
+## Paper citations
+
+`content/citations.json` holds verified bibliographic metadata and source URLs
+for every Research entry. Published papers use final journal records, including
+print year, volume, issue and pages; chapters cite the published book. Working
+papers retain their report number and any revision or conditional acceptance note.
+When a paper is published, update its citation here as well as its visible entry.
+Do not use temporary Google Scholar export URLs.
+
+`python scripts/build_site.py` generates stable `docs/citations/*.bib` downloads
+and matching links on Research, the homepage and paper detail pages. The build
+needs no external API. `python -m unittest discover -s scripts/tests` checks
+coverage, download targets, final-version examples and link ordering.
