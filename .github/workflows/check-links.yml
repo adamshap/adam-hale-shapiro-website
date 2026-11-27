@@ -66,9 +66,18 @@ jobs:
               ...context.repo, state: 'open', creator: 'github-actions[bot]', per_page: 100
             });
             const existing = issues.find(i => !i.pull_request && i.title === title && (i.body || '').includes(marker));
-            if (broken) {
+            const priorState = (existing?.body || '').match(/<!-- website-link-check-urls: (.*?) -->/);
+            const previousUrls = priorState ? JSON.parse(priorState[1]) : [];
+            const results = new Map(report.results.map(r => [r.url, r]));
+            // A timeout or paywall must not silently mark a previously broken
+            // URL as fixed. Resolve only after a successful check or removal.
+            const pending = previousUrls.filter(url => results.has(url) && results.get(url).result !== 'broken' &&
+              (results.get(url).result !== 'ok' || results.get(url).note));
+            if (broken || pending.length) {
               const findings = fs.readFileSync('link-report.md', 'utf8').split('## Automated verification limits')[0].trim();
-              const body = `${marker}\n${findings}\n\nPaywalls and bot-blocked URLs are not treated as confirmed broken links. Full verification details are in the latest [workflow report](https://github.com/${context.repo.owner}/${context.repo.repo}/actions/workflows/check-links.yml).\n\nThis issue updates when findings change and closes when the confirmed failures are resolved.`;
+              const tracked = [...new Set([...report.results.filter(r => r.result === 'broken').map(r => r.url), ...pending])].sort();
+              const pendingText = pending.length ? `\n\n## Previously broken URLs awaiting verification\n\n${pending.sort().map(url => `- ${url}`).join('\n')}` : '';
+              const body = `${marker}\n<!-- website-link-check-urls: ${JSON.stringify(tracked)} -->\n${findings}${pendingText}\n\nPaywalls and bot-blocked URLs are not treated as new confirmed broken links. Full verification details are in the latest [workflow report](https://github.com/${context.repo.owner}/${context.repo.repo}/actions/workflows/check-links.yml).\n\nThis issue updates when findings change and closes when the failures are verified as resolved or their links are removed.`;
               if (!existing) {
                 await github.rest.issues.create({...context.repo, title, body});
               } else if (existing.body !== body) {
