@@ -13,7 +13,8 @@
       "institution": "Federal Reserve Bank of San Francisco",
       "type": "Working Paper",
       "number": "2026-10",
-      "year": "2026"
+      "year": "2026",
+      "note": "Revised November 2026"
     },
     "sources": [
       "https://api.crossref.org/works/10.24148/wp2026-10"
