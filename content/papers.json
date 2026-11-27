@@ -1,0 +1,2525 @@
+{
+  "groups": {
+    "working-papers": "Recent Working Papers",
+    "publications": "Publications",
+    "book-chapters": "Book chapters and Policy papers",
+    "older-working-papers": "Older working papers"
+  },
+  "papers": [
+    {
+      "id": "measuring-inflation-shock-momentum",
+      "key": "Lansing2026MeasuringInflationShockMomentum",
+      "match_title": "Measuring Inflation Shock Momentum",
+      "paper_path": "/blank-3",
+      "entry_type": "techreport",
+      "fields": {
+        "title": "Measuring Inflation Shock Momentum",
+        "author": "Lansing, Kevin J. and Shapiro, Adam Hale",
+        "doi": "10.24148/wp2026-10",
+        "url": "https://doi.org/10.24148/wp2026-10",
+        "institution": "Federal Reserve Bank of San Francisco",
+        "type": "Working Paper",
+        "number": "2026-10"
+      },
+      "sources": [
+        "https://api.crossref.org/works/10.24148/wp2026-10"
+      ],
+      "verified": "2026-11-27",
+      "group": "working-papers",
+      "href": "/blank-3/",
+      "date": {
+        "value": "2026-11",
+        "kind": "revision"
+      },
+      "author_links": {},
+      "coverage_html": "",
+      "abstract_html": "<p>We develop a non-parametric filter that identifies sustained directional runs in shocks to monthly inflation—a concept we define as “inflation shock momentum.” By assessing the shocks to over 100 disaggregated Personal Consumption Expenditures (PCE) inflation categories, we isolate the share of categories experiencing positive or negative inflation shock momentum in a given month. We define the “Inflation Shock Momentum Index” (ISMI) as the net positive momentum share of expenditure-weighted categories (positive minus negative) in a given month. We examine the information in ISMI for aggregate PCE inflation at horizons of 1 to 3 years, controlling for other inflation predictors. Adding ISMI improves in-sample fit and generally lowers out-of-sample forecast errors in OLS comparisons with otherwise identical models, particularly at longer horizons, with smaller incremental gains under ridge regularization.</p>",
+      "detail_coverage": false,
+      "resources": [
+        {
+          "label": "PDF",
+          "href": "https://www.frbsf.org/wp-content/uploads/wp2026-10.pdf",
+          "views": [
+            "research",
+            "detail"
+          ]
+        },
+        {
+          "label": "Dashboard",
+          "href": "https://adamshap.github.io/ismi-webapp/ism_webapp.html",
+          "views": [
+            "research",
+            "detail"
+          ]
+        },
+        {
+          "label": "Data",
+          "href": "https://adamshap.github.io/ismi-webapp/ismi_data.xlsx",
+          "views": [
+            "research",
+            "detail"
+          ]
+        }
+      ],
+      "figure": {
+        "src": "/assets/research/measuring-inflation-shock-momentum.png",
+        "alt": "Inflation Shock Momentum Index and PCE inflation",
+        "width": 980,
+        "height": 428,
+        "source_pdf": "https://www.frbsf.org/wp-content/uploads/wp2026-10.pdf",
+        "page": 12,
+        "crop": [
+          61.2,
+          146.52,
+          550.8000000000001,
+          360.36
+        ],
+        "kind": "figure",
+        "display_bounds": [
+          47,
+          17,
+          927,
+          419
+        ]
+      },
+      "topics": [
+        "inflation"
+      ],
+      "featured": false
+    },
+    {
+      "id": "not-all-inflation-is-the-same-state-dependent-transmission-of-monetary-policy",
+      "key": "Najjar2026NotAllInflationIs",
+      "match_title": "Not all inflation is the same: State-dependent Transmission of Monetary Policy",
+      "paper_path": "/blank-4",
+      "entry_type": "techreport",
+      "fields": {
+        "title": "Not All Inflation Is the Same: State-Dependent Transmission of Monetary Policy",
+        "author": "Najjar, Rami and Shapiro, Adam Hale",
+        "doi": "10.24148/wp2025-28",
+        "url": "https://doi.org/10.24148/wp2025-28",
+        "institution": "Federal Reserve Bank of San Francisco",
+        "type": "Working Paper",
+        "number": "2025-28"
+      },
+      "sources": [
+        "https://api.crossref.org/works/10.24148/wp2025-28"
+      ],
+      "verified": "2026-11-27",
+      "group": "working-papers",
+      "href": "/blank-4/",
+      "date": {
+        "value": "2026-06",
+        "kind": "revision"
+      },
+      "author_links": {},
+      "coverage_html": "",
+      "abstract_html": "<p>We show that the underlying source of inflation impacts financial market perceptions of the persistence of monetary policy surprises. Financial markets expect policy surprises to be more persistent when inflation is driven by demand factors. During supply-driven episodes, markets perceive these surprises as less persistent. This divergence in perception arises from markets updating their beliefs about the Fed’s state-dependent, or “targeted,” reaction function. Markets infer more information about the Fed’s long-term policy path when surprises occur during periods of large demand imbalances, while they discount this information during supply imbalances. These dynamics lead longer-run interest rates to be more sensitive to variations in demand than supply.</p>",
+      "detail_coverage": false,
+      "resources": [
+        {
+          "label": "PDF",
+          "href": "https://www.frbsf.org/wp-content/uploads/wp2025-28.pdf",
+          "views": [
+            "research",
+            "detail"
+          ]
+        }
+      ],
+      "figure": {
+        "src": "/assets/research/not-all-inflation-is-the-same-state-dependent-transmission-of-monetary.png",
+        "alt": "Treasury yield responses to monetary policy tightening",
+        "width": 1041,
+        "height": 334,
+        "source_pdf": "https://www.frbsf.org/wp-content/uploads/wp2025-28.pdf",
+        "page": 8,
+        "crop": [
+          55.08,
+          110.88000000000001,
+          575.28,
+          277.2
+        ],
+        "kind": "figure",
+        "display_bounds": [
+          55,
+          6,
+          976,
+          328
+        ]
+      },
+      "topics": [
+        "inflation",
+        "finance"
+      ],
+      "featured": false
+    },
+    {
+      "id": "a-simple-framework-to-monitor-inflation",
+      "key": "Shapiro2022ASimpleFrameworkTo",
+      "match_title": "A Simple Framework to Monitor Inflation",
+      "paper_path": "/copy-of-papers",
+      "entry_type": "techreport",
+      "fields": {
+        "title": "A Simple Framework to Monitor Inflation",
+        "author": "Shapiro, Adam Hale",
+        "doi": "10.24148/wp2020-29",
+        "url": "https://doi.org/10.24148/wp2020-29",
+        "institution": "Federal Reserve Bank of San Francisco",
+        "type": "Working Paper",
+        "number": "2020-29"
+      },
+      "sources": [
+        "https://api.crossref.org/works/10.24148/wp2020-29"
+      ],
+      "verified": "2026-11-27",
+      "group": "working-papers",
+      "href": "/copy-of-papers/",
+      "date": {
+        "value": "2022-06",
+        "kind": "revision"
+      },
+      "author_links": {},
+      "coverage_html": "<p>Coverage in <a href=\"https://www.economist.com/finance-and-economics/2019/03/28/why-is-inflation-in-america-so-low\">The Economist</a>, <a href=\"https://www.bloomberg.com/news/articles/2020-08-24/fed-study-finds-virus-is-a-powerful-downward-drag-on-inflation\">Bloomberg</a>, <a href=\"https://www.wsj.com/articles/a-key-reason-why-the-fed-struggles-to-hit-2-inflation-uncooperative-prices-11564318800\">Wall Street Journal</a>, <a href=\"https://www.nytimes.com/2021/06/03/business/economy/us-economic-recovery.html\">New York Times</a>, <a href=\"https://www.ft.com/content/fe130505-53ca-4e58-b464-6ee4467521e8\">Financial Times</a></p><p>Coverage in Wall Street Journal: <a href=\"https://www.wsj.com/articles/derbys-take-fed-report-ties-weak-inflation-directly-to-pandemic-11598434200\">Pandemic effects</a> · <a href=\"https://www.wsj.com/opinion/inflation-isnt-transitory-but-it-isnt-permanent-either-federal-reserve-interest-rates-oil-energy-costs-prices-11654113873\">Transitory inflation</a> · <a href=\"https://www.wsj.com/economy/central-banking/stalled-inflation-vexes-the-fed-is-it-noise-or-a-new-trend-dd381d2f\">Inflation trend</a></p>",
+      "abstract_html": "<p>This paper proposes a simple framework to help monitor and understand movements in PCE inflation in real time. The approach is to decompose inflation using simple categorical-level regressions or systems of equations. The estimates are then used to group categories into components of PCE inflation. I review some applications of the methodology, and show how it can help explain inflation dynamics over recent episodes. The methodology shows that inflation remained low in the mid-2010s primarily because of factors unrelated to aggregate economic conditions. I also apply the methodology to the Covid-19 pandemic. The decomposition reveals that a majority of elevated inflation in core PCE inflation in the 2021-2022 period was due to “Covid-sensitive” categories, that is, those categories where prices and quantities moved the most at the onset of the pandemic. Finally, I show how the methodology can be applied in a dynamic fashion, labeling categories as either supply- or demand-driven by month. This decomposition allows one to assess the extent to which supply and demand factors are impacting inflation.</p>",
+      "detail_coverage": false,
+      "resources": [
+        {
+          "label": "PDF",
+          "href": "https://www.frbsf.org/wp-content/uploads/wp2020-29.pdf",
+          "views": [
+            "research",
+            "detail"
+          ]
+        },
+        {
+          "label": "Cyclical code",
+          "href": "https://drive.google.com/file/d/1XoHnJjhcQb3RM7EWf4htqbVw2aZLIwPH/view?usp=drive_link",
+          "views": [
+            "research",
+            "detail"
+          ]
+        },
+        {
+          "label": "COVID code",
+          "href": "https://drive.google.com/file/d/1K7pWnlCzPGrfUGg4kXGUI2xWH0TEPP2T/view?usp=drive_link",
+          "views": [
+            "research",
+            "detail"
+          ]
+        }
+      ],
+      "detail_show_venue": false,
+      "figure": {
+        "src": "/assets/research/a-simple-framework-to-monitor-inflation.png",
+        "alt": "Cyclical and acyclical contributions to core PCE inflation",
+        "width": 992,
+        "height": 872,
+        "source_pdf": "https://www.frbsf.org/wp-content/uploads/wp2020-29.pdf",
+        "page": 24,
+        "crop": [
+          64.26,
+          138.6,
+          559.98,
+          574.1999999999999
+        ],
+        "kind": "figure",
+        "display_bounds": [
+          9,
+          50,
+          987,
+          839
+        ]
+      },
+      "topics": [
+        "inflation"
+      ],
+      "featured": false
+    },
+    {
+      "id": "news-selection-and-household-inflation-expectations",
+      "key": "Chahrour2025NewsSelectionAndHousehold",
+      "match_title": "News Selection and Household Inflation Expectations",
+      "paper_path": "/papers",
+      "entry_type": "techreport",
+      "fields": {
+        "title": "News Selection and Household Inflation Expectations",
+        "author": "Chahrour, Ryan and Shapiro, Adam Hale and Wilson, Daniel J.",
+        "doi": "10.24148/wp2024-31",
+        "url": "https://doi.org/10.24148/wp2024-31",
+        "institution": "Federal Reserve Bank of San Francisco",
+        "type": "Working Paper",
+        "number": "2024-31",
+        "note": "Conditionally accepted, American Economic Journal: Macroeconomics"
+      },
+      "sources": [
+        "https://api.crossref.org/works/10.24148/wp2024-31"
+      ],
+      "verified": "2026-11-27",
+      "group": "publications",
+      "href": "/papers/",
+      "date": {
+        "value": "2025-12",
+        "kind": "revision"
+      },
+      "author_links": {},
+      "coverage_html": "",
+      "abstract_html": "<p>We examine how media reporting about inflation impacts household inflation expectations. In a model where households learn about inflation from news coverage, households account for news selection—the media’s systematic selection of topics— when forming their expectations. Because media are more likely to report on inflation when it is high, the model implies an asymmetric response to news: high-inflation news changes expectations more than low-inflation news. We test this implication using household panel data, and find that exposure to higher-prices news increases inflation expectations by 0.4 percentage point, while exposure to lower-prices news has no significant effect.</p>",
+      "detail_coverage": false,
+      "resources": [
+        {
+          "label": "PDF",
+          "href": "https://www.frbsf.org/wp-content/uploads/wp2024-31.pdf",
+          "views": [
+            "research",
+            "detail"
+          ]
+        }
+      ],
+      "figure": {
+        "src": "/assets/research/news-selection-and-household-inflation-expectations.png",
+        "alt": "Aggregate variation in hearing inflation news",
+        "width": 956,
+        "height": 650,
+        "source_pdf": "https://drive.google.com/file/d/1z1Hcgu2mrh3X7V9DUCdXK9kKekRJB_dE/view",
+        "page": 7,
+        "crop": [
+          64.26,
+          35.64,
+          541.6199999999999,
+          360.36
+        ],
+        "kind": "figure",
+        "display_bounds": [
+          74,
+          71,
+          884,
+          600
+        ]
+      },
+      "topics": [
+        "inflation"
+      ],
+      "featured": true
+    },
+    {
+      "id": "are-medicaid-and-medicare-patients-treated-equally",
+      "key": "Ackley2025AreMedicaidAndMedicare",
+      "match_title": "Are Medicaid and Medicare Patients Treated Equally?",
+      "paper_path": "/blank",
+      "entry_type": "techreport",
+      "fields": {
+        "title": "Are Medicaid and Medicare Patients Treated Equally?",
+        "author": "Ackley, Calvin and Dunn, Abe and Liebman, Eli and Shapiro, Adam Hale",
+        "doi": "10.24148/wp2024-14",
+        "url": "https://doi.org/10.24148/wp2024-14",
+        "institution": "Federal Reserve Bank of San Francisco",
+        "type": "Working Paper",
+        "number": "2024-14",
+        "note": "Conditionally accepted, American Economic Journal: Economic Policy"
+      },
+      "sources": [
+        "https://api.crossref.org/works/10.24148/wp2024-14"
+      ],
+      "verified": "2026-11-27",
+      "group": "publications",
+      "href": "/blank/",
+      "date": {
+        "value": "2025-03",
+        "kind": "revision"
+      },
+      "author_links": {},
+      "coverage_html": "",
+      "abstract_html": "<p>We examine whether Medicaid recipients receive the same health care services as those on Medicare. We track the services provided to the same individual as they age into Medicare from Medicaid at age 65. Cost sharing remains negligible across the insurance switch, implying that changes in care utilization reflects supply-side factors. Utilization increases by about 20 percent upon switching to Medicare. We find that 60 to 90 percent of the increase in office visits is explained by physicians averse to accepting Medicaid patients. This analysis provides new evidence that Medicaid’s smaller provider network plays a large role in limiting utilization.</p>",
+      "detail_coverage": false,
+      "resources": [
+        {
+          "label": "PDF",
+          "href": "https://www.frbsf.org/wp-content/uploads/wp2024-14.pdf",
+          "views": [
+            "research",
+            "detail"
+          ]
+        }
+      ],
+      "figure": {
+        "src": "/assets/research/are-medicaid-and-medicare-patients-treated-equally.png",
+        "alt": "Health spending by payer type for dual-eligible patients",
+        "width": 980,
+        "height": 500,
+        "source_pdf": "/_files/ugd/5f94f7_5fe90671a9e847fda98083da2f173bdd.pdf",
+        "page": 35,
+        "crop": [
+          64.25999999999999,
+          130.68,
+          553.86,
+          380.15999999999997
+        ],
+        "kind": "figure",
+        "display_bounds": [
+          52,
+          38,
+          916,
+          481
+        ]
+      },
+      "topics": [
+        "health"
+      ],
+      "featured": true
+    },
+    {
+      "id": "decomposing-supply-and-demand-driven-inflation",
+      "key": "Shapiro2026DecomposingSupplyAndDemand",
+      "match_title": "Decomposing Supply and Demand Driven Inflation",
+      "paper_path": "/copy-of-news-selection",
+      "entry_type": "article",
+      "fields": {
+        "title": "Decomposing Supply- and Demand-Driven Inflation",
+        "author": "Shapiro, Adam Hale",
+        "journal": "Journal of Money, Credit and Banking",
+        "volume": "58",
+        "number": "2",
+        "pages": "365--388",
+        "doi": "10.1111/jmcb.13209",
+        "url": "https://doi.org/10.1111/jmcb.13209"
+      },
+      "sources": [
+        "https://api.crossref.org/works/10.1111/jmcb.13209"
+      ],
+      "verified": "2026-11-27",
+      "group": "publications",
+      "href": "/copy-of-news-selection/",
+      "date": {
+        "value": "2026-03",
+        "kind": "publication"
+      },
+      "author_links": {},
+      "coverage_html": "<p>Coverage in Financial Times: <a href=\"https://www.ft.com/content/c4a030b0-45a2-4bb1-93ff-830e78f2bc6c\" title=\"The Fed alone cannot bring inflation down\">Fiscal policy</a> · <a href=\"https://www.ft.com/content/31b15e03-929f-40c1-b2f8-782df4bd6e37\" title=\"A Fed-induced recession is a medicine worse than the disease\">Recession</a> · <a href=\"https://www.ft.com/content/461911c7-a628-42cb-9d28-7400fefb0c1c\" title=\"Potemkin rate increases\">Interest rates</a> · <a href=\"https://www.ft.com/content/e5a1e46f-d266-417e-bd47-3d4076a061b0\" title=\"Can robots replace humans in monetary policy?\">Monetary policy</a> · <a href=\"https://www.ft.com/content/de31dc95-a0cd-432a-b403-f2ff26a6cdb8\" title=\"Why everyone is talking about food inflation\">Food inflation</a></p><p>Coverage in <a href=\"https://www.wsj.com/economy/goods-deflation-is-back-it-could-speed-inflations-return-to-2-c782d434\">Wall Street Journal</a></p><p>Coverage in <a href=\"https://www.bloomberg.com/news/articles/2022-06-21/supply-issues-account-for-half-of-us-inflation-rise-study-shows\">Bloomberg</a></p><p>Coverage in Reuters: <a href=\"https://www.reuters.com/markets/us/demand-issues-account-one-third-us-inflation-spike-sf-fed-2022-06-21/\">Inflation drivers</a> · <a href=\"https://www.reuters.com/markets/us/supply-chain-hangover-still-feeding-inflation-sf-fed-paper-2023-06-20/\">Supply chains</a> · <a href=\"https://www.reuters.com/markets/us/no-stocks-are-not-good-inflation-hedge-2026-04-23/\">Stocks and inflation</a></p>",
+      "abstract_html": "<p>The extent to which either supply or demand factors drive inflation has important implications for economic policy. I propose a framework to decompose inflation into supply‐ and demand‐driven components. I generate two new data series that quantify the degree to which either demand or supply is driving inflation in a current month. The demand‐driven contribution tends to decline during recessions, while the supply‐driven contribution tends to follow food and energy prices. Monetary policy tightening acts to reduce the demand‐driven contribution of inflation. Oil‐supply shocks act to increase the supply‐driven contribution, but decrease the demand‐driven contribution of inflation.</p>",
+      "detail_coverage": false,
+      "resources": [
+        {
+          "label": "PDF",
+          "href": "https://www.frbsf.org/wp-content/uploads/wp2022-18.pdf",
+          "views": [
+            "research",
+            "detail"
+          ]
+        },
+        {
+          "label": "Dashboard",
+          "href": "https://adamshap.github.io/supply-demand-webapp/supply_demand_webapp.html",
+          "views": [
+            "research",
+            "detail"
+          ]
+        },
+        {
+          "label": "Data",
+          "href": "https://adamshap.github.io/supply-demand-webapp/supply_demand_public.xlsx",
+          "views": [
+            "research",
+            "detail"
+          ]
+        },
+        {
+          "label": "Letter",
+          "href": "https://www.frbsf.org/wp-content/uploads/el2022-15.pdf",
+          "views": [
+            "research",
+            "detail"
+          ]
+        },
+        {
+          "label": "Code",
+          "href": "/_files/archives/5f94f7_8b71061271f146b683a178f69fd8927a.zip",
+          "views": [
+            "research",
+            "detail"
+          ]
+        }
+      ],
+      "figure": {
+        "src": "/assets/research/decomposing-supply-and-demand-driven-inflation.png",
+        "alt": "Supply and demand shifts in a price-quantity diagram",
+        "width": 1004,
+        "height": 531,
+        "source_pdf": "https://www.frbsf.org/wp-content/uploads/wp2022-18.pdf",
+        "page": 9,
+        "crop": [
+          58.14,
+          83.16,
+          559.98,
+          348.48
+        ],
+        "kind": "figure",
+        "display_bounds": [
+          1,
+          49,
+          983,
+          492
+        ]
+      },
+      "topics": [
+        "inflation"
+      ],
+      "featured": false
+    },
+    {
+      "id": "monetary-tightening-and-financial-stress-during-supply-versus-demand-driven-inflation",
+      "key": "Boissay2025MonetaryTighteningAndFinancial",
+      "match_title": "Monetary Tightening and Financial Stress during Supply- versus Demand-driven Inflation",
+      "paper_path": "/copy-of-phillips-meets-beveridge",
+      "entry_type": "article",
+      "fields": {
+        "title": "Monetary Tightening and Financial Stress during Supply- versus Demand-driven Inflation",
+        "author": "Boissay, Frédéric and Collard, Fabrice and Manea, Cristina and Shapiro, Adam Hale",
+        "journal": "International Journal of Central Banking",
+        "volume": "21",
+        "number": "2",
+        "pages": "147--220",
+        "url": "https://www.ijcb.org/journal/ijcb25q2a4.pdf"
+      },
+      "sources": [
+        "https://www.ijcb.org/journal/ijcb25q2a4.pdf",
+        "https://www.ijcb.org/sites/default/files/journal/v21n2/ijcb-v21n2.pdf"
+      ],
+      "verified": "2026-11-27",
+      "group": "publications",
+      "href": "/copy-of-phillips-meets-beveridge/",
+      "date": {
+        "value": "2025-04",
+        "kind": "publication"
+      },
+      "author_links": {},
+      "coverage_html": "",
+      "abstract_html": "<p>This paper explores the state-dependent effects of a monetary tightening on financial stress, focusing on a novel dimension: whether inflation is driven by supply versus demand factors at the time of the policy intervention. These underlying factors likely affect the economy’s financial resilience to a monetary tightening. We estimate the effects of high-frequency identified monetary surprises on financial stress, differentiating the effects based on whether inflation is supply- or demand-driven. We find that financial stress increases after a tightening when inflation is supply-driven, whereas it remains roughly unchanged or even declines when inflation is demand-driven.</p>",
+      "detail_coverage": false,
+      "resources": [
+        {
+          "label": "PDF",
+          "href": "/_files/ugd/5f94f7_5486e197099c4bdc9e17489a4af39221.pdf",
+          "views": [
+            "research",
+            "detail"
+          ]
+        },
+        {
+          "label": "SUERF policy brief",
+          "href": "https://www.suerf.org/wp-content/uploads/2026/05/SUERF-Policy-Brief-1457_Boissay-Collard-Manea-Shapiro.pdf",
+          "views": [
+            "research",
+            "detail"
+          ]
+        }
+      ],
+      "figure": {
+        "src": "/assets/research/monetary-tightening-and-financial-stress-during-supply-versus-demand-d.png",
+        "alt": "Financial stress and inflation drivers during monetary tightening",
+        "width": 1013,
+        "height": 337,
+        "source_pdf": "/_files/ugd/5f94f7_5486e197099c4bdc9e17489a4af39221.pdf",
+        "page": 4,
+        "crop": [
+          44.64570007324219,
+          71.5606512451172,
+          550.6303009033203,
+          239.93865417480467
+        ],
+        "kind": "figure",
+        "display_bounds": [
+          80,
+          2,
+          929,
+          327
+        ]
+      },
+      "topics": [
+        "inflation",
+        "finance"
+      ],
+      "featured": false
+    },
+    {
+      "id": "phillips-meets-beveridge",
+      "key": "Barnichon2024PhillipsMeetsBeveridge",
+      "match_title": "Phillips meets Beveridge",
+      "paper_path": "/copy-of-papers-1",
+      "entry_type": "article",
+      "fields": {
+        "title": "Phillips meets Beveridge",
+        "author": "Barnichon, Régis and Shapiro, Adam Hale",
+        "journal": "Journal of Monetary Economics",
+        "volume": "148",
+        "pages": "103660",
+        "doi": "10.1016/j.jmoneco.2024.103660",
+        "url": "https://doi.org/10.1016/j.jmoneco.2024.103660"
+      },
+      "sources": [
+        "https://api.crossref.org/works/10.1016/j.jmoneco.2024.103660"
+      ],
+      "verified": "2026-11-27",
+      "group": "publications",
+      "href": "/copy-of-papers-1/",
+      "date": {
+        "value": "2024-11",
+        "kind": "publication"
+      },
+      "author_links": {
+        "Barnichon, Régis": "https://sites.google.com/site/regisbarnichon/"
+      },
+      "coverage_html": "",
+      "abstract_html": "<p>The Phillips curve plays a central role in the macroeconomics literature. However, there is little consensus on the forcing variable that drives inflation in the model, i.e., on the appropriate measure of “slack” in the economy. In this work, we systematically assess the ability of variables commonly used in the literature to (i) predict and (ii) explain inflation fluctuations over time and across U.S. metropolitan areas. In particular, we exploit a newly constructed panel dataset with job openings and vacancy filling cost proxies covering 1982-2022. We find that the vacancy-unemployment (V/U) ratio and vacancy filling cost proxies outperform other slack measures, in particular the unemployment rate. Beveridge curve shifts—notably, movements in matching efficiency—are responsible for the superior performance of the V/U ratio over unemployment.</p>",
+      "detail_coverage": false,
+      "resources": [
+        {
+          "label": "PDF",
+          "href": "/_files/ugd/5f94f7_ce7e1a1cc2814413bc8c94ec65672dba.pdf",
+          "views": [
+            "research",
+            "detail"
+          ]
+        }
+      ],
+      "figure": {
+        "src": "/assets/research/phillips-meets-beveridge.png",
+        "alt": "Comparative inflation forecasting performance",
+        "width": 893,
+        "height": 335,
+        "source_pdf": "/_files/ugd/5f94f7_ce7e1a1cc2814413bc8c94ec65672dba.pdf",
+        "page": 5,
+        "crop": [
+          57.146461486816406,
+          55.700775146484375,
+          503.43311309814453,
+          222.8031005859375
+        ],
+        "kind": "figure",
+        "display_bounds": [
+          28,
+          0,
+          833,
+          335
+        ]
+      },
+      "topics": [
+        "inflation"
+      ],
+      "featured": false
+    },
+    {
+      "id": "a-denial-a-day-keeps-the-doctor-away",
+      "key": "Dunn2024ADenialADay",
+      "match_title": "A Denial a Day Keeps the Doctor Away",
+      "paper_path": "/copy-of-medicare-vs-medicaid",
+      "entry_type": "article",
+      "fields": {
+        "title": "A Denial a Day Keeps the Doctor Away",
+        "author": "Dunn, Abe and Gottlieb, Joshua D and Shapiro, Adam Hale and Sonnenstuhl, Daniel J and Tebaldi, Pietro",
+        "journal": "The Quarterly Journal of Economics",
+        "volume": "139",
+        "number": "1",
+        "pages": "187--233",
+        "doi": "10.1093/qje/qjad035",
+        "url": "https://doi.org/10.1093/qje/qjad035"
+      },
+      "sources": [
+        "https://api.crossref.org/works/10.1093/qje/qjad035"
+      ],
+      "verified": "2026-11-27",
+      "group": "publications",
+      "href": "/copy-of-medicare-vs-medicaid/",
+      "date": {
+        "value": "2024-02",
+        "kind": "publication"
+      },
+      "author_links": {
+        "Dunn, Abe": "https://www.bea.gov/research/meet-the-researchers/abe-c-dunn",
+        "Gottlieb, Joshua D": "http://www.gottlieb.ca/",
+        "Sonnenstuhl, Daniel J": "https://www.linkedin.com/in/daniel-j-sonnenstuhl-2878b110a/",
+        "Tebaldi, Pietro": "https://www.pietrotebaldi.com/"
+      },
+      "coverage_html": "",
+      "abstract_html": "<p>Who bears the consequences of administrative problems in healthcare? We use data on repeated interactions between a large sample of U.S. physicians and many different insurers to document the complexity of healthcare billing, and estimate its economic costs for doctors and consequences for patients. Observing the back-and-forth sequences of claim denials and resubmissions for past visits, we can estimate physicians’ costs of haggling with insurers to collect payments. Combining these costs with the revenue never collected, we estimate that physicians lose 18% of Medicaid revenue to billing problems, compared with 4.7% for Medicare and 2.4% for commercial insurers. Identifying off of physician movers and practices that span state boundaries, we find that physicians respond to billing problems by refusing to accept Medicaid patients in states with more severe billing hurdles. These hurdles are quantitatively just as important as payment rates for explaining variation in physicians’ willingness to treat Medicaid patients. We conclude that administrative frictions have first-order costs for doctors, patients, and equality of access to healthcare. We quantify the potential economic gains—in terms of reduced public spending or increased access to physicians—if these frictions could be reduced, and find them to be sizable.</p>",
+      "detail_coverage": false,
+      "resources": [
+        {
+          "label": "PDF",
+          "href": "/_files/ugd/5f94f7_bd2a0f5fec4f45eabcc6ee07c66aea80.pdf",
+          "views": [
+            "research",
+            "detail"
+          ]
+        },
+        {
+          "label": "Summary",
+          "href": "https://bfi.uchicago.edu/insight/research-summary/a-denial-a-day-keeps-the-doctor-away/",
+          "views": [
+            "research",
+            "detail"
+          ]
+        }
+      ],
+      "figure": {
+        "src": "/assets/research/a-denial-a-day-keeps-the-doctor-away.png",
+        "alt": "Overview of the health insurance billing process",
+        "width": 1040,
+        "height": 423,
+        "source_pdf": "/_files/ugd/5f94f7_bd2a0f5fec4f45eabcc6ee07c66aea80.pdf",
+        "page": 7,
+        "crop": [
+          86.16480102539063,
+          64.90709838867188,
+          297.26856353759763,
+          584.1638854980469
+        ],
+        "kind": "figure",
+        "display_bounds": [
+          23,
+          25,
+          1040,
+          423
+        ]
+      },
+      "topics": [
+        "health"
+      ],
+      "featured": false
+    },
+    {
+      "id": "taking-the-fed-at-its-word-a-new-approach-to-estimating-central-bank-objectives-using-text-analysis",
+      "key": "Shapiro2022TakingTheFedAt",
+      "match_title": "Taking the Fed at its Word: A New Approach to Estimating Central Bank Objectives using Text Analysis",
+      "paper_path": "/copy-of-a-denial-a-day-keeps-the-doct",
+      "entry_type": "article",
+      "fields": {
+        "title": "Taking the Fed at its Word: A New Approach to Estimating Central Bank Objectives using Text Analysis",
+        "author": "Shapiro, Adam Hale and Wilson, Daniel J",
+        "journal": "The Review of Economic Studies",
+        "volume": "89",
+        "number": "5",
+        "pages": "2768--2805",
+        "doi": "10.1093/restud/rdab094",
+        "url": "https://doi.org/10.1093/restud/rdab094"
+      },
+      "sources": [
+        "https://api.crossref.org/works/10.1093/restud/rdab094"
+      ],
+      "verified": "2026-11-27",
+      "group": "publications",
+      "href": "/copy-of-a-denial-a-day-keeps-the-doct/",
+      "date": {
+        "value": "2022-10",
+        "kind": "publication"
+      },
+      "author_links": {
+        "Wilson, Daniel J": "https://www.frbsf.org/economic-research/economists/daniel-wilson/"
+      },
+      "coverage_html": "",
+      "abstract_html": "<p>We propose a new approach to estimating central bank preferences, including the implicit inflation target, that requires no priors on the underlying macroeconomic structure nor observation of monetary policy actions. Our approach entails directly estimating the central bank’s objective function from the sentiment expressed by policymakers in their internal meetings. We apply the approach to the objective function of the U.S. Federal Open Market Committee (FOMC). The results challenge two key aspects of conventional wisdom regarding FOMC preferences. First, the FOMC had an implicit inflation target of approximately 1½% on average over our baseline 2000–11 sample period, significantly below the commonly assumed value of 2. Second, the FOMC’s loss depends strongly on output growth and stock market performance and less so on their perception of current economic slack.</p>",
+      "detail_coverage": false,
+      "resources": [
+        {
+          "label": "PDF",
+          "href": "/_files/ugd/5f94f7_4d6eeff857f242e9a220b6030823d4dd.pdf",
+          "views": [
+            "research",
+            "detail"
+          ]
+        },
+        {
+          "label": "Letter",
+          "href": "https://www.frbsf.org/wp-content/uploads/el2019-12.pdf",
+          "views": [
+            "research",
+            "detail"
+          ]
+        },
+        {
+          "label": "Code & data",
+          "href": "https://zenodo.org/records/5598429",
+          "views": [
+            "research",
+            "detail"
+          ]
+        },
+        {
+          "label": "Letter",
+          "href": "https://www.frbsf.org/research-and-insights/publications/economic-letter/2019/04/evolution-of-fomc-explicit-inflation-target/",
+          "views": [
+            "detail"
+          ]
+        }
+      ],
+      "figure": {
+        "src": "/assets/research/taking-the-fed-at-its-word-a-new-approach-to-estimating-central-bank-o.png",
+        "alt": "Text-based negativity scores and human ratings",
+        "width": 750,
+        "height": 570,
+        "source_pdf": "/_files/ugd/5f94f7_4d6eeff857f242e9a220b6030823d4dd.pdf",
+        "page": 12,
+        "crop": [
+          90.0,
+          40.0,
+          465.0,
+          325.0
+        ],
+        "kind": "figure",
+        "display_bounds": [
+          10,
+          3,
+          741,
+          569
+        ]
+      },
+      "topics": [
+        "inflation"
+      ],
+      "featured": false
+    },
+    {
+      "id": "measuring-news-sentiment",
+      "key": "Shapiro2022MeasuringNewsSentiment",
+      "match_title": "Measuring News Sentiment",
+      "paper_path": "/copy-of-a-denial-a-day-keeps-the-doct-1",
+      "entry_type": "article",
+      "fields": {
+        "title": "Measuring news sentiment",
+        "author": "Shapiro, Adam Hale and Sudhof, Moritz and Wilson, Daniel J.",
+        "journal": "Journal of Econometrics",
+        "volume": "228",
+        "number": "2",
+        "pages": "221--243",
+        "doi": "10.1016/j.jeconom.2020.07.053",
+        "url": "https://doi.org/10.1016/j.jeconom.2020.07.053"
+      },
+      "sources": [
+        "https://api.crossref.org/works/10.1016/j.jeconom.2020.07.053"
+      ],
+      "verified": "2026-11-27",
+      "group": "publications",
+      "href": "/copy-of-a-denial-a-day-keeps-the-doct-1/",
+      "date": {
+        "value": "2022-06",
+        "kind": "publication"
+      },
+      "author_links": {
+        "Sudhof, Moritz": "http://www.moritzsudhof.com/",
+        "Wilson, Daniel J.": "https://www.frbsf.org/economic-research/economists/daniel-wilson/"
+      },
+      "coverage_html": "<p>Coverage in Wall Street Journal: <a href=\"https://www.wsj.com/articles/san-francisco-fed-paper-looks-at-measuring-news-sentiment-1484926019\">News sentiment</a> · <a href=\"https://www.wsj.com/articles/whats-in-the-news-a-new-economic-indicator-1491909240\">Economic indicator</a></p><p>Coverage in <a href=\"https://www.bloomberg.com/news/articles/2017-02-13/forget-fake-news-for-markets-it-s-never-been-more-real\">Bloomberg</a></p>",
+      "abstract_html": "<p>This paper demonstrates state-of-the-art text sentiment analysis tools while developing a new time-series measure of economic sentiment derived from economic and financial newspaper articles from January 1980 to April 2015. We compare the predictive accuracy of a large set of sentiment analysis models using a sample of articles that have been rated by humans on a positivity/negativity scale. The results highlight the gains from combining existing lexicons and from accounting for negation. We also generate our own sentiment-scoring model, which includes a new lexicon built specifically to capture the sentiment in economic news articles. This model is shown to have better predictive accuracy than existing “off-the-shelf” models. Lastly, we provide two applications to the economic research on sentiment. First, we show that daily news sentiment is predictive of movements of survey-based measures of consumer sentiment. Second, motivated by Barsky and Sims (2012), we estimate the impulse responses of macroeconomic variables to sentiment shocks, finding that positive sentiment shocks increase consumption, output, and interest rates and dampen inflation.</p>",
+      "detail_coverage": false,
+      "resources": [
+        {
+          "label": "PDF",
+          "href": "/_files/ugd/5f94f7_e55b2f2b572a4ccc8d8a982b7a7d1410.pdf",
+          "views": [
+            "research",
+            "detail"
+          ]
+        },
+        {
+          "label": "Code",
+          "href": "https://www.frbsf.org/economic-research/indicators-data/daily-news-sentiment-index/files/news_sentiment_replication_code.zip",
+          "views": [
+            "research",
+            "detail"
+          ]
+        },
+        {
+          "label": "Data",
+          "href": "https://www.frbsf.org/economic-research/indicators-data/daily-news-sentiment-index/files/news_sentiment_data.xlsx",
+          "views": [
+            "research",
+            "detail"
+          ]
+        },
+        {
+          "label": "Letter",
+          "href": "https://www.frbsf.org/research-and-insights/publications/economic-letter/2020/04/news-sentiment-time-of-covid-19/",
+          "views": [
+            "research",
+            "detail"
+          ]
+        }
+      ],
+      "figure": {
+        "src": "/assets/research/measuring-news-sentiment.png",
+        "alt": "Distribution of news sentiment model scores",
+        "width": 512,
+        "height": 402,
+        "source_pdf": "/_files/ugd/5f94f7_e55b2f2b572a4ccc8d8a982b7a7d1410.pdf",
+        "page": 6,
+        "crop": [
+          145.0,
+          55.0,
+          401.0,
+          256.0
+        ],
+        "kind": "figure",
+        "display_bounds": [
+          11,
+          9,
+          498,
+          395
+        ]
+      },
+      "topics": [],
+      "featured": false,
+      "volume_url": "https://www.sciencedirect.com/journal/journal-of-econometrics/vol/228/issue/2"
+    },
+    {
+      "id": "using-brexit-to-identify-the-nature-of-price-rigidities",
+      "key": "Hobijn2021UsingBrexitToIdentify",
+      "match_title": "Using Brexit to Identify the Nature of Price Rigidities",
+      "paper_path": "/copy-of-measuring-news-sentiment",
+      "entry_type": "article",
+      "fields": {
+        "title": "Using Brexit to identify the nature of price rigidities",
+        "author": "Hobijn, Bart and Nechio, Fernanda and Shapiro, Adam Hale",
+        "journal": "Journal of International Economics",
+        "volume": "130",
+        "pages": "103448",
+        "doi": "10.1016/j.jinteco.2021.103448",
+        "url": "https://doi.org/10.1016/j.jinteco.2021.103448"
+      },
+      "sources": [
+        "https://api.crossref.org/works/10.1016/j.jinteco.2021.103448"
+      ],
+      "verified": "2026-11-27",
+      "group": "publications",
+      "href": "/copy-of-measuring-news-sentiment/",
+      "date": {
+        "value": "2021-05",
+        "kind": "publication"
+      },
+      "author_links": {
+        "Hobijn, Bart": "https://www.barthobijn.net/",
+        "Nechio, Fernanda": "https://www.frbsf.org/economic-research/economists/fernanda-nechio/"
+      },
+      "coverage_html": "",
+      "abstract_html": "<p>Using price quote data that underpin the official U.K. consumer price index (CPI), we analyze the effects of the unexpected passing of the Brexit referendum on the dynamics of price adjustments. The sizable depreciation of the British pound that immediately followed Brexit works as a quasi-experiment, enabling us to study the transmission of a large common marginal cost shock to inflation as well as the distribution of prices within granular product categories. The bulk of the aggregate inflationary effect is attributable to the size of price adjustments, an aspect matched well by the time-dependent price-setting model. The state-dependent model fares better in capturing the endogenous selection of price changes at the lower end of the price distribution. Both models miss on the magnitude of the adjustment conditional on selection.</p>",
+      "detail_coverage": false,
+      "resources": [
+        {
+          "label": "PDF",
+          "href": "/_files/ugd/5f94f7_6cbcf3c792094e85acb251e160cfb92e.pdf",
+          "views": [
+            "research",
+            "detail"
+          ]
+        },
+        {
+          "label": "Letter",
+          "href": "https://www.frbsf.org/research-and-insights/publications/economic-letter/2019/08/brexit-price-spike/",
+          "views": [
+            "research",
+            "detail"
+          ]
+        }
+      ],
+      "figure": {
+        "src": "/assets/research/using-brexit-to-identify-the-nature-of-price-rigidities.png",
+        "alt": "UK exchange rate around the Brexit referendum",
+        "width": 926,
+        "height": 387,
+        "source_pdf": "/_files/ugd/5f94f7_6cbcf3c792094e85acb251e160cfb92e.pdf",
+        "page": 4,
+        "crop": [
+          40.81890106201172,
+          44.5606201171875,
+          503.43311309814453,
+          237.656640625
+        ],
+        "kind": "figure",
+        "display_bounds": [
+          27,
+          10,
+          901,
+          366
+        ]
+      },
+      "topics": [
+        "inflation",
+        "competition"
+      ],
+      "featured": false
+    },
+    {
+      "id": "de-leveraging-or-de-risking-how-banks-cope-with-loss",
+      "key": "Bidder2021DeLeveragingOrDe",
+      "match_title": "De-leveraging or De-Risking? How Banks Cope with Loss",
+      "paper_path": "/copy-of-brexit",
+      "entry_type": "article",
+      "fields": {
+        "title": "De-leveraging or de-risking? How banks cope with loss",
+        "author": "Bidder, Rhys M. and Krainer, John R. and Shapiro, Adam Hale",
+        "journal": "Review of Economic Dynamics",
+        "volume": "39",
+        "pages": "100--127",
+        "doi": "10.1016/j.red.2020.06.014",
+        "url": "https://doi.org/10.1016/j.red.2020.06.014"
+      },
+      "sources": [
+        "https://api.crossref.org/works/10.1016/j.red.2020.06.014"
+      ],
+      "verified": "2026-11-27",
+      "group": "publications",
+      "href": "/copy-of-brexit/",
+      "date": {
+        "value": "2021-01",
+        "kind": "publication"
+      },
+      "author_links": {
+        "Bidder, Rhys M.": "https://sites.google.com/view/rhysbidder",
+        "Krainer, John R.": "https://www.nber.org/people/john_krainer"
+      },
+      "coverage_html": "",
+      "abstract_html": "<p>We use variation in banks’ loan exposure to industries adversely affected by the oil price declines of 2014 to explore how they respond to a net worth shock. Using granular data obtained under the Fed’s stress testing programs we show that exposed banks tightened credit on corporate lending and on mortgages that they would ultimately hold on their balance sheet. However, they expanded credit for mortgages to be securitized, particularly those that are government-backed. Thus, banks re-balance their portfolio so as to lower their average risk weight, rather than scaling back the size of their balance sheet, as looking at on-balance-sheet corporate or residential lending alone would suggest. These results show the importance of taking a cross-balance sheet perspective when examining bank behavior. In addition, in terms of the ultimate ‘credit channel’ to firms and households, we show precisely how borrowers substitute to alternative financing when banks they initially borrow from tighten credit. In showing that there was ultimately a minimal impact on borrowers’ overall funding, we provide a benchmark for crisis-period studies, which typically find a powerful credit channel effect.</p>",
+      "detail_coverage": false,
+      "resources": [
+        {
+          "label": "PDF",
+          "href": "/_files/ugd/5f94f7_41fb32e8a58b4953bdb35cc16da8c494.pdf",
+          "views": [
+            "research",
+            "detail"
+          ]
+        },
+        {
+          "label": "Letter",
+          "href": "https://www.frbsf.org/research-and-insights/publications/economic-letter/2018/01/how-do-banks-cope-with-loss/",
+          "views": [
+            "research",
+            "detail"
+          ]
+        }
+      ],
+      "figure": {
+        "src": "/assets/research/de-leveraging-or-de-risking-how-banks-cope-with-loss.png",
+        "alt": "Oil prices and problem loans",
+        "width": 662,
+        "height": 488,
+        "source_pdf": "/_files/ugd/5f94f7_41fb32e8a58b4953bdb35cc16da8c494.pdf",
+        "page": 6,
+        "crop": [
+          104.0,
+          54.0,
+          435.0,
+          298.0
+        ],
+        "kind": "figure",
+        "display_bounds": [
+          11,
+          9,
+          652,
+          470
+        ]
+      },
+      "topics": [
+        "finance"
+      ],
+      "featured": false
+    },
+    {
+      "id": "administration-above-administrators-the-changing-technology-of-health-care-management",
+      "key": "Dunn2020AdministrationAboveAdministratorsThe",
+      "match_title": "Administration above Administrators: The Changing Technology of Health Care Management",
+      "paper_path": "/copy-of-de-risking",
+      "entry_type": "article",
+      "fields": {
+        "title": "Administration above Administrators: The Changing Technology of Health Care Management",
+        "author": "Dunn, Abe and Gottlieb, Joshua D. and Shapiro, Adam Hale",
+        "journal": "AEA Papers and Proceedings",
+        "volume": "110",
+        "pages": "274--278",
+        "doi": "10.1257/pandp.20201031",
+        "url": "https://doi.org/10.1257/pandp.20201031"
+      },
+      "sources": [
+        "https://api.crossref.org/works/10.1257/pandp.20201031"
+      ],
+      "verified": "2026-11-27",
+      "group": "publications",
+      "href": "/copy-of-de-risking/",
+      "date": {
+        "value": "2020-05",
+        "kind": "publication"
+      },
+      "author_links": {
+        "Dunn, Abe": "https://www.bea.gov/research/meet-the-researchers/abe-c-dunn",
+        "Gottlieb, Joshua D.": "http://www.gottlieb.ca/"
+      },
+      "coverage_html": "",
+      "abstract_html": "<p>This paper measures the costs and types of administrative inputs in health care. We use data on labor and nonlabor inputs by industry and categorize them as administrative or not. We find that nonlabor inputs are a critical part of administrative spending, over and above labor inputs. Trends in nonlabor administrative input spending have differed dramatically from that of labor input spending for hospitals over the last 20 years. Hospitals have substituted away from office workers and toward externally purchased inputs. The share of managers and technical workers in administration has grown. The technology of health care administration is changing.</p>",
+      "detail_coverage": false,
+      "resources": [
+        {
+          "label": "PDF",
+          "href": "/_files/ugd/5f94f7_bbf33285c5a34bc7815a31feaf63f211.pdf",
+          "views": [
+            "research",
+            "detail"
+          ]
+        },
+        {
+          "label": "AEA Page",
+          "href": "https://www.aeaweb.org/articles?id=10.1257/pandp.20201031",
+          "views": [
+            "detail"
+          ]
+        }
+      ],
+      "figure": {
+        "src": "/assets/research/administration-above-administrators-the-changing-technology-of-health-.png",
+        "alt": "Administrative input shares in ambulatory health care",
+        "width": 404,
+        "height": 238,
+        "source_pdf": "/_files/ugd/5f94f7_bbf33285c5a34bc7815a31feaf63f211.pdf",
+        "page": 3,
+        "crop": [
+          47.88,
+          72.0,
+          249.48,
+          190.8
+        ],
+        "kind": "figure",
+        "display_bounds": [
+          3,
+          2,
+          396,
+          219
+        ]
+      },
+      "topics": [
+        "health"
+      ],
+      "featured": false
+    },
+    {
+      "id": "does-medicare-part-d-save-lives",
+      "key": "Dunn2019DoesMedicarePartD",
+      "match_title": "Does Medicare Part D Save Lives?",
+      "paper_path": "/copy-of-administrators",
+      "entry_type": "article",
+      "fields": {
+        "title": "Does Medicare Part D Save Lives?",
+        "author": "Dunn, Abe and Shapiro, Adam Hale",
+        "journal": "American Journal of Health Economics",
+        "volume": "5",
+        "number": "1",
+        "pages": "126--164",
+        "doi": "10.1162/ajhe_a_00107",
+        "url": "https://doi.org/10.1162/ajhe_a_00107"
+      },
+      "sources": [
+        "https://api.crossref.org/works/10.1162/ajhe_a_00107"
+      ],
+      "verified": "2026-11-27",
+      "group": "publications",
+      "href": "/copy-of-administrators/",
+      "date": {
+        "value": "2019",
+        "kind": "publication",
+        "season": "Winter"
+      },
+      "author_links": {
+        "Dunn, Abe": "https://www.bea.gov/research/meet-the-researchers/abe-c-dunn"
+      },
+      "coverage_html": "<p>Coverage in <a href=\"https://www.wsj.com/articles/up-to-27-000-americans-didnt-die-of-cardiovascular-disease-thanks-to-medicare-drug-coverage-1424462745\">The Wall Street Journal</a></p>",
+      "abstract_html": "<p>We examine the impact of Medicare Part D on mortality for the population over the age of 65. We identify the effects of the reform using variation in drug coverage across counties before the reform was implemented. Studying mortality rates immediately before and after the reform, we find that cardiovascular-related mortality drops significantly in those counties most affected by Part D. Estimates suggest that up to 26,000 more individuals were alive in mid-2007 because of the Part D implementation in 2006. We estimate the welfare benefit from lives saved to range from $1.5 to $4.8 billion.</p>",
+      "detail_coverage": true,
+      "resources": [
+        {
+          "label": "PDF",
+          "href": "/_files/ugd/5f94f7_4e337f56520f47138c34ee703572c370.pdf",
+          "views": [
+            "research",
+            "detail"
+          ]
+        }
+      ],
+      "figure": {
+        "src": "/assets/research/does-medicare-part-d-save-lives.png",
+        "alt": "Mortality and drug coverage around Medicare Part D",
+        "width": 968,
+        "height": 682,
+        "source_pdf": "/_files/ugd/5f94f7_4e337f56520f47138c34ee703572c370.pdf",
+        "page": 7,
+        "crop": [
+          58.14,
+          170.27999999999997,
+          541.6199999999999,
+          510.84000000000003
+        ],
+        "kind": "figure",
+        "display_bounds": [
+          77,
+          30,
+          897,
+          628
+        ]
+      },
+      "topics": [
+        "health"
+      ],
+      "featured": false
+    },
+    {
+      "id": "the-complexity-of-billing-and-paying-for-physician-care",
+      "key": "Gottlieb2018TheComplexityOfBilling",
+      "match_title": "The Complexity of Billing and Paying for Physician Care",
+      "paper_path": null,
+      "entry_type": "article",
+      "fields": {
+        "title": "The Complexity Of Billing And Paying For Physician Care",
+        "author": "Gottlieb, Joshua D. and Shapiro, Adam Hale and Dunn, Abe",
+        "journal": "Health Affairs",
+        "volume": "37",
+        "number": "4",
+        "pages": "619--626",
+        "doi": "10.1377/hlthaff.2017.1325",
+        "url": "https://doi.org/10.1377/hlthaff.2017.1325"
+      },
+      "sources": [
+        "https://api.crossref.org/works/10.1377/hlthaff.2017.1325"
+      ],
+      "verified": "2026-11-27",
+      "group": "publications",
+      "href": "https://drive.google.com/file/d/1N1YXVxv-4MJKjJ3WzJFJJady6MgCUkDx/view?usp=sharing",
+      "date": {
+        "value": "2018-04",
+        "kind": "publication"
+      },
+      "author_links": {
+        "Gottlieb, Joshua D.": "http://www.gottlieb.ca/",
+        "Dunn, Abe": "https://www.bea.gov/research/meet-the-researchers/abe-c-dunn"
+      },
+      "coverage_html": "",
+      "abstract_html": "",
+      "detail_coverage": false,
+      "resources": [
+        {
+          "label": "PDF",
+          "href": "/_files/ugd/5f94f7_810667fbb0294fd489b6d6d7ebb91746.pdf",
+          "views": [
+            "research"
+          ]
+        },
+        {
+          "label": "Online Appendix",
+          "href": "https://www.bea.gov/sites/default/files/papers/BillingDifficulty-GSD-4-18_0.pdf",
+          "views": [
+            "research"
+          ]
+        }
+      ],
+      "figure": {
+        "src": "/assets/research/the-complexity-of-billing-and-paying-for-physician-care.png",
+        "alt": "Time to payment by insurance type",
+        "width": 646,
+        "height": 510,
+        "source_pdf": "/_files/ugd/5f94f7_810667fbb0294fd489b6d6d7ebb91746.pdf",
+        "page": 6,
+        "crop": [
+          33.16423126220703,
+          50.89409149169922,
+          355.761753540039,
+          305.36454895019534
+        ],
+        "kind": "figure",
+        "display_bounds": [
+          2,
+          5,
+          634,
+          497
+        ]
+      },
+      "topics": [
+        "health"
+      ],
+      "featured": false
+    },
+    {
+      "id": "physician-competition-and-the-provision-of-care-evidence-from-heart-attacks",
+      "key": "Dunn2018PhysicianCompetitionAndThe",
+      "match_title": "Physician Competition and the Provision of Care: Evidence from Heart Attacks",
+      "paper_path": "/copy-of-part-d",
+      "entry_type": "article",
+      "fields": {
+        "title": "Physician Competition and the Provision of Care: Evidence from Heart Attacks",
+        "author": "Dunn, Abe and Shapiro, Adam Hale",
+        "journal": "American Journal of Health Economics",
+        "volume": "4",
+        "number": "2",
+        "pages": "226--261",
+        "doi": "10.1162/ajhe_a_00099",
+        "url": "https://doi.org/10.1162/ajhe_a_00099"
+      },
+      "sources": [
+        "https://api.crossref.org/works/10.1162/ajhe_a_00099"
+      ],
+      "verified": "2026-11-27",
+      "group": "publications",
+      "href": "/copy-of-part-d/",
+      "date": {
+        "value": "2018",
+        "kind": "publication",
+        "season": "Spring"
+      },
+      "author_links": {
+        "Dunn, Abe": "https://www.bea.gov/research/meet-the-researchers/abe-c-dunn"
+      },
+      "coverage_html": "",
+      "abstract_html": "<p>We study the impact of competition among physicians on service provision and patients&#x27; health outcomes for the US commercial market. We focus on cardiologists treating patients with a first-time heart attack treated in the emergency room. Physician concentration has a small but statistically significant effect on service utilization. Cardiologists in more concentrated markets perform more intensive procedures, particularly diagnostic procedures—services in which the procedure choice is more discretionary. Higher concentration leads to fewer readmissions but has no effect on mortality. These findings suggest that changes in organizational structure, such as a merger of physician groups, influence not only the negotiated prices of services, but also service provision.</p>",
+      "detail_coverage": false,
+      "resources": [
+        {
+          "label": "PDF",
+          "href": "/_files/ugd/5f94f7_2af23a762ebc4588874fb579a7eb1707.pdf",
+          "views": [
+            "research",
+            "detail"
+          ]
+        },
+        {
+          "label": "PDF",
+          "href": "/_files/ugd/5f94f7_b4d10a94f4474488bc7967bdce920fc3.pdf",
+          "views": [
+            "detail"
+          ]
+        }
+      ],
+      "figure": {
+        "src": "/assets/research/physician-competition-and-the-provision-of-care-evidence-from-heart-at.png",
+        "alt": "Physician cost, negotiated prices and patient severity",
+        "width": 674,
+        "height": 506,
+        "source_pdf": "/_files/ugd/5f94f7_2af23a762ebc4588874fb579a7eb1707.pdf",
+        "page": 6,
+        "crop": [
+          54.0,
+          48.6,
+          390.96000000000004,
+          301.32
+        ],
+        "kind": "figure",
+        "display_bounds": [
+          15,
+          20,
+          650,
+          506
+        ]
+      },
+      "topics": [
+        "health",
+        "competition"
+      ],
+      "featured": false
+    },
+    {
+      "id": "guidelines-for-measuring-disease-episodes-an-analysis-of-the-effects-on-the-components-of-expenditure-growth",
+      "key": "Dunn2017GuidelinesForMeasuringDisease",
+      "match_title": "Guidelines for Measuring Disease Episodes: An Analysis of the Effects on the Components of Expenditure Growth",
+      "paper_path": "/copy-of-part-d-1",
+      "entry_type": "article",
+      "fields": {
+        "title": "Guidelines for Measuring Disease Episodes: An Analysis of the Effects on the Components of Expenditure Growth",
+        "author": "Dunn, Abe and Liebman, Eli and Rittmueller, Lindsey and Shapiro, Adam Hale",
+        "journal": "Health Services Research",
+        "volume": "52",
+        "number": "2",
+        "pages": "720--740",
+        "doi": "10.1111/1475-6773.12498",
+        "url": "https://doi.org/10.1111/1475-6773.12498"
+      },
+      "sources": [
+        "https://api.crossref.org/works/10.1111/1475-6773.12498"
+      ],
+      "verified": "2026-11-27",
+      "group": "publications",
+      "href": "/copy-of-part-d-1/",
+      "date": {
+        "value": "2017-04",
+        "kind": "publication"
+      },
+      "author_links": {
+        "Dunn, Abe": "https://www.bea.gov/research/meet-the-researchers/abe-c-dunn",
+        "Liebman, Eli": "https://sites.google.com/site/elibliebman/home"
+      },
+      "coverage_html": "",
+      "abstract_html": "<p>Objective. To provide guidelines to researchers measuring health expenditures by<br> disease and compare these methodologies’ implied inflation estimates.</p> <p><br> Data Source. A convenience sample of commercially insured individuals over the<br> 2003 to 2007 period from Truven Health. Population weights are applied, based on<br> age, sex, and region, to make the sample of over 4 million enrollees representative of<br> the entire commercially insured population.</p> <p><br> Study Design. Different methods are used to allocate medical-care expenditures to<br> distinct condition categories. We compare the estimates of disease-price inflation by<br> method.</p> <p><br> Principal Findings. Across a variety of methods, the compound annual growth rate<br> stays within the range 3.1 to 3.9 percentage points. Disease-specific inflation measures<br> are more sensitive to the selected methodology.</p> <p><br> Conclusion. The selected allocation method impacts aggregate inflation rates, but<br> considering the variety of methods applied, the differences appear small. Future<br> research is necessary to better understand these differences in other population samples<br> and to connect disease expenditures to measures of quality.</p>",
+      "detail_coverage": false,
+      "resources": [
+        {
+          "label": "PDF",
+          "href": "/_files/ugd/5f94f7_e0547e474231495491141d237420fc0f.pdf",
+          "views": [
+            "research",
+            "detail"
+          ]
+        }
+      ],
+      "figure": {
+        "src": "/assets/research/guidelines-for-measuring-disease-episodes-an-analysis-of-the-effects-o.png",
+        "alt": "Growth decomposition by disease-episode measurement method",
+        "width": 692,
+        "height": 370,
+        "source_pdf": "/_files/ugd/5f94f7_e0547e474231495491141d237420fc0f.pdf",
+        "page": 12,
+        "crop": [
+          56.160000000000004,
+          74.52000000000001,
+          401.76000000000005,
+          259.2
+        ],
+        "kind": "table",
+        "display_bounds": [
+          15,
+          3,
+          669,
+          370
+        ]
+      },
+      "topics": [
+        "health"
+      ],
+      "featured": false
+    },
+    {
+      "id": "price-setting-and-rapid-technology-adoption-the-case-of-the-pc-industry",
+      "key": "Copeland2016PriceSettingAndRapid",
+      "match_title": "Price Setting and Rapid Technology Adoption: the case of the PC industry",
+      "paper_path": "/copy-of-part-d-2",
+      "entry_type": "article",
+      "fields": {
+        "title": "Price Setting and Rapid Technology Adoption: The Case of the PC Industry",
+        "author": "Copeland, Adam and Shapiro, Adam Hale",
+        "journal": "Review of Economics and Statistics",
+        "volume": "98",
+        "number": "3",
+        "pages": "601--616",
+        "doi": "10.1162/rest_a_00539",
+        "url": "https://doi.org/10.1162/rest_a_00539"
+      },
+      "sources": [
+        "https://api.crossref.org/works/10.1162/REST_a_00539"
+      ],
+      "verified": "2026-11-27",
+      "group": "publications",
+      "href": "/copy-of-part-d-2/",
+      "date": {
+        "value": "2016-07",
+        "kind": "publication"
+      },
+      "author_links": {
+        "Copeland, Adam": "https://www.newyorkfed.org/research/economists/copeland"
+      },
+      "coverage_html": "",
+      "abstract_html": "<p>We examine how the confluence of competition and upstream innovation influences downstream firms’ profit-maximizing strategies. We focus on personal computers and use two novel data sets to describe the dramatic fall in both price (27% at an annual rate) and sales of a computer over its product cycle. Further, we document that computers are typically sold for only four months before being replaced by a higher-quality product. To explain these facts, we develop and calibrate a vintage capital model that combines a competitive market structure with an exogenous rapid rate of innovation.</p>",
+      "detail_coverage": false,
+      "resources": [
+        {
+          "label": "PDF",
+          "href": "/_files/ugd/5f94f7_602f4ddc0b4f4502a74ac420091f7d46.pdf",
+          "views": [
+            "research",
+            "detail"
+          ]
+        }
+      ],
+      "figure": {
+        "src": "/assets/research/price-setting-and-rapid-technology-adoption-the-case-of-the-pc-industr.png",
+        "alt": "Prices of notebook computers over their product cycles",
+        "width": 1097,
+        "height": 705,
+        "source_pdf": "/_files/ugd/5f94f7_602f4ddc0b4f4502a74ac420091f7d46.pdf",
+        "page": 4,
+        "crop": [
+          47.25,
+          81.0,
+          595.35,
+          433.35
+        ],
+        "kind": "figure",
+        "display_bounds": [
+          14,
+          0,
+          1058,
+          677
+        ]
+      },
+      "topics": [
+        "competition"
+      ],
+      "featured": false
+    },
+    {
+      "id": "implications-of-utilization-shifts-on-medical-care-price-measurement",
+      "key": "Dunn2015ImplicationsOfUtilizationShifts",
+      "match_title": "Implications of Utilization Shifts on Medical-Care Price Measurement",
+      "paper_path": "/copy-of-ami",
+      "entry_type": "article",
+      "fields": {
+        "title": "Implications of Utilization Shifts on Medical-care Price Measurement",
+        "author": "Dunn, Abe and Liebman, Eli and Shapiro, Adam Hale",
+        "journal": "Health Economics",
+        "volume": "24",
+        "number": "5",
+        "pages": "539--557",
+        "doi": "10.1002/hec.3036",
+        "url": "https://doi.org/10.1002/hec.3036"
+      },
+      "sources": [
+        "https://api.crossref.org/works/10.1002/hec.3036"
+      ],
+      "verified": "2026-11-27",
+      "group": "publications",
+      "href": "/copy-of-ami/",
+      "date": {
+        "value": "2015-05",
+        "kind": "publication"
+      },
+      "author_links": {
+        "Dunn, Abe": "https://www.bea.gov/research/meet-the-researchers/abe-c-dunn",
+        "Liebman, Eli": "https://sites.google.com/site/elibliebman/home"
+      },
+      "coverage_html": "",
+      "abstract_html": "<p>The medical-care sector often experiences changes in medical protocols and technologies that cause shifts in treatments. However, the commonly used medical-care price indexes reported by the Bureau of Labor Statistics hold the mix of medical services fixed. In contrast, episode expenditure indexes, advocated by many health economists, track the full cost of disease treatment, even as treatments shift across service categories (e.g., inpatient to outpatient hospital). In our data, we find that these two conceptually different measures of price growth show similar aggregate rates of inflation over the 2003–2007 period. Although aggregate trends are similar, we observe differences when looking at specific disease categories.</p>",
+      "detail_coverage": false,
+      "resources": [
+        {
+          "label": "PDF",
+          "href": "/_files/ugd/5f94f7_5b656198c19e4219b2bc85ca9c438785.pdf",
+          "views": [
+            "research",
+            "detail"
+          ]
+        }
+      ],
+      "figure": {
+        "src": "/assets/research/implications-of-utilization-shifts-on-medical-care-price-measurement.png",
+        "alt": "Accounting for changes in medical-care procedures",
+        "width": 919,
+        "height": 230,
+        "source_pdf": "/_files/ugd/5f94f7_5b656198c19e4219b2bc85ca9c438785.pdf",
+        "page": 10,
+        "crop": [
+          53.84400421142578,
+          88.431123046875,
+          512.934987487793,
+          202.6546569824219
+        ],
+        "kind": "table",
+        "display_bounds": [
+          170,
+          0,
+          747,
+          201
+        ]
+      },
+      "topics": [
+        "health"
+      ],
+      "featured": false
+    },
+    {
+      "id": "physician-payments-under-health-care-reform",
+      "key": "Dunn2015PhysicianPaymentsUnderHealth",
+      "match_title": "Physician Payments Under Health Care Reform",
+      "paper_path": "/copy-of-utilization",
+      "entry_type": "article",
+      "fields": {
+        "title": "Physician payments under health care reform",
+        "author": "Dunn, Abe and Shapiro, Adam Hale",
+        "journal": "Journal of Health Economics",
+        "volume": "39",
+        "pages": "89--105",
+        "doi": "10.1016/j.jhealeco.2014.09.004",
+        "url": "https://doi.org/10.1016/j.jhealeco.2014.09.004"
+      },
+      "sources": [
+        "https://api.crossref.org/works/10.1016/j.jhealeco.2014.09.004"
+      ],
+      "verified": "2026-11-27",
+      "group": "publications",
+      "href": "/copy-of-utilization/",
+      "date": {
+        "value": "2015-01",
+        "kind": "publication"
+      },
+      "author_links": {
+        "Dunn, Abe": "https://www.bea.gov/research/meet-the-researchers/abe-c-dunn"
+      },
+      "coverage_html": "",
+      "abstract_html": "<p>This study examines the impact of major health insurance reform on payments made in the health care sector. We study the prices of services paid to physicians in the privately insured market during the Massachusetts health care reform. The reform increased the number of insured individuals as well as introduced an online marketplace where insurers compete. We estimate that, over the reform period, physician payments increased at least 11 percentage points relative to control areas. Payment increases began around the time legislation passed the House and Senate-the period in which their was a high probability of the bill eventually becoming law. This result is consistent with fixed-duration payment contracts being negotiated in anticipation of future demand and competition.</p>",
+      "detail_coverage": false,
+      "resources": [
+        {
+          "label": "PDF",
+          "href": "/_files/ugd/5f94f7_9a0e0b531e954f549e6f0b66b0e5b507.pdf",
+          "views": [
+            "research",
+            "detail"
+          ]
+        }
+      ],
+      "figure": {
+        "src": "/assets/research/physician-payments-under-health-care-reform.png",
+        "alt": "Physician service price growth by state",
+        "width": 1067,
+        "height": 636,
+        "source_pdf": "/_files/ugd/5f94f7_9a0e0b531e954f549e6f0b66b0e5b507.pdf",
+        "page": 7,
+        "crop": [
+          35.71799926757812,
+          55.55900085449219,
+          568.5114883422851,
+          373.03900573730465
+        ],
+        "kind": "figure",
+        "display_bounds": [
+          25,
+          19,
+          1044,
+          624
+        ]
+      },
+      "topics": [
+        "health"
+      ],
+      "featured": false
+    },
+    {
+      "id": "do-physicians-possess-market-power",
+      "key": "Dunn2014DoPhysiciansPossessMarket",
+      "match_title": "Do Physicians Possess Market Power?",
+      "paper_path": "/copy-of-utilization-1",
+      "entry_type": "article",
+      "fields": {
+        "title": "Do Physicians Possess Market Power?",
+        "author": "Dunn, Abe and Shapiro, Adam Hale",
+        "journal": "The Journal of Law and Economics",
+        "volume": "57",
+        "number": "1",
+        "pages": "159--193",
+        "doi": "10.1086/674407",
+        "url": "https://doi.org/10.1086/674407"
+      },
+      "sources": [
+        "https://api.crossref.org/works/10.1086/674407"
+      ],
+      "verified": "2026-11-27",
+      "group": "publications",
+      "href": "/copy-of-utilization-1/",
+      "date": {
+        "value": "2014-02",
+        "kind": "publication"
+      },
+      "author_links": {
+        "Dunn, Abe": "https://www.bea.gov/research/meet-the-researchers/abe-c-dunn"
+      },
+      "coverage_html": "",
+      "abstract_html": "<p>We study the degree to which greater physician concentration leads to higher service prices charged by physicians in the commercially insured medical care market. Using a database of physicians throughout the United States, we construct physician-firm concentration measures based on market boundaries defined by fixed driving times, which we label the fixed-travel-time Herfindahl-Hirschman index. We link these concentration measures to health insurance claims. We find that physicians in more concentrated markets charge higher service prices; a physician in the 90th percentile of market concentration will charge 14–30 percent higher fees than a physician in the 10th percentile. Our estimates imply that physician consolidation has caused about an 8 percent increase in fees on average over the last 20 years and substantially higher increases in concentrated markets.</p>",
+      "detail_coverage": false,
+      "resources": [
+        {
+          "label": "PDF",
+          "href": "/_files/ugd/5f94f7_a2e64616d7ae4a26a543b57f2ae1139c.pdf",
+          "views": [
+            "research",
+            "detail"
+          ]
+        }
+      ],
+      "figure": {
+        "src": "/assets/research/do-physicians-possess-market-power.png",
+        "alt": "Physician concentration in the cardiology sample",
+        "width": 671,
+        "height": 445,
+        "source_pdf": "/_files/ugd/5f94f7_a2e64616d7ae4a26a543b57f2ae1139c.pdf",
+        "page": 24,
+        "crop": [
+          40.791413574218744,
+          61.93336669921874,
+          375.71038818359375,
+          283.5896264648437
+        ],
+        "kind": "figure",
+        "display_bounds": [
+          40,
+          34,
+          648,
+          398
+        ]
+      },
+      "topics": [
+        "health",
+        "competition"
+      ],
+      "featured": false
+    },
+    {
+      "id": "geographic-variation-in-commercial-medical-care-expenditures-a-framework-for-decomposing-price-and-utilization",
+      "key": "Dunn2013GeographicVariationInCommercial",
+      "match_title": "Geographic Variation in Commercial Medical-Care Expenditures: A Framework for Decomposing Price and Utilization",
+      "paper_path": "/copy-of-market-power",
+      "entry_type": "article",
+      "fields": {
+        "title": "Geographic variation in commercial medical-care expenditures: A framework for decomposing price and utilization",
+        "author": "Dunn, Abe and Shapiro, Adam Hale and Liebman, Eli",
+        "journal": "Journal of Health Economics",
+        "volume": "32",
+        "number": "6",
+        "pages": "1153--1165",
+        "doi": "10.1016/j.jhealeco.2013.09.006",
+        "url": "https://doi.org/10.1016/j.jhealeco.2013.09.006"
+      },
+      "sources": [
+        "https://api.crossref.org/works/10.1016/j.jhealeco.2013.09.006"
+      ],
+      "verified": "2026-11-27",
+      "group": "publications",
+      "href": "/copy-of-market-power/",
+      "date": {
+        "value": "2013-12",
+        "kind": "publication"
+      },
+      "author_links": {
+        "Dunn, Abe": "https://www.bea.gov/research/meet-the-researchers/abe-c-dunn",
+        "Liebman, Eli": "https://sites.google.com/site/elibliebman/home"
+      },
+      "coverage_html": "",
+      "abstract_html": "<p>This study introduces a new framework for measuring and analyzing medical-care expenditures. The framework focuses on expenditures at the disease level that are decomposed between price and utilization. We find that both price and utilization differences are important contributors to expenditure differences across commercial markets. Further examination shows that for some diseases utilization drives variation while for others price is more important. Finally, when disease-specific measures are aggregated across diseases, much of the important disease-specific variation is masked, leading to much smaller measures of aggregate variation.</p>",
+      "detail_coverage": false,
+      "resources": [
+        {
+          "label": "PDF",
+          "href": "/_files/ugd/5f94f7_90ae67646c594b23a73a5119826bde69.pdf",
+          "views": [
+            "research",
+            "detail"
+          ]
+        },
+        {
+          "label": "Online Appendix",
+          "href": "https://www.bea.gov/sites/default/files/papers/TechnicalAppendix.pdf",
+          "views": [
+            "research",
+            "detail"
+          ]
+        }
+      ],
+      "figure": {
+        "src": "/assets/research/geographic-variation-in-commercial-medical-care-expenditures-a-framewo.png",
+        "alt": "Medical-care expenditures across MSAs",
+        "width": 1060,
+        "height": 318,
+        "source_pdf": "/_files/ugd/5f94f7_90ae67646c594b23a73a5119826bde69.pdf",
+        "page": 3,
+        "crop": [
+          44.647499084472656,
+          51.59050079345703,
+          574.4644882202148,
+          210.3305032348633
+        ],
+        "kind": "table",
+        "display_bounds": [
+          0,
+          0,
+          1040,
+          318
+        ]
+      },
+      "topics": [
+        "health"
+      ],
+      "featured": false
+    },
+    {
+      "id": "medical-care-price-indexes-for-patients-with-employer-provided-insurance-nationally-representative-estimates-from-marketscan-data",
+      "key": "Dunn2013MedicalCarePriceIndexes",
+      "match_title": "Medical-Care Price Indexes for Patients with Employer Provided Insurance: Nationally Representative Estimates from MarketScan Data",
+      "paper_path": null,
+      "entry_type": "article",
+      "fields": {
+        "title": "Medical Care Price Indexes for Patients with Employer-Provided Insurance: Nationally Representative Estimates from MarketScan Data",
+        "author": "Dunn, Abe and Liebman, Eli and Pack, Sarah and Shapiro, Adam Hale",
+        "journal": "Health Services Research",
+        "volume": "48",
+        "number": "3",
+        "pages": "1173--1190",
+        "doi": "10.1111/1475-6773.12008",
+        "url": "https://doi.org/10.1111/1475-6773.12008"
+      },
+      "sources": [
+        "https://api.crossref.org/works/10.1111/1475-6773.12008"
+      ],
+      "verified": "2026-11-27",
+      "group": "publications",
+      "href": "https://onlinelibrary.wiley.com/doi/abs/10.1111/1475-6773.12008",
+      "date": {
+        "value": "2013-06",
+        "kind": "publication"
+      },
+      "author_links": {
+        "Dunn, Abe": "https://www.bea.gov/research/meet-the-researchers/abe-c-dunn",
+        "Liebman, Eli": "https://sites.google.com/site/elibliebman/home"
+      },
+      "coverage_html": "",
+      "abstract_html": "",
+      "detail_coverage": false,
+      "resources": [
+        {
+          "label": "Working paper PDF",
+          "href": "/_files/papers/marketscan-price-indexes.pdf",
+          "views": [
+            "research"
+          ]
+        }
+      ],
+      "figure": {
+        "src": "/assets/research/medical-care-price-indexes-for-patients-with-employer-provided-insuran.png",
+        "alt": "Medical-care price indexes for MarketScan and Pharmetrics",
+        "width": 1066,
+        "height": 548,
+        "source_pdf": "/_files/papers/marketscan-price-indexes.pdf",
+        "page": 18,
+        "crop": [
+          58.14,
+          265.32,
+          590.5799999999999,
+          538.5600000000001
+        ],
+        "kind": "figure",
+        "display_bounds": [
+          67,
+          0,
+          793,
+          461
+        ]
+      },
+      "topics": [
+        "health"
+      ],
+      "featured": false
+    },
+    {
+      "id": "strategic-alliance-as-a-response-to-the-threat-of-entry-evidence-from-airline-codesharing",
+      "key": "Goetz2012StrategicAllianceAsA",
+      "match_title": "Strategic Alliance as a Response to the Threat of Entry: Evidence from Airline Codesharing",
+      "paper_path": null,
+      "entry_type": "article",
+      "fields": {
+        "title": "Strategic alliance as a response to the threat of entry: Evidence from airline codesharing",
+        "author": "Goetz, Christopher F. and Shapiro, Adam Hale",
+        "journal": "International Journal of Industrial Organization",
+        "volume": "30",
+        "number": "6",
+        "pages": "735--747",
+        "doi": "10.1016/j.ijindorg.2012.08.003",
+        "url": "https://doi.org/10.1016/j.ijindorg.2012.08.003"
+      },
+      "sources": [
+        "https://api.crossref.org/works?query.title=Strategic+Alliance+as+a+Response+to+the+Threat+of+Entry%3A+Evidence+from+Airline+Codesharing&query.author=Shapiro&rows=4"
+      ],
+      "verified": "2026-11-27",
+      "group": "publications",
+      "href": "https://drive.google.com/file/d/0Bw-SDdc4zVJccm92MWN4WVJJZ3c/view?usp=sharing&resourcekey=0-P7WIYVLutzJTBxz9Mub2Qw",
+      "date": {
+        "value": "2012-11",
+        "kind": "publication"
+      },
+      "author_links": {
+        "Goetz, Christopher F.": "https://www.nber.org/people/christopher_goetz"
+      },
+      "coverage_html": "",
+      "abstract_html": "",
+      "detail_coverage": false,
+      "resources": [
+        {
+          "label": "PDF",
+          "href": "/_files/ugd/5f94f7_7dd5e29922f241a99c189e39e4898a2c.pdf",
+          "views": [
+            "research"
+          ]
+        }
+      ],
+      "figure": {
+        "src": "/assets/research/strategic-alliance-as-a-response-to-the-threat-of-entry-evidence-from-.png",
+        "alt": "Share of airline segments operated under codesharing",
+        "width": 524,
+        "height": 368,
+        "source_pdf": "/_files/ugd/5f94f7_7dd5e29922f241a99c189e39e4898a2c.pdf",
+        "page": 3,
+        "crop": [
+          306.0,
+          50.0,
+          568.0,
+          234.0
+        ],
+        "kind": "figure",
+        "display_bounds": [
+          9,
+          6,
+          510,
+          362
+        ]
+      },
+      "topics": [
+        "competition"
+      ],
+      "featured": false
+    },
+    {
+      "id": "price-dispersion-over-the-business-cycle-evidence-from-the-airline-industry",
+      "key": "Cornia2012PriceDispersionOverThe",
+      "match_title": "Price Dispersion Over the Business Cycle: Evidence from the Airline Industry",
+      "paper_path": null,
+      "entry_type": "article",
+      "fields": {
+        "title": "Price Dispersion Over the Business Cycle: Evidence from the Airline Industry",
+        "author": "Cornia, Marco and Gerardi, Kristopher S. and Shapiro, Adam Hale",
+        "journal": "The Journal of Industrial Economics",
+        "volume": "60",
+        "number": "3",
+        "pages": "347--373",
+        "doi": "10.1111/j.1467-6451.2012.00488.x",
+        "url": "https://doi.org/10.1111/j.1467-6451.2012.00488.x"
+      },
+      "sources": [
+        "https://api.crossref.org/works/10.1111/j.1467-6451.2012.00488.x"
+      ],
+      "verified": "2026-11-27",
+      "group": "publications",
+      "href": "https://drive.google.com/file/d/0Bw-SDdc4zVJcQnBoZ0dQSXJMTzg/view?usp=sharing&resourcekey=0-nbcC8rlWEjmMsjnqVNM8Pg",
+      "date": {
+        "value": "2012-09",
+        "kind": "publication"
+      },
+      "author_links": {
+        "Gerardi, Kristopher S.": "https://www.atlantafed.org/en/who-we-are/people/research/economists/kristopher-gerardi"
+      },
+      "coverage_html": "",
+      "abstract_html": "",
+      "detail_coverage": false,
+      "resources": [
+        {
+          "label": "PDF",
+          "href": "/_files/ugd/5f94f7_f8978866a7294209865ccf318308e284.pdf",
+          "views": [
+            "research"
+          ]
+        }
+      ],
+      "figure": {
+        "src": "/assets/research/price-dispersion-over-the-business-cycle-evidence-from-the-airline-ind.png",
+        "alt": "Airline price dispersion and the business cycle",
+        "width": 708,
+        "height": 488,
+        "source_pdf": "/_files/ugd/5f94f7_f8978866a7294209865ccf318308e284.pdf",
+        "page": 5,
+        "crop": [
+          45.240929718017576,
+          45.439378051757814,
+          398.5510475158692,
+          288.8646176147461
+        ],
+        "kind": "figure",
+        "display_bounds": [
+          26,
+          0,
+          680,
+          483
+        ]
+      },
+      "topics": [
+        "competition"
+      ],
+      "featured": false
+    },
+    {
+      "id": "does-competition-reduce-price-dispersion-new-evidence-from-the-airline-industry",
+      "key": "Gerardi2009DoesCompetitionReducePrice",
+      "match_title": "Does Competition Reduce Price Dispersion? New Evidence from the Airline Industry",
+      "paper_path": null,
+      "entry_type": "article",
+      "fields": {
+        "title": "Does Competition Reduce Price Dispersion? New Evidence from the Airline Industry",
+        "author": "Gerardi, Kristopher S. and Shapiro, Adam Hale",
+        "journal": "Journal of Political Economy",
+        "volume": "117",
+        "number": "1",
+        "pages": "1--37",
+        "doi": "10.1086/597328",
+        "url": "https://doi.org/10.1086/597328"
+      },
+      "sources": [
+        "https://api.crossref.org/works/10.1086/597328"
+      ],
+      "verified": "2026-11-27",
+      "group": "publications",
+      "href": "https://drive.google.com/file/d/0Bw-SDdc4zVJcWk1taTl2THZ0QTQ/view?usp=sharing&resourcekey=0-qPzKpO3EDgdp9LvKLlhg8A",
+      "date": {
+        "value": "2009-02",
+        "kind": "publication"
+      },
+      "author_links": {
+        "Gerardi, Kristopher S.": "https://www.atlantafed.org/en/who-we-are/people/research/economists/kristopher-gerardi"
+      },
+      "coverage_html": "",
+      "abstract_html": "",
+      "detail_coverage": false,
+      "resources": [
+        {
+          "label": "PDF",
+          "href": "/_files/ugd/5f94f7_99ae70ff90a642048c10cd77a1811994.pdf",
+          "views": [
+            "research"
+          ]
+        }
+      ],
+      "figure": {
+        "src": "/assets/research/does-competition-reduce-price-dispersion-new-evidence-from-the-airline.png",
+        "alt": "Airline entry and exit by carrier type",
+        "width": 918,
+        "height": 848,
+        "source_pdf": "/_files/ugd/5f94f7_99ae70ff90a642048c10cd77a1811994.pdf",
+        "page": 7,
+        "crop": [
+          76.5,
+          170.28,
+          535.5,
+          594.0
+        ],
+        "kind": "figure",
+        "display_bounds": [
+          147,
+          20,
+          762,
+          848
+        ]
+      },
+      "topics": [
+        "competition"
+      ],
+      "featured": false
+    },
+    {
+      "id": "estimating-the-new-keynesian-phillips-curve-a-vertical-production-chain-approach",
+      "key": "Shapiro2008EstimatingTheNewKeynesian",
+      "match_title": "Estimating the New Keynesian Phillips Curve: A Vertical Production Chain Approach",
+      "paper_path": null,
+      "entry_type": "article",
+      "fields": {
+        "title": "Estimating the New Keynesian Phillips Curve: A Vertical Production Chain Approach",
+        "author": "Shapiro, Adam Hale",
+        "journal": "Journal of Money, Credit and Banking",
+        "volume": "40",
+        "number": "4",
+        "pages": "627--666",
+        "doi": "10.1111/j.1538-4616.2008.00130.x",
+        "url": "https://doi.org/10.1111/j.1538-4616.2008.00130.x"
+      },
+      "sources": [
+        "https://api.crossref.org/works/10.1111/j.1538-4616.2008.00130.x"
+      ],
+      "verified": "2026-11-27",
+      "group": "publications",
+      "href": "https://drive.google.com/file/d/0Bw-SDdc4zVJcWVVyZmp2VFRIVTg/view?usp=sharing&resourcekey=0-1SUiTxNbmrfw5h9pJGnu7Q",
+      "date": {
+        "value": "2008-06",
+        "kind": "publication"
+      },
+      "author_links": {},
+      "coverage_html": "",
+      "abstract_html": "",
+      "detail_coverage": false,
+      "resources": [
+        {
+          "label": "PDF",
+          "href": "/_files/ugd/5f94f7_dfcddd4e499b4cf4b0de54b182aff524.pdf",
+          "views": [
+            "research"
+          ]
+        }
+      ],
+      "figure": {
+        "src": "/assets/research/estimating-the-new-keynesian-phillips-curve-a-vertical-production-chai.png",
+        "alt": "GDP inflation and alternative measures of marginal cost",
+        "width": 672,
+        "height": 518,
+        "source_pdf": "/_files/ugd/5f94f7_dfcddd4e499b4cf4b0de54b182aff524.pdf",
+        "page": 10,
+        "crop": [
+          78.0,
+          90.0,
+          414.0,
+          349.0
+        ],
+        "kind": "figure",
+        "display_bounds": [
+          4,
+          15,
+          672,
+          514
+        ]
+      },
+      "topics": [
+        "inflation"
+      ],
+      "featured": false
+    },
+    {
+      "id": "inflation-since-the-pandemic-lessons-and-challenges",
+      "key": "Hajdini2025InflationSinceThePandemic",
+      "match_title": "Inflation Since the Pandemic: Lessons and Challenges",
+      "paper_path": null,
+      "entry_type": "techreport",
+      "fields": {
+        "title": "Inflation Since the Pandemic: Lessons and Challenges",
+        "author": "Hajdini, Ina and Shapiro, Adam Hale and Smith, A. Lee and Villar, Daniel",
+        "institution": "Board of Governors of the Federal Reserve System",
+        "type": "Finance and Economics Discussion Series",
+        "number": "2025-070",
+        "doi": "10.17016/FEDS.2025.070",
+        "url": "https://doi.org/10.17016/FEDS.2025.070",
+        "note": "Background paper for the Federal Reserve's 2025 Review of Monetary Policy Strategy, Tools, and Communications"
+      },
+      "sources": [
+        "https://www.federalreserve.gov/econres/feds/inflation-since-the-pandemic-lessons-and-challenges.htm"
+      ],
+      "verified": "2026-11-27",
+      "group": "book-chapters",
+      "href": "https://www.frbsf.org/research-and-insights/publications/working-papers/2025/08/inflation-since-pandemic-lessons-and-challenges/",
+      "date": {
+        "value": "2025-08",
+        "kind": "publication"
+      },
+      "author_links": {},
+      "coverage_html": "",
+      "abstract_html": "",
+      "detail_coverage": false,
+      "resources": [
+        {
+          "label": "PDF",
+          "href": "https://www.frbsf.org/wp-content/uploads/wp2025-16.pdf",
+          "views": [
+            "research"
+          ]
+        }
+      ],
+      "figure": {
+        "src": "/assets/research/inflation-since-pandemic.png",
+        "alt": "Headline and core PCE inflation before and during the pandemic",
+        "width": 1005,
+        "height": 556,
+        "source_pdf": "https://www.frbsf.org/wp-content/uploads/wp2025-16.pdf",
+        "page": 3,
+        "crop": [
+          61.2,
+          308.88,
+          563.0400000000001,
+          586.08
+        ],
+        "kind": "figure",
+        "display_bounds": [
+          100,
+          12,
+          880,
+          547
+        ]
+      },
+      "topics": [
+        "inflation"
+      ],
+      "featured": false
+    },
+    {
+      "id": "decomposing-medical-care-expenditure-growth",
+      "key": "Dunn2018DecomposingMedicalCareExpenditure",
+      "match_title": "Decomposing Medical-Care Expenditure Growth",
+      "paper_path": null,
+      "entry_type": "incollection",
+      "fields": {
+        "title": "Decomposing Medical Care Expenditure Growth",
+        "author": "Dunn, Abe and Liebman, Eli and Shapiro, Adam Hale",
+        "booktitle": "Measuring and Modeling Health Care Costs",
+        "editor": "Aizcorbe, Ana and Baker, Colin and Berndt, Ernst R. and Cutler, David M.",
+        "publisher": "University of Chicago Press",
+        "pages": "81--111",
+        "chapter": "3",
+        "url": "https://www.nber.org/chapters/c13112"
+      },
+      "sources": [
+        "https://www.nber.org/system/files/chapters/c13112/c13112.pdf"
+      ],
+      "verified": "2026-11-27",
+      "group": "book-chapters",
+      "href": "https://press.uchicago.edu/ucp/books/book/chicago/M/bo27523501.html",
+      "date": {
+        "value": "2018",
+        "kind": "publication"
+      },
+      "author_links": {},
+      "coverage_html": "",
+      "abstract_html": "",
+      "detail_coverage": false,
+      "resources": [
+        {
+          "label": "PDF",
+          "href": "https://www.nber.org/system/files/chapters/c13112/c13112.pdf",
+          "views": [
+            "research"
+          ]
+        }
+      ],
+      "figure": {
+        "src": "/assets/research/decomposing-medical-growth.png",
+        "alt": "Aggregate medical-care expenditure, prevalence, and demographic indexes",
+        "width": 580,
+        "height": 364,
+        "source_pdf": "https://www.nber.org/system/files/chapters/c13112/c13112.pdf",
+        "page": 17,
+        "crop": [
+          69.12,
+          38.879999999999995,
+          358.56,
+          220.32000000000002
+        ],
+        "kind": "figure",
+        "display_bounds": [
+          0,
+          34,
+          563,
+          361
+        ]
+      },
+      "topics": [
+        "health"
+      ],
+      "featured": false
+    },
+    {
+      "id": "developing-a-framework-for-decomposing-medical-care-expenditure-growth-exploring-issues-of-representativeness",
+      "key": "Dunn2014DevelopingAFrameworkFor",
+      "match_title": "Developing a Framework for Decomposing Medical-Care Expenditure Growth: Exploring Issues of Representativeness",
+      "paper_path": null,
+      "entry_type": "incollection",
+      "fields": {
+        "title": "Developing a Framework for Decomposing Medical-Care Expenditure Growth: Exploring Issues of Representativeness",
+        "author": "Dunn, Abe and Liebman, Eli and Shapiro, Adam Hale",
+        "booktitle": "Measuring Economic Sustainability and Progress",
+        "editor": "Jorgenson, Dale W. and Landefeld, J. Steven and Schreyer, Paul",
+        "publisher": "University of Chicago Press",
+        "pages": "545--574",
+        "chapter": "16",
+        "url": "https://www.nber.org/chapters/c12841"
+      },
+      "sources": [
+        "https://www.nber.org/system/files/chapters/c12841/c12841.pdf"
+      ],
+      "verified": "2026-11-27",
+      "group": "book-chapters",
+      "href": "https://press.uchicago.edu/ucp/books/book/chicago/M/bo18143459.html",
+      "date": {
+        "value": "2014",
+        "kind": "publication"
+      },
+      "author_links": {},
+      "coverage_html": "",
+      "abstract_html": "",
+      "detail_coverage": false,
+      "resources": [
+        {
+          "label": "PDF",
+          "href": "https://www.nber.org/system/files/chapters/c12841/c12841.pdf",
+          "views": [
+            "research"
+          ]
+        }
+      ],
+      "figure": {
+        "src": "/assets/research/medical-representativeness.png",
+        "alt": "Table 16.1 compares sample and population statistics for commercially insured patients",
+        "width": 727,
+        "height": 623,
+        "source_pdf": "https://www.nber.org/system/files/chapters/c12841/c12841.pdf",
+        "page": 14,
+        "crop": [
+          43.2,
+          272.15999999999997,
+          406.08,
+          583.2
+        ],
+        "kind": "table",
+        "display_bounds": [
+          41,
+          14,
+          675,
+          602
+        ]
+      },
+      "topics": [
+        "health"
+      ],
+      "featured": false
+    },
+    {
+      "id": "a-dynamic-model-of-price-signaling-consumer-learning-and-price-adjustment",
+      "key": "Osborne2014ADynamicModelOf",
+      "match_title": "A Dynamic Model of Price Signaling, Consumer Learning, and Price Adjustment",
+      "paper_path": null,
+      "entry_type": "techreport",
+      "fields": {
+        "title": "A Dynamic Model of Price Signaling, Consumer Learning, and Price Adjustment",
+        "author": "Osborne, Matthew and Shapiro, Adam Hale",
+        "doi": "10.24148/wp2014-27",
+        "url": "https://doi.org/10.24148/wp2014-27",
+        "institution": "Federal Reserve Bank of San Francisco",
+        "type": "Working Paper",
+        "number": "2014-27"
+      },
+      "sources": [
+        "https://api.crossref.org/works/10.24148/wp2014-27"
+      ],
+      "verified": "2026-11-27",
+      "group": "older-working-papers",
+      "href": "https://www.frbsf.org/research-and-insights/publications/working-papers/2014/11/a-dynamic-model-of-price-signaling-consumer-learning-and-price-adjustment/",
+      "date": {
+        "value": "2014-11",
+        "kind": "publication"
+      },
+      "author_links": {},
+      "coverage_html": "",
+      "abstract_html": "",
+      "detail_coverage": false,
+      "resources": [
+        {
+          "label": "PDF",
+          "href": "https://www.frbsf.org/wp-content/uploads/wp2014-27.pdf",
+          "views": [
+            "research"
+          ]
+        }
+      ],
+      "figure": {
+        "src": "/assets/research/price-signaling.png",
+        "alt": "Pricing policy function under price signaling and consumer learning",
+        "width": 834,
+        "height": 508,
+        "source_pdf": "https://www.frbsf.org/wp-content/uploads/wp2014-27.pdf",
+        "page": 15,
+        "crop": [
+          122.4,
+          126.72,
+          538.5600000000001,
+          380.15999999999997
+        ],
+        "kind": "figure",
+        "display_bounds": [
+          96,
+          12,
+          602,
+          494
+        ]
+      },
+      "topics": [
+        "competition"
+      ],
+      "featured": false
+    },
+    {
+      "id": "implications-of-consumer-heterogeneity-on-price-measures-for-technology-goods",
+      "key": "Shapiro2010ImplicationsOfConsumerHeterogeneity",
+      "match_title": "Implications of Consumer Heterogeneity on Price Measures for Technology Goods",
+      "paper_path": null,
+      "entry_type": "techreport",
+      "fields": {
+        "title": "Implications of Consumer Heterogeneity on Price Measures for Technology Goods",
+        "author": "Shapiro, Adam Hale and Aizcorbe, Ana",
+        "institution": "Bureau of Economic Analysis",
+        "type": "Working Paper",
+        "number": "2010-10",
+        "url": "https://www.bea.gov/research/papers/2010/implications-consumer-heterogeneity-price-measures-technology-goods"
+      },
+      "sources": [
+        "https://www.bea.gov/sites/default/files/papers/WP2010-10.pdf"
+      ],
+      "verified": "2026-11-27",
+      "group": "older-working-papers",
+      "href": "https://www.bea.gov/research/papers/2010/implications-consumer-heterogeneity-price-measures-technology-goods",
+      "date": {
+        "value": "2010-08",
+        "kind": "publication"
+      },
+      "author_links": {},
+      "coverage_html": "",
+      "abstract_html": "",
+      "detail_coverage": false,
+      "resources": [
+        {
+          "label": "PDF",
+          "href": "https://www.bea.gov/sites/default/files/papers/WP2010-10.pdf",
+          "views": [
+            "research"
+          ]
+        }
+      ],
+      "venue_label": "Manuscript",
+      "figure": {
+        "src": "/assets/research/consumer-heterogeneity.png",
+        "alt": "Prices of Hewlett Packard laptop computers over their product life cycles",
+        "width": 1036,
+        "height": 742,
+        "source_pdf": "https://www.bea.gov/sites/default/files/papers/WP2010-10.pdf",
+        "page": 37,
+        "crop": [
+          47.6,
+          218.92000000000002,
+          565.25,
+          589.4
+        ],
+        "kind": "figure",
+        "display_bounds": [
+          43,
+          40,
+          954,
+          706
+        ]
+      },
+      "topics": [
+        "competition"
+      ],
+      "featured": false
+    },
+    {
+      "id": "decomposing-the-foreclosure-crisis-house-price-depreciation-versus-bad-underwriting",
+      "key": "Gerardi2009DecomposingTheForeclosureCrisis",
+      "match_title": "Decomposing the Foreclosure Crisis: House Price Depreciation versus Bad Underwriting",
+      "paper_path": null,
+      "entry_type": "techreport",
+      "fields": {
+        "title": "Decomposing the Foreclosure Crisis: House Price Depreciation versus Bad Underwriting",
+        "author": "Gerardi, Kristopher and Shapiro, Adam Hale and Willen, Paul S.",
+        "institution": "Federal Reserve Bank of Atlanta",
+        "type": "Working Paper",
+        "number": "2009-25",
+        "url": "https://fraser.stlouisfed.org/files/docs/historical/frbatl/wp/frbatl_wp_2009-25.pdf"
+      },
+      "sources": [
+        "https://fraser.stlouisfed.org/files/docs/historical/frbatl/wp/frbatl_wp_2009-25.pdf"
+      ],
+      "verified": "2026-11-27",
+      "group": "older-working-papers",
+      "href": "https://fraser.stlouisfed.org/files/docs/historical/frbatl/wp/frbatl_wp_2009-25.pdf",
+      "date": {
+        "value": "2009-09",
+        "kind": "publication"
+      },
+      "author_links": {},
+      "coverage_html": "",
+      "abstract_html": "",
+      "detail_coverage": false,
+      "resources": [
+        {
+          "label": "PDF",
+          "href": "https://fraser.stlouisfed.org/files/docs/historical/frbatl/wp/frbatl_wp_2009-25.pdf",
+          "views": [
+            "research"
+          ]
+        }
+      ],
+      "figure": {
+        "src": "/assets/research/foreclosure-crisis.png",
+        "alt": "Massachusetts house prices, foreclosures, and delinquencies",
+        "width": 1079,
+        "height": 999,
+        "source_pdf": "https://fraser.stlouisfed.org/files/docs/historical/frbatl/wp/frbatl_wp_2009-25.pdf",
+        "page": 37,
+        "crop": [
+          48.96,
+          142.56,
+          587.52,
+          641.5200000000001
+        ],
+        "kind": "figure",
+        "display_bounds": [
+          39,
+          40,
+          992,
+          955
+        ]
+      },
+      "topics": [
+        "finance"
+      ],
+      "featured": false
+    },
+    {
+      "id": "subprime-outcomes-risky-mortgages-homeownership-experiences-and-foreclosures",
+      "key": "Gerardi2007SubprimeOutcomesRiskyMortgages",
+      "match_title": "Subprime Outcomes: Risky Mortgages, Homeownership Experiences, and Foreclosures",
+      "paper_path": null,
+      "entry_type": "techreport",
+      "fields": {
+        "title": "Subprime Outcomes: Risky Mortgages, Homeownership Experiences, and Foreclosures",
+        "author": "Gerardi, Kristopher and Shapiro, Adam Hale and Willen, Paul S.",
+        "institution": "Federal Reserve Bank of Boston",
+        "type": "Working Paper",
+        "number": "07-15",
+        "url": "https://www.bostonfed.org/publications/research-department-working-paper/2007/subprime-outcomes-risky-mortgages-homeownership-experiences-and-foreclosures.aspx"
+      },
+      "sources": [
+        "https://www.bostonfed.org/publications/research-department-working-paper/2007/subprime-outcomes-risky-mortgages-homeownership-experiences-and-foreclosures.aspx"
+      ],
+      "verified": "2026-11-27",
+      "group": "older-working-papers",
+      "href": "https://www.bostonfed.org/publications/research-department-working-paper/2007/subprime-outcomes-risky-mortgages-homeownership-experiences-and-foreclosures.aspx",
+      "date": {
+        "value": "2008-05",
+        "kind": "revision"
+      },
+      "citation_year": "2007",
+      "author_links": {},
+      "coverage_html": "",
+      "abstract_html": "",
+      "detail_coverage": false,
+      "resources": [
+        {
+          "label": "PDF",
+          "href": "https://www.bostonfed.org/-/media/Documents/Workingpapers/PDF/wp0715.pdf",
+          "views": [
+            "research"
+          ]
+        }
+      ],
+      "figure": {
+        "src": "/assets/research/subprime-outcomes.png",
+        "alt": "Estimated cumulative foreclosure incidence for prime and subprime homeownerships",
+        "width": 1029,
+        "height": 1094,
+        "source_pdf": "https://www.bostonfed.org/-/media/Documents/Workingpapers/PDF/wp0715.pdf",
+        "page": 62,
+        "crop": [
+          61.2,
+          95.03999999999999,
+          575.28,
+          641.5200000000001
+        ],
+        "kind": "figure",
+        "display_bounds": [
+          18,
+          35,
+          961,
+          1001
+        ]
+      },
+      "topics": [
+        "finance"
+      ],
+      "featured": false
+    }
+  ]
+}

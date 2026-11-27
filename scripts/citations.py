@@ -1,10 +1,7 @@
 """Build stable BibTeX downloads from publisher-verified, local metadata."""
-import json
 import re
 import unicodedata
-from pathlib import Path
-
-ROOT = Path(__file__).resolve().parents[1]
+from paper_data import citation_records
 
 
 def normalized_title(value):
@@ -12,7 +9,7 @@ def normalized_title(value):
 
 
 def load_citations():
-    entries = json.loads((ROOT / 'content/citations.json').read_text(encoding='utf-8'))
+    entries = citation_records()
     for field in ('id', 'key', 'match_title'):
         values = [e[field] for e in entries]
         if len(values) != len(set(values)):

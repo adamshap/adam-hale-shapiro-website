@@ -16,36 +16,6 @@ if (menuButton && navigation) {
   });
   navigation.addEventListener('click', (event) => { if (event.target.closest('a')) setMenu(false); });
 }
-const searchInput = document.querySelector('[data-search-input]');
-if (searchInput) {
-  const items = [...document.querySelectorAll('[data-search-item]')];
-  const groups = [...document.querySelectorAll('[data-search-group]')];
-  const status = document.querySelector('[data-search-status]');
-  const empty = document.querySelector('[data-empty-results]');
-  const normalize = (value) => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
-  const index = items.map((item) => normalize(item.dataset.search || item.textContent));
-  const filter = () => {
-    const terms = normalize(searchInput.value).trim().split(/\s+/).filter(Boolean);
-    let count = 0;
-    items.forEach((item, i) => {
-      const matches = terms.every((term) => index[i].includes(term));
-      item.hidden = !matches;
-      if (matches) count += 1;
-    });
-    groups.forEach((group) => { group.hidden = ![...group.querySelectorAll('[data-search-item]')].some((item) => !item.hidden); });
-    if (status) status.textContent = `${count} ${count === 1 ? 'result' : 'results'}`;
-    if (empty) empty.hidden = count !== 0;
-  };
-  searchInput.addEventListener('input', filter);
-  searchInput.addEventListener('search', filter);
-  document.querySelector('[data-clear-search]')?.addEventListener('click', () => {
-    searchInput.value = '';
-    filter();
-    searchInput.focus();
-  });
-  filter();
-}
-
 // Reveal contact details only after a visitor activates the button.
 // This deters simple address harvesters; it is not access control.
 for (const button of document.querySelectorAll('[data-reveal-email]')) {
@@ -75,6 +45,9 @@ if (topicButtons.length) {
     groups.forEach((group) => {
       group.hidden = ![...group.querySelectorAll('[data-topics]')].some((paper) => !paper.hidden);
     });
+    const status = document.querySelector('[data-filter-status]');
+    const count = papers.filter((paper) => !paper.hidden).length;
+    if (status) status.textContent = `Showing ${count} ${count === 1 ? 'result' : 'results'} for ${button.textContent.trim()}.`;
   }));
 }
 
@@ -128,6 +101,7 @@ document.querySelectorAll('[data-dashboard-updated]').forEach(updateDashboardFre
 // Keep citations readable without JavaScript; copying always starts with a tap.
 for (const button of document.querySelectorAll('[data-copy-citation]')) {
   button.hidden = false;
+  const copyLabel = button.getAttribute('aria-label');
   button.addEventListener('click', async () => {
     const panel = button.closest('.citation-panel');
     const citation = panel.querySelector('textarea');
@@ -146,9 +120,10 @@ for (const button of document.querySelectorAll('[data-copy-citation]')) {
     }
     status.textContent = copied ? 'Copied to clipboard.' : 'Citation selected. Touch and hold to copy.';
     button.textContent = copied ? 'Copied' : 'Copy';
+    button.setAttribute('aria-label', copied ? copyLabel.replace(/^Copy\b/, 'Copied') : copyLabel);
     if (copied) {
       clearTimeout(button.copyReset);
-      button.copyReset = setTimeout(() => { button.textContent = 'Copy'; }, 2500);
+      button.copyReset = setTimeout(() => { button.textContent = 'Copy'; button.setAttribute('aria-label', copyLabel); }, 2500);
     }
   });
 }

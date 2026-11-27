@@ -6,9 +6,9 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: ['docs/**', 'scripts/**', '.github/workflows/check-links.yml']
+    paths: ['content/**', 'docs/**', 'scripts/**', '.github/workflows/check-links.yml']
   pull_request:
-    paths: ['docs/**', 'scripts/**', '.github/workflows/check-links.yml']
+    paths: ['content/**', 'docs/**', 'scripts/**', '.github/workflows/check-links.yml']
 
 permissions:
   contents: read
@@ -29,8 +29,14 @@ jobs:
       - uses: actions/setup-python@v7
         with:
           python-version: '3.13'
-      - name: Test link classification and metadata
+      - name: Verify generated pages match their source
+        run: |
+          python scripts/build_site.py
+          git diff --exit-code -- docs
+      - name: Test shared paper data, accessibility markup and links
         run: python -m unittest discover -s scripts/tests -v
+      - name: Test citation copying and accessible topic controls
+        run: node --test scripts/tests/test_controls.js
       - name: Check local and external links
         id: audit
         env:

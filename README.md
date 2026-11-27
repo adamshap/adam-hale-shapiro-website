@@ -2,8 +2,8 @@
 
 Academic website hosted on GitHub Pages at adam-hale-shapiro.com.
 The publishable website is in `docs/`. No paid hosting or production dependencies
-are required. The site includes responsive navigation, research and Economic
-Letters search, paper abstracts, dashboards, and downloadable research assets.
+are required. The site includes responsive navigation, topic filters, paper
+abstracts, dashboards, and downloadable research assets.
 
 ## Sharing previews and link monitoring
 
@@ -53,8 +53,10 @@ outside the published `docs/` directory.
 - Individual paper pages retain their existing paths in `docs/`.
 - Shared appearance: `docs/assets/style.css`
 
-Page content is maintained in `content/site.json`. The shared HTML layouts are
-in `scripts/build_site.py`. Edit the content or layout and regenerate the pages:
+Paper information is maintained in `content/papers.json`; `content/site.json`
+holds the remaining static page content. The shared HTML layouts are in
+`scripts/build_site.py`, with paper view models in `scripts/paper_data.py`.
+Edit the source content or layout and regenerate the pages:
 
 ```powershell
 py scripts/build_site.py
@@ -64,12 +66,12 @@ py -m http.server 8766 --bind 127.0.0.1 --directory docs
 
 The renderer uses Python's standard library. Preview the result, then commit the
 content, renderer, and generated `docs/` changes together. GitHub Pages publishes
-from the `main` branch's `/docs` folder. Direct HTML edits in `docs/` must also be
-carried into the source content or layout before rebuilding.
+from the `main` branch's `/docs` folder. The checks rebuild the site and reject
+generated pages that differ from their source. Edit the source, not generated HTML.
 
-The site uses system fonts, local assets, and a small progressive-enhancement
+The site uses locally hosted Source Sans 3, local assets, and a small progressive-enhancement
 script. All pages, abstracts, and downloads remain accessible without JavaScript;
-JavaScript adds the mobile menu and instant search.
+JavaScript adds topic filters, citation copying, and dashboard update dates.
 
 ## Domain migration
 
@@ -90,7 +92,8 @@ downloaded Wix assets and any capture failures. Original HTML snapshots are in
 the local ignored `migration/source/` directory. They are not published.
 
 The one-time `migration/migrate.py` importer captures the old public Wix site.
-Do not rerun it after editing the new site: edit `docs/` directly instead.
+Do not rerun it after editing the new site: maintain the current `content/`
+sources and shared renderer instead.
 
 ## Analytics
 
@@ -114,18 +117,49 @@ Publishing new dashboard data updates these labels without rebuilding this site.
 If the source is unavailable, visitors are directed to the dashboard for the
 latest data rather than seeing an old hard-coded date.
 
-## Paper citations
+## Shared paper records and citations
 
-`content/citations.json` holds verified bibliographic metadata and source URLs
-for every Research entry. Published papers use final journal records, including
-print year, volume, issue and pages; chapters cite the published book. Working
-papers retain their report number and any revision or conditional acceptance note.
-When a paper is published, update its citation here as well as its visible entry.
-Do not use temporary Google Scholar export URLs.
+`content/papers.json` holds one record per paper: authors, publication details,
+revision date, abstract, resource links, media coverage, topic assignments and
+figure framing. Research, featured homepage papers, individual pages and BibTeX
+are generated from those records. Existing page URLs and citation filenames stay
+stable. `featured` selects homepage papers independently of acceptance status.
+
+`match_title` is the shared web heading; `fields.title` preserves publisher
+spelling/capitalization for the citation. `fields.author` supplies the ordered
+author list for both views and BibTeX. The structured `date` supplies all displayed
+dates and the citation year/revision note; `citation_year` is an explicit exception
+for reports conventionally cited by their original year despite a later revision.
+Resource `views` control which links appear in Research and detail pages, while
+each URL is stored once. A paper with no topic assignments appears under All.
+
+Published papers use final journal records, including print year, volume, issue
+and pages; chapters cite the published book. Working papers retain their report
+number and any revision or conditional acceptance note. When a paper changes,
+update its single record and rebuild. Do not use temporary Scholar export URLs.
 
 `python scripts/build_site.py` generates stable `docs/citations/*.bib` downloads
 and matching expandable citations on Research, the homepage and paper detail pages.
 Each citation provides selectable text, a Copy button and a Download .bib link;
 the text and download remain available without JavaScript. The build
 needs no external API. `python -m unittest discover -s scripts/tests` checks
-coverage, download targets, final-version examples and link ordering.
+coverage, propagation of paper edits, download targets, final-version examples,
+link ordering and accessibility markup. `node --test scripts/tests/test_controls.js`
+checks citation copying, its fallback and accessible topic controls.
+
+## Accessibility and stylesheet maintenance
+
+The stylesheet retains the existing cascade and responsive breakpoints, with
+unused components and superseded declarations removed. Keep related rules with
+their component; check desktop and phone layouts after styling changes. Source
+line endings are fixed to LF so asset hashes match on Windows and in CI.
+
+Keyboard skip navigation targets a focusable main landmark. Paper resource and
+copy controls have contextual accessible names, and topic filtering announces its
+result in a screen-reader-only status without adding visible counts. Native
+disclosures keep abstracts and downloads usable without JavaScript.
+
+The November 2026 maintenance review compared computed styles on all 26 pages
+at 320, 390, 768, 1280 and 1600 pixels. Accessibility was checked with axe-core
+4.14.1 (WCAG A/AA and best-practice rules), plus manual keyboard and disclosure
+checks. These checks support ongoing maintenance; they are not a certification.

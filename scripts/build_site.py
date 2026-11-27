@@ -8,6 +8,7 @@ import posixpath
 import re
 import hashlib
 from citations import bibtex, load_citations, normalized_title, write_citations
+from paper_data import load_site, load_papers, research_assets
 
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / 'docs'
@@ -25,10 +26,11 @@ def citation_link(title, destination, paper_path=None):
         return ''
     filename = entry['id'] + '.bib'
     href = relative('/citations/' + filename, destination)
-    download = '<a class="resource-link" href="' + escape(href, quote=True) + '" download="' + filename + '">Download .bib</a>'
+    label = escape(entry['match_title'], quote=True)
+    download = '<a class="resource-link" href="' + escape(href, quote=True) + '" download="' + filename + '" aria-label="Download .bib for ' + label + '">Download .bib</a>'
     return ('<details class="paper-citation"><summary>BibTeX<span class="sr-only"> for ' + escape(entry['match_title']) + '</span></summary>'
             '<div class="citation-panel"><textarea readonly rows="8" spellcheck="false" aria-label="BibTeX citation for ' + escape(entry['match_title'], quote=True) + '">' + escape(bibtex(entry)) + '</textarea>'
-            '<div class="citation-actions"><button type="button" data-copy-citation hidden>Copy</button>' + download + '<span class="citation-status" role="status" aria-live="polite"></span></div></div></details>')
+            '<div class="citation-actions"><button type="button" data-copy-citation aria-label="Copy BibTeX for ' + label + '" hidden>Copy</button>' + download + '<span class="citation-status" role="status" aria-live="polite"></span></div></div></details>')
 
 def sharing_metadata(slug, title, description):
     url = SITE_URL + ('/' if slug == '/' else '/' + slug.strip('/') + '/')
@@ -263,15 +265,17 @@ def paper(block, slug='/research', destination=None, pages=None):
                     abstract_parts.append(inner(part, target, destination))
             if abstract_parts:
                 abstract = '<details class="paper-abstract"><summary>Abstract<span class="sr-only"> for ' + escape(title) + '</span></summary><div class="paper-abstract-content">' + ''.join(abstract_parts) + '</div></details>'
-    search = escape(text(block), quote=True)
     resource_html = resources(resource_nodes, slug, destination)
     resource_links = Tree(resource_html).root.find('div') if resource_html else None
     links = resource_links.children if resource_links else []
+    for link in links:
+        if isinstance(link, Node) and link.tag == 'a':
+            link.attrs['aria-label'] = text(link) + ' for ' + title
     resource_actions = ''.join(serialize(n, destination, destination, True) for n in links)
     disclosures = resource_actions + citation_link(title, destination) + abstract + media_coverage(media_nodes, title, slug, destination)
     if disclosures:
         disclosures = '<div class="paper-disclosures">' + disclosures + '</div>'
-    return '<article class="paper" data-search-item data-search="' + search + '"><h3>' + title_html + '</h3><div class="paper-details">' + details + '</div>' + status_html + disclosures + '</article>'
+    return '<article class="paper"><h3>' + title_html + '</h3><div class="paper-details">' + details + '</div>' + status_html + disclosures + '</article>'
 
 def navigation(slug):
     items = [('/', 'Home'), ('/research/', 'Research'), ('/blank-1/', 'Letters'), ('/blank-2/', 'Code & Data')]
@@ -287,6 +291,7 @@ def footer(slug):
     return '''<footer class="site-footer"><div class="footer-top"><div>''' + anchor('/', 'Adam Hale Shapiro', slug, 'footer-name') + '''<p>''' + affiliation + '''</p></div><div class="footer-contact"><button class="email-reveal" type="button" data-reveal-email hidden>Show email</button><noscript><a href="https://www.frbsf.org/our-people/economists/adam-shapiro/">Contact via SF Fed profile</a></noscript><p>101 Market Street · San Francisco, CA 94105</p></div></div><p class="disclaimer">The content on this website does not represent the views of the Federal Reserve Bank of San Francisco (FRBSF) or the Federal Reserve System. <a href="https://www.frbsf.org/contact-us/">Contact the FRBSF</a> for all media inquiries.</p><div class="footer-bottom"><span>© 2026 Adam Hale Shapiro</span><a href="#top">Back to top</a></div></footer>'''
 
 def page(slug, title, body, description=None):
+    body = body.replace('<main id="content"', '<main id="content" tabindex="-1"', 1)
     description = description or 'Research papers, publications, Economic Letters, interactive inflation dashboards, code and data from economist Adam Hale Shapiro.'
     return '''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#6a2036"><title>''' + escape(title) + '''</title><meta name="description" content="''' + escape(description, quote=True) + '''">''' + sharing_metadata(slug, title, description) + '''<link rel="icon" href="''' + asset_href('/assets/favicon.svg', slug) + '''" type="image/svg+xml"><link rel="stylesheet" href="''' + asset_href('/assets/style.css', slug) + '''"><script defer src="''' + asset_href('/assets/site.js', slug) + '''"></script><script data-goatcounter="''' + GOATCOUNTER + '''" async src="https://gc.zgo.at/count.js"></script></head><body id="top"><a class="skip-link" href="#content">Skip to content</a>''' + navigation(slug) + body + footer(slug) + '</body></html>\n'
@@ -316,15 +321,13 @@ def home(pages):
     hero = '''<section class="hero"><div class="hero-copy"><div class="hero-tools"><div class="profile-links">''' + social + '''</div></div></div></section>'''
     tools = '<section class="home-section"><div class="section-header"><div><h2>Interactive Dashboards</h2></div>' + anchor('/blank-2/', 'All code & data', css='text-link all-data-link') + '</div><div class="tools-grid">' + tool_feature('Inflation Shock Momentum', 'https://adamshap.github.io/ismi-webapp/ism_webapp.html', 'Explore sustained movements in inflation shocks.', 'ismi.jpg') + tool_feature('Supply & Demand Driven Inflation', 'https://adamshap.github.io/supply-demand-webapp/supply_demand_webapp.html', 'Explore the supply and demand components of inflation.', 'supply-demand.jpg') + '</div></section>'
     blocks = [fragment(b) for b in pages['/research']['blocks']]
-    selected = [b for b in blocks if 'Conditionally accepted' in text(b)][:2]
+    featured = {p['href'] for p in load_papers()['papers'] if p.get('featured')}
+    selected = [b for b in blocks if b.find('a') and local_path(b.find('a').attrs['href'], '/research') in featured][:2]
     if not selected:
         selected = [b for b in blocks if b.find('p')][:2]
-    figures = json.loads((ROOT / 'content/research-figures.json').read_text(encoding='utf-8'))
+    figures = research_assets('figure')
     research = '<section class="home-section"><div class="section-header"><div><h2>Recent papers</h2></div>' + anchor('/research/', 'All research', css='text-link all-research-link') + '</div><div class="featured-papers">' + ''.join(illustrated_research(b, None, figures, destination='/') for b in selected) + '</div></section>'
-    return page(slug, 'Adam Hale Shapiro | Economist', banner + '<main id="content" class="home-main"><h1 class="sr-only">Adam Hale Shapiro</h1>' + hero + research + tools + '</main>')
-
-def search_field(label, count):
-    return '<div class="search-toolbar"><label class="search-box"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><span class="sr-only">' + escape(label) + '</span><input type="search" data-search-input placeholder="' + escape(label) + '" autocomplete="off"></label><p class="search-status" data-search-status aria-live="polite">' + str(count) + ' results</p></div><div class="empty-results" data-empty-results hidden><h3>No matching results</h3><p>Try a title, coauthor, journal, or year.</p><button type="button" class="button button-secondary" data-clear-search>Clear search</button></div>'
+    return page(slug, 'Adam Hale Shapiro | Economist', '<main id="content" class="home-shell"><h1 class="sr-only">Adam Hale Shapiro</h1>' + banner + '<div class="home-main">' + hero + research + tools + '</div></main>')
 
 def figure_image(figure, destination, loading='lazy'):
     width, height = figure['width'], figure['height']
@@ -362,7 +365,7 @@ def illustrated_research(block, pages, figures, destination='/research', topics=
     return serialize(article, destination, destination, True)
 
 def topic_strip(tabs):
-    return '<div class="topic-strip">' + tabs + '<span class="topic-swipe-cue" aria-hidden="true" hidden><svg width="12" height="16" viewBox="0 0 12 16" fill="none"><path d="m4 4 4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>'
+    return '<div class="topic-strip">' + tabs + '<span class="topic-swipe-cue" aria-hidden="true" hidden><svg width="12" height="16" viewBox="0 0 12 16" fill="none"><path d="m4 4 4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><p class="sr-only" role="status" aria-live="polite" data-filter-status></p></div>'
 
 def research(data, pages):
     slug = '/research'
@@ -373,15 +376,15 @@ def research(data, pages):
             groups.append([text(block.find('h2')), []])
         elif block.find('p'):
             groups[-1][1].append(block)
-    figures = json.loads((ROOT / 'content/research-figures.json').read_text(encoding='utf-8'))
-    topics = json.loads((ROOT / 'content/research-topics.json').read_text(encoding='utf-8'))
+    figures = research_assets('figure')
+    topics = research_assets('topics')
     assert set(topics) == set(figures), 'Each research paper needs topic assignments'
     labels = [('all', 'All'), ('inflation', 'Inflation & monetary policy'), ('health', 'Health economics'), ('competition', 'Price setting & competition'), ('finance', 'Banking & finance')]
     tabs = topic_strip('<div class="research-topics" role="group" aria-label="Filter papers by topic">' + ''.join('<button type="button" class="topic-tab" data-topic="' + key + '" aria-pressed="' + ('true' if key == 'all' else 'false') + '" aria-controls="research-results">' + escape(label) + '</button>' for key, label in labels) + '</div>')
     content = ''
     for index, (title, blocks) in enumerate(groups):
         section_id = ['working-papers', 'publications', 'book-chapters', 'older-working-papers'][index]
-        content += '<section class="research-group" id="' + section_id + '" data-search-group><div class="group-heading"><h2>' + escape(title) + '</h2></div>' + ''.join(illustrated_research(block, pages, figures, topics=topics) for block in blocks) + '</section>'
+        content += '<section class="research-group" id="' + section_id + '"><div class="group-heading"><h2>' + escape(title) + '</h2></div>' + ''.join(illustrated_research(block, pages, figures, topics=topics) for block in blocks) + '</section>'
     return page(slug, 'Research | Adam Hale Shapiro', '<main id="content" class="page-main research-main">' + section_heading('Research', 'Papers & publications') + tabs + '<div id="research-results" class="research-results">' + content + '</div></main>')
 
 def letters(data):
@@ -416,7 +419,7 @@ def letters(data):
             preview.children = [figure_image(figure, slug, 'eager' if index < 2 else 'lazy')]
             article.children = [copy, preview, *disclosures]
         articles += serialize(article, slug, slug, True)
-    return page(slug, 'Economic Letters | Adam Hale Shapiro', '<main id="content" class="page-main letters-main">' + section_heading('San Francisco Fed', 'Economic Letters') + tabs + '<div id="letter-results" class="letter-list">' + articles + '</div><p class="letter-figure-credit">Figures: Federal Reserve Bank of San Francisco.</p></main>')
+    return page(slug, 'Economic Letters | Adam Hale Shapiro', '<main id="content" class="page-main letters-main">' + section_heading('San Francisco Fed', 'Economic Letters') + tabs + '<h2 class="sr-only">Letters by publication date</h2><div id="letter-results" class="letter-list">' + articles + '</div><p class="letter-figure-credit">Figures: Federal Reserve Bank of San Francisco.</p></main>')
 
 def code_data(data):
     slug = '/blank-2'
@@ -484,7 +487,7 @@ def detail(slug, data):
 
 def build():
     write_citations(DOCS / 'citations')
-    pages = json.loads((ROOT / 'content/site.json').read_text(encoding='utf-8'))
+    pages = load_site()
     for slug, data in pages.items():
         if slug == '/':
             output = home(pages)
