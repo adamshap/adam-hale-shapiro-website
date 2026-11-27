@@ -110,3 +110,31 @@ async function updateDashboardFreshness(note) {
   }
 }
 document.querySelectorAll('[data-dashboard-updated]').forEach(updateDashboardFreshness);
+
+// Keep citations readable without JavaScript; copying always starts with a tap.
+for (const button of document.querySelectorAll('[data-copy-citation]')) {
+  button.hidden = false;
+  button.addEventListener('click', async () => {
+    const panel = button.closest('.citation-panel');
+    const citation = panel.querySelector('textarea');
+    const status = panel.querySelector('.citation-status');
+    let copied = false;
+    try {
+      await navigator.clipboard.writeText(citation.value);
+      copied = true;
+    } catch {
+      // Older mobile browsers may lack clipboard permission. Preserve a usable
+      // selected citation even if their legacy copy command is also unavailable.
+      citation.focus({ preventScroll: true });
+      citation.select();
+      citation.setSelectionRange(0, citation.value.length);
+      try { copied = document.execCommand('copy'); } catch { /* Manual copy remains available. */ }
+    }
+    status.textContent = copied ? 'Copied to clipboard.' : 'Citation selected. Touch and hold to copy.';
+    button.textContent = copied ? 'Copied' : 'Copy';
+    if (copied) {
+      clearTimeout(button.copyReset);
+      button.copyReset = setTimeout(() => { button.textContent = 'Copy'; }, 2500);
+    }
+  });
+}

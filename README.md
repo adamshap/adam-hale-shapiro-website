@@ -120,6 +120,8 @@ When a paper is published, update its citation here as well as its visible entry
 Do not use temporary Google Scholar export URLs.
 
 `python scripts/build_site.py` generates stable `docs/citations/*.bib` downloads
-and matching links on Research, the homepage and paper detail pages. The build
+and matching expandable citations on Research, the homepage and paper detail pages.
+Each citation provides selectable text, a Copy button and a Download .bib link;
+the text and download remain available without JavaScript. The build
 needs no external API. `python -m unittest discover -s scripts/tests` checks
 coverage, download targets, final-version examples and link ordering.

@@ -7,7 +7,7 @@ import json
 import posixpath
 import re
 import hashlib
-from citations import load_citations, normalized_title, write_citations
+from citations import bibtex, load_citations, normalized_title, write_citations
 
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / 'docs'
@@ -25,7 +25,10 @@ def citation_link(title, destination, paper_path=None):
         return ''
     filename = entry['id'] + '.bib'
     href = relative('/citations/' + filename, destination)
-    return '<a class="resource-link" href="' + escape(href, quote=True) + '" download="' + filename + '">BibTeX</a>'
+    download = '<a class="resource-link" href="' + escape(href, quote=True) + '" download="' + filename + '">Download .bib</a>'
+    return ('<details class="paper-citation"><summary>BibTeX<span class="sr-only"> for ' + escape(entry['match_title']) + '</span></summary>'
+            '<div class="citation-panel"><textarea readonly rows="8" spellcheck="false" aria-label="BibTeX citation for ' + escape(entry['match_title'], quote=True) + '">' + escape(bibtex(entry)) + '</textarea>'
+            '<div class="citation-actions"><button type="button" data-copy-citation hidden>Copy</button>' + download + '<span class="citation-status" role="status" aria-live="polite"></span></div></div></details>')
 
 def sharing_metadata(slug, title, description):
     url = SITE_URL + ('/' if slug == '/' else '/' + slug.strip('/') + '/')
@@ -103,7 +106,7 @@ def relative(href, destination):
 def serialize(node, source='/', destination='/', tidy=False):
     if isinstance(node, str):
         return escape(re.sub(r'\s+', ' ', node) if tidy else node)
-    inside = ''.join(serialize(c, source, destination, tidy) for c in node.children)
+    inside = ''.join(serialize(c, source, destination, tidy and node.tag not in ('textarea', 'pre', 'code')) for c in node.children)
     if node.tag == 'root':
         return inside
     if node.tag == 'a' and not text(node).strip('"“” ') and not node.find('img'):

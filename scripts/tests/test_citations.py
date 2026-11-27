@@ -20,7 +20,7 @@ class CitationChecks(unittest.TestCase):
         found = set()
         for paper in papers:
             with self.subTest(title=paper.find('h3').text()):
-                links = [n for n in paper.walk() if n.tag == 'a' and n.text() == 'BibTeX']
+                links = [n for n in paper.walk() if n.tag == 'a' and n.text() == 'Download .bib']
                 self.assertEqual(len(links), 1)
                 link = links[0]
                 path = urlsplit(urljoin('https://local.test/research/', link.attrs['href'])).path
@@ -28,23 +28,28 @@ class CitationChecks(unittest.TestCase):
                 self.assertTrue(filename.is_file())
                 self.assertEqual(link.attrs['download'], filename.name)
                 found.add(filename.name)
-                actions = list(link.parent.children)
+                panel = next(n for n in paper.walk() if n.tag == 'details' and 'paper-citation' in n.attrs.get('class', ''))
+                self.assertIn('readonly', panel.find('textarea').attrs)
+                self.assertEqual(panel.find('textarea').text(), filename.read_text(encoding='utf-8'))
+                self.assertEqual(len([n for n in panel.walk() if n.tag == 'button' and 'data-copy-citation' in n.attrs]), 1)
+                actions = list(panel.parent.children)
                 for disclosure in (n for n in actions if isinstance(n, build_site.Node) and n.tag == 'details'):
-                    self.assertLess(actions.index(link), actions.index(disclosure))
+                    if disclosure is not panel:
+                        self.assertLess(actions.index(panel), actions.index(disclosure))
         self.assertEqual(found, {e['id'] + '.bib' for e in self.entries})
 
     def test_home_and_detail_pages_use_the_same_citations(self):
         for entry in self.entries:
             if entry['paper_path']:
                 tree = build_site.Tree((self.root / 'docs' / entry['paper_path'].strip('/') / 'index.html').read_text(encoding='utf-8'))
-                links = [n for n in tree.root.walk() if n.tag == 'a' and n.text() == 'BibTeX']
+                links = [n for n in tree.root.walk() if n.tag == 'a' and n.text() == 'Download .bib']
                 self.assertEqual(len(links), 1, entry['id'])
                 self.assertTrue(links[0].attrs['href'].endswith('/' + entry['id'] + '.bib'))
         tree = build_site.Tree((self.root / 'docs/index.html').read_text(encoding='utf-8'))
         papers = [n for n in tree.root.walk() if n.tag == 'article' and 'paper' in n.attrs.get('class', '').split()]
         self.assertTrue(papers)
         for paper in papers:
-            self.assertEqual(len([n for n in paper.walk() if n.tag == 'a' and n.text() == 'BibTeX']), 1)
+            self.assertEqual(len([n for n in paper.walk() if n.tag == 'a' and n.text() == 'Download .bib']), 1)
 
     def test_published_citations_are_final_articles_or_chapters(self):
         by_title = {e['match_title']: e for e in self.entries}
