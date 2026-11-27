@@ -15,6 +15,10 @@ after replacing the image so its cache version updates. LinkedIn may cache
 older cards; its Post Inspector can refresh a URL without publishing a post:
 https://www.linkedin.com/post-inspector/
 
+The image's HTML source is `content/social-preview.html`. Serve the repository
+root and render that page at 1200 × 630 to replace the JPEG. It uses the website's
+banner opacity and fade, with an edge-to-edge image and the existing typography.
+
 `Check website links` runs weekly on Mondays at 15:23 UTC, after relevant
 pushes, and on demand under GitHub Actions. Pull requests check local references
 only. It validates published files, page anchors, sharing-image references,
