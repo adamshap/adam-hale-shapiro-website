@@ -1353,7 +1353,10 @@ html:not(.js) .research-topics { display:none; }
 .citation-actions button:hover { text-decoration:underline; }
 .citation-actions button:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
 .citation-actions .citation-status { color:var(--muted); font-size:.8rem; }
-@media(max-width:650px) { .citation-panel textarea { font-size:16px; } }
+@media(max-width:650px) {
+  .citation-panel textarea { height:128px; min-height:112px; padding:8px; font-size:11px; line-height:1.45; white-space:pre; overflow-wrap:normal; overflow:auto; }
+  .citation-panel .citation-actions .resource-link { display:inline-flex; align-items:center; min-height:44px; padding:8px 0; }
+}
 .media-outlets { list-style:none; padding:4px 0 8px; margin:0; color:var(--muted); line-height:1.5; }
 .media-outlets>li { display:flex; flex-wrap:wrap; align-items:baseline; gap:2px 12px; padding:4px 0; }
 .media-outlet { font-weight:500; color:var(--ink); }
