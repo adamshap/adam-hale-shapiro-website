@@ -5,6 +5,41 @@ The publishable website is in `docs/`. No paid hosting or production dependencie
 are required. The site includes responsive navigation, research and Economic
 Letters search, paper abstracts, dashboards, and downloadable research assets.
 
+## Sharing previews and link monitoring
+
+Every generated page includes its own canonical URL and Open Graph title,
+description, and image, plus equivalent Twitter card tags. The shared
+1200 × 630 JPEG is `docs/assets/social-preview.jpg`, using the existing trees
+and Source Sans 3. These tags do not change the rendered website. Rebuild
+after replacing the image so its cache version updates. LinkedIn may cache
+older cards; its Post Inspector can refresh a URL without publishing a post:
+https://www.linkedin.com/post-inspector/
+
+`Check website links` runs weekly on Mondays at 15:23 UTC, after relevant
+pushes, and on demand under GitHub Actions. Pull requests check local references
+only. It validates published files, page anchors, sharing-image references,
+and public external links without credentials. Confirmed HTTP 404/410 links
+are checked twice with GET; paywalls, bot protection, and temporary network
+failures are reported separately as verification limits.
+
+Each run saves JSON and Markdown reports for 30 days and adds a job summary.
+Confirmed broken links fail the check and open or update one issue in this
+repository; unchanged findings do not create duplicate issues. The issue closes
+when those failures are resolved. Repository notification preferences determine
+GitHub's email notifications. The workflow never rewrites site links or edits
+Google Drive files. GitHub may disable schedules on a public repository after
+60 days without repository activity; re-enable the workflow in Actions if needed.
+
+Run manually:
+
+```powershell
+py -m unittest discover -s scripts/tests -v
+py scripts/audit_links.py --output link-report.json --fail-on-broken
+```
+
+Use `--local-only` to skip external network checks. Keep local report output
+outside the published `docs/` directory.
+
 ## Edit the website
 
 - Home: `docs/index.html`

@@ -1,0 +1,83 @@
+name: Check website links
+
+on:
+  schedule:
+    - cron: '23 15 * * 1'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['docs/**', 'scripts/**', '.github/workflows/check-links.yml']
+  pull_request:
+    paths: ['docs/**', 'scripts/**', '.github/workflows/check-links.yml']
+
+permissions:
+  contents: read
+
+concurrency:
+  group: website-link-check-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+      - name: Test link classification and metadata
+        run: python -m unittest discover -s scripts/tests -v
+      - name: Check local and external links
+        id: audit
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          if [ "$EVENT_NAME" = "pull_request" ]; then
+            python scripts/audit_links.py --local-only --output link-report.json
+          else
+            python scripts/audit_links.py --output link-report.json
+          fi
+          cat link-report.md >> "$GITHUB_STEP_SUMMARY"
+      - name: Save full report
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: website-link-report
+          path: |
+            link-report.json
+            link-report.md
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Keep one issue for confirmed broken links
+        if: steps.audit.outcome == 'success' && github.event_name != 'pull_request'
+        uses: actions/github-script@v9
+        with:
+          script: |
+            const fs = require('fs');
+            const report = JSON.parse(fs.readFileSync('link-report.json', 'utf8'));
+            const marker = '<!-- website-link-check -->';
+            const title = 'Website link check: broken links';
+            const broken = report.local_errors.length + (report.summary.broken || 0);
+            const issues = await github.paginate(github.rest.issues.listForRepo, {
+              ...context.repo, state: 'open', creator: 'github-actions[bot]', per_page: 100
+            });
+            const existing = issues.find(i => !i.pull_request && i.title === title && (i.body || '').includes(marker));
+            if (broken) {
+              const findings = fs.readFileSync('link-report.md', 'utf8').split('## Automated verification limits')[0].trim();
+              const body = `${marker}\n${findings}\n\nPaywalls and bot-blocked URLs are not treated as confirmed broken links. Full verification details are in the latest [workflow report](https://github.com/${context.repo.owner}/${context.repo.repo}/actions/workflows/check-links.yml).\n\nThis issue updates when findings change and closes when the confirmed failures are resolved.`;
+              if (!existing) {
+                await github.rest.issues.create({...context.repo, title, body});
+              } else if (existing.body !== body) {
+                await github.rest.issues.update({...context.repo, issue_number: existing.number, body});
+              }
+            } else if (existing) {
+              await github.rest.issues.update({...context.repo, issue_number: existing.number, state: 'closed', state_reason: 'completed'});
+            }
+      - name: Fail on confirmed broken links
+        if: steps.audit.outcome == 'success'
+        run: |
+          python -c "import json; r=json.load(open('link-report.json')); raise SystemExit(1 if r['local_errors'] or r['summary'].get('broken') else 0)"
