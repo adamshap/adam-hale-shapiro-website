@@ -296,8 +296,8 @@ def page(slug, title, body, description=None):
     return '''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#6a2036"><title>''' + escape(title) + '''</title><meta name="description" content="''' + escape(description, quote=True) + '''">''' + sharing_metadata(slug, title, description) + '''<link rel="icon" href="''' + asset_href('/assets/favicon.svg', slug) + '''" type="image/svg+xml"><link rel="stylesheet" href="''' + asset_href('/assets/style.css', slug) + '''"><script defer src="''' + asset_href('/assets/site.js', slug) + '''"></script><script data-goatcounter="''' + GOATCOUNTER + '''" async src="https://gc.zgo.at/count.js"></script></head><body id="top"><a class="skip-link" href="#content">Skip to content</a>''' + navigation(slug) + body + footer(slug) + '</body></html>\n'
 
-def section_heading(eyebrow, title, intro=''):
-    return '<div class="page-heading"><p class="eyebrow">' + escape(eyebrow) + '</p><h1>' + escape(title) + '</h1>' + ('<p class="page-intro">' + escape(intro) + '</p>' if intro else '') + '</div>'
+def section_heading(title, intro=''):
+    return '<div class="page-heading"><h1>' + escape(title) + '</h1>' + ('<p class="page-intro">' + escape(intro) + '</p>' if intro else '') + '</div>'
 
 def tool_feature(name, href, description, preview, slug='/'):
     return '<a class="tool-feature" href="' + escape(relative(href, slug), quote=True) + '"><div class="tool-summary"><h3>' + escape(name) + '</h3><p>' + escape(description) + '</p></div><span class="tool-preview"><img src="' + asset_href('/assets/dashboards/' + preview, slug) + '" alt="" width="914" height="500" loading="lazy" decoding="async"></span></a>'
@@ -337,7 +337,7 @@ def figure_image(figure, destination, loading='lazy'):
     # their maximum safe scale; fuller plots get a little optical breathing room.
     # The outer frame and row spacing stay fixed, and all chart labels remain.
     frame_height = 4 / 7
-    balanced_scale = (.76 * frame_height / (crop_width * crop_height)) ** .5
+    balanced_scale = (.84 * frame_height / (crop_width * crop_height)) ** .5
     scale = min(1 / crop_width, frame_height / crop_height, balanced_scale)
     framing = {
         'width': width * scale * 100,
@@ -385,7 +385,7 @@ def research(data, pages):
     for index, (title, blocks) in enumerate(groups):
         section_id = ['working-papers', 'publications', 'book-chapters', 'older-working-papers'][index]
         content += '<section class="research-group" id="' + section_id + '"><div class="group-heading"><h2>' + escape(title) + '</h2></div>' + ''.join(illustrated_research(block, pages, figures, topics=topics) for block in blocks) + '</section>'
-    return page(slug, 'Research | Adam Hale Shapiro', '<main id="content" class="page-main research-main">' + section_heading('Research', 'Papers & publications') + tabs + '<div id="research-results" class="research-results">' + content + '</div></main>')
+    return page(slug, 'Research | Adam Hale Shapiro', '<main id="content" class="page-main research-main">' + section_heading('Papers & publications') + tabs + '<div id="research-results" class="research-results">' + content + '</div></main>')
 
 def letters(data):
     slug = '/blank-1'
@@ -419,7 +419,7 @@ def letters(data):
             preview.children = [figure_image(figure, slug, 'eager' if index < 2 else 'lazy')]
             article.children = [copy, preview, *disclosures]
         articles += serialize(article, slug, slug, True)
-    return page(slug, 'Economic Letters | Adam Hale Shapiro', '<main id="content" class="page-main letters-main">' + section_heading('San Francisco Fed', 'Economic Letters') + tabs + '<h2 class="sr-only">Letters by publication date</h2><div id="letter-results" class="letter-list">' + articles + '</div><p class="letter-figure-credit">Figures: Federal Reserve Bank of San Francisco.</p></main>')
+    return page(slug, 'Economic Letters | Adam Hale Shapiro', '<main id="content" class="page-main letters-main">' + section_heading('Economic Letters') + tabs + '<h2 class="sr-only">Letters by publication date</h2><div id="letter-results" class="letter-list">' + articles + '</div><p class="letter-figure-credit">Figures: Federal Reserve Bank of San Francisco.</p></main>')
 
 def code_data(data):
     slug = '/blank-2'
@@ -461,7 +461,7 @@ def code_data(data):
         if documentation:
             detail += '<details class="data-documentation"><summary>Documentation</summary><div>' + ''.join(documentation) + '</div></details>'
         items += '<article class="data-item' + (' dashboard-item' if i < 2 else '') + '"><div class="data-item-heading"><p class="eyebrow">' + ('Interactive dashboard' if i < 2 else 'Data & replication') + '</p><h2>' + escape(title) + '</h2></div><div class="data-details">' + detail + '</div></article>'
-    return page(slug, 'Code & Data | Adam Hale Shapiro', '<main id="content" class="page-main data-main">' + section_heading('Research resources', 'Code & data') + '<div class="data-list">' + items + '</div></main>')
+    return page(slug, 'Code & Data | Adam Hale Shapiro', '<main id="content" class="page-main data-main">' + section_heading('Code & data') + '<div class="data-list">' + items + '</div></main>')
 
 def detail(slug, data):
     blocks = [fragment(b) for b in data['blocks']]

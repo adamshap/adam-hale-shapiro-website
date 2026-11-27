@@ -328,7 +328,7 @@ body:has(> .research-main) > .site-header,body:has(> .letters-main) > .site-head
   gap:16px;
   align-items:baseline;
   padding-bottom:21px;
-  border-bottom:1px solid var(--ink);
+  border-bottom:1px solid var(--line);
 }
 .group-heading h2 {
   font-size:1.6rem;
@@ -390,7 +390,7 @@ body:has(> .research-main) > .site-header,body:has(> .letters-main) > .site-head
   max-width:1000px;
 }
 .letter-list .paper:first-child {
-  border-top:1px solid var(--ink);
+  border-top:1px solid var(--line);
 }
 .data-list {
   display:grid;
@@ -1773,7 +1773,7 @@ html:not(.js) .research-topics {
 .paper-disclosures {
   display:flex;
   flex-wrap:wrap;
-  align-items:baseline;
+  align-items:center;
   gap:0 16px;
   grid-column:1 / -1;
   margin-top:2px;
@@ -1783,6 +1783,7 @@ html:not(.js) .research-topics {
   display:contents;
 }
 .paper-disclosures .resource-link {
+  white-space:nowrap;
   min-height:28px;
   padding:4px 0;
   border:0;
@@ -1804,15 +1805,16 @@ html:not(.js) .research-topics {
   flex-basis:100%;
 }
 .paper-disclosures summary {
-  display:list-item;
+  display:inline-flex;
+  align-items:center;
+  gap:4px;
+  white-space:nowrap;
+  list-style:none;
   width:fit-content;
   padding:4px 0;
   font:500 .875rem/1.5 var(--sans);
   color:var(--accent);
   cursor:pointer;
-}
-.paper-disclosures summary::marker {
-  font-size:.7em;
 }
 .paper-disclosures summary:hover {
   color:var(--accent);
@@ -1827,15 +1829,16 @@ html:not(.js) .research-topics {
   font-size:.875rem;
 }
 .paper-citation summary {
-  display:list-item;
+  display:inline-flex;
+  align-items:center;
+  gap:4px;
+  white-space:nowrap;
+  list-style:none;
   width:fit-content;
   padding:4px 0;
   font:500 .875rem/1.5 var(--sans);
   color:var(--accent);
   cursor:pointer;
-}
-.paper-citation summary::marker {
-  font-size:.7em;
 }
 .paper-citation summary:focus-visible {
   outline:2px solid var(--accent);
@@ -1843,6 +1846,22 @@ html:not(.js) .research-topics {
 }
 .resource-links>.paper-citation[open] {
   flex-basis:100%;
+}
+/* Inset disclosure markers keep links evenly spaced when an action row wraps. */
+.paper-disclosures summary::-webkit-details-marker,.paper-citation summary::-webkit-details-marker {
+  display:none;
+}
+.paper-disclosures summary::before,.paper-citation summary::before {
+  content:"";
+  flex:none;
+  width:0;
+  height:0;
+  border-top:3px solid transparent;
+  border-bottom:3px solid transparent;
+  border-left:4px solid currentColor;
+}
+.paper-disclosures details[open]>summary::before,.paper-citation[open]>summary::before {
+  transform:rotate(90deg);
 }
 .citation-panel {
   margin:4px 0 8px;
