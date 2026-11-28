@@ -348,10 +348,9 @@ def figure_image(figure, destination, loading='lazy'):
     style = ';'.join('--figure-' + key + ':' + format(value, '.4f') + '%' for key, value in framing.items())
     return Node('img', [('src', asset_href(figure['src'], destination)), ('alt', figure['alt']), ('width', str(width)), ('height', str(height)), ('loading', loading), ('decoding', 'async'), ('style', style)])
 
-def illustrated_research(block, pages, figures, destination='/research', topics=None):
+def illustrated_research(block, pages, figures, destination='/research', topics=None, show_figure=True):
     article = Tree(paper(block, destination=destination, pages=pages)).root.find('article')
     href = article.find('h3').find('a').attrs['href']
-    figure = figures[local_path(href, destination)]
     article.attrs['class'] += ' research-item'
     if topics is not None:
         article.attrs['data-topics'] = ' '.join(topics[local_path(href, destination)])
@@ -359,9 +358,12 @@ def illustrated_research(block, pages, figures, destination='/research', topics=
         article.attrs['class'] += ' featured-publication'
     copy = Node('div', [('class', 'research-copy')])
     copy.children = article.children
-    preview = Node('a', [('class', 'letter-figure research-figure'), ('href', href), ('aria-label', 'Read ' + figure['title'])])
-    preview.children = [figure_image(figure, destination)]
-    article.children = [copy, preview]
+    article.children = [copy]
+    if show_figure:
+        figure = figures[local_path(href, destination)]
+        preview = Node('a', [('class', 'letter-figure research-figure'), ('href', href), ('aria-label', 'Read ' + figure['title'])])
+        preview.children = [figure_image(figure, destination)]
+        article.children.append(preview)
     return serialize(article, destination, destination, True)
 
 def topic_strip(tabs):
@@ -384,7 +386,7 @@ def research(data, pages):
     content = ''
     for index, (title, blocks) in enumerate(groups):
         section_id = ['working-papers', 'publications', 'book-chapters', 'older-working-papers'][index]
-        content += '<section class="research-group" id="' + section_id + '"><div class="group-heading"><h2>' + escape(title) + '</h2></div>' + ''.join(illustrated_research(block, pages, figures, topics=topics) for block in blocks) + '</section>'
+        content += '<section class="research-group" id="' + section_id + '"><div class="group-heading"><h2>' + escape(title) + '</h2></div>' + ''.join(illustrated_research(block, pages, figures, topics=topics, show_figure=False) for block in blocks) + '</section>'
     return page(slug, 'Research | Adam Hale Shapiro', '<main id="content" class="page-main research-main">' + section_heading('Papers & publications') + tabs + '<div id="research-results" class="research-results">' + content + '</div></main>')
 
 def letters(data):

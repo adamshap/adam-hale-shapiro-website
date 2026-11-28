@@ -1579,7 +1579,7 @@ body:has(> .research-main) > .site-header,body:has(> .letters-main) > .site-head
   padding:1px 0;
 }
 .research-main .research-item {
-  align-items:start;
+  display:block;
 }
 .research-main .research-item>.paper-abstract {
   margin-top:1px;
