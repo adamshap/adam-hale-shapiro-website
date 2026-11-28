@@ -300,7 +300,7 @@ def section_heading(title, intro=''):
     return '<div class="page-heading"><h1>' + escape(title) + '</h1>' + ('<p class="page-intro">' + escape(intro) + '</p>' if intro else '') + '</div>'
 
 def tool_feature(name, href, description, preview, slug='/'):
-    return '<a class="tool-feature" href="' + escape(relative(href, slug), quote=True) + '"><div class="tool-summary"><h3>' + escape(name) + '</h3><p>' + escape(description) + '</p></div><span class="tool-preview"><img src="' + asset_href('/assets/dashboards/' + preview, slug) + '" alt="" width="914" height="500" loading="lazy" decoding="async"></span></a>'
+    return '<a class="tool-feature" href="' + escape(relative(href, slug), quote=True) + '"><div class="tool-summary"><h3>' + escape(name) + '</h3><p>' + escape(description) + '</p></div><span class="tool-preview"><img src="' + asset_href('/assets/dashboards/' + preview, slug) + '" alt="" width="968" height="574" loading="lazy" decoding="async"></span></a>'
 
 def home(pages):
     slug = '/'
