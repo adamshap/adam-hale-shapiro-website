@@ -318,7 +318,7 @@ def home(pages):
         compact_label = {'SF Fed Profile': 'SF Fed'}.get(label, label)
         social += '<a class="profile-link" aria-label="' + escape(label, quote=True) + '" href="' + escape(link.attrs['href'], quote=True) + '">' + image + '<span class="profile-label">' + escape(label) + '</span><span class="profile-label-compact" aria-hidden="true">' + escape(compact_label) + '</span></a>'
     banner = '<div class="tree-banner"><img src="assets/forest-banner.jpg" alt="Sunlight falling on snow-covered trees" width="1600" height="440" fetchpriority="high"></div>'
-    hero = '''<section class="hero"><div class="hero-copy"><div class="hero-tools"><div class="profile-links">''' + social + '''</div></div></div></section>'''
+    hero = '''<section class="hero"><div class="hero-copy"><p class="home-introduction">''' + escape(text(paras[0])) + '''</p><div class="hero-tools"><div class="profile-links">''' + social + '''</div></div></div></section>'''
     tools = '<section class="home-section"><div class="section-header"><div><h2>Interactive Dashboards</h2></div>' + anchor('/blank-2/', 'All code & data', css='text-link all-data-link') + '</div><div class="tools-grid">' + tool_feature('Inflation Shock Momentum', 'https://adamshap.github.io/ismi-webapp/ism_webapp.html', 'Explore sustained movements in inflation shocks.', 'ismi.jpg') + tool_feature('Supply & Demand Driven Inflation', 'https://adamshap.github.io/supply-demand-webapp/supply_demand_webapp.html', 'Explore the supply and demand components of inflation.', 'supply-demand.jpg') + '</div></section>'
     blocks = [fragment(b) for b in pages['/research']['blocks']]
     featured = {p['href'] for p in load_papers()['papers'] if p.get('featured')}

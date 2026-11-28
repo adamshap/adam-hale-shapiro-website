@@ -1351,6 +1351,13 @@ body:has(> .research-main) > .site-header,body:has(> .letters-main) > .site-head
 .hero-copy {
   max-width:940px;
 }
+.home-introduction {
+  max-width:72ch;
+  margin:0 0 8px;
+  font-size:1rem;
+  line-height:1.55;
+  color:var(--muted);
+}
 .hero-copy>.eyebrow {
   color:var(--muted);
   font-size:.8rem;
