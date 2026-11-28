@@ -326,7 +326,7 @@ def home(pages):
     if not selected:
         selected = [b for b in blocks if b.find('p')][:2]
     figures = research_assets('figure')
-    research = '<section class="home-section"><div class="section-header"><div><h2>Recent papers</h2></div>' + anchor('/research/', 'All research', css='text-link all-research-link') + '</div><div class="featured-papers">' + ''.join(illustrated_research(b, None, figures, destination='/') for b in selected) + '</div></section>'
+    research = '<section class="home-section"><div class="section-header"><div><h2>Recent papers</h2></div>' + anchor('/research/', 'All research', css='text-link all-research-link') + '</div><div class="featured-papers">' + ''.join(illustrated_research(b, None, figures, destination='/', show_figure=False) for b in selected) + '</div></section>'
     return page(slug, 'Adam Hale Shapiro | Economist', '<main id="content" class="home-shell"><h1 class="sr-only">Adam Hale Shapiro</h1>' + banner + '<div class="home-main">' + hero + research + tools + '</div></main>')
 
 def figure_image(figure, destination, loading='lazy'):

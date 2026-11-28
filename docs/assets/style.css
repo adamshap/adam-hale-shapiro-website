@@ -1279,11 +1279,7 @@ body:has(> .research-main) > .site-header,body:has(> .letters-main) > .site-head
   gap:30px;
 }
 .featured-papers .research-item {
-  display:grid;
-  grid-template-columns:minmax(0,1fr) 112px;
-  grid-template-rows:1fr auto;
-  column-gap:20px;
-  align-items:start;
+  display:block;
 }
 .featured-papers .paper h3 {
   font-size:1.08rem;
